@@ -4,32 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apricot: { DEFAULT: '#ffcdb2', 100: '#571e00', 200: '#ad3d00', 300: '#ff5d05', 400: '#ff955c', 500: '#ffcdb2', 600: '#ffd7c2', 700: '#ffe1d1', 800: '#ffebe0', 900: '#fff5f0' },
+                        melon: { DEFAULT: '#ffb4a2', 100: '#541100', 200: '#a72100', 300: '#fb3200', 400: '#ff7350', 500: '#ffb4a2', 600: '#ffc4b6', 700: '#ffd3c8', 800: '#ffe2da', 900: '#fff0ed' },
+                        salmon_pink: { DEFAULT: '#e5989b', 100: '#3d0f11', 200: '#7a1f22', 300: '#b82e32', 400: '#d65c60', 500: '#e5989b', 600: '#ebadaf', 700: '#f0c2c3', 800: '#f5d6d7', 900: '#faebeb' },
+                        old_rose: { DEFAULT: '#b5838d', 100: '#27171a', 200: '#4e2f35', 300: '#75464f', 400: '#9c5d6a', 500: '#b5838d', 600: '#c39ca4', 700: '#d2b4ba', 800: '#e1cdd1', 900: '#f0e6e8' },
+                        dim_gray: { DEFAULT: '#6d6875', 100: '#161517', 200: '#2b292e', 300: '#413e46', 400: '#56525d', 500: '#6d6875', 600: '#898492', 700: '#a7a3ad', 800: '#c4c1c8', 900: '#e2e0e4' }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="d-flex">
-    <div class="sidebar bg-light p-4" style="width: 25%;">
-        <h2 class="text-primary">Your Name</h2>
-        <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link text-dark" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="#contact">Contact</a></li>
-        </ul>
-    </div>
-    <div class="content flex-grow-1 p-5">
-        <section id="about" class="mb-5">
-            <h1>About Me</h1>
-            <p class="lead">Brief introduction about yourself.</p>
+<body class="bg-apricot-900 text-dim_gray-100 font-sans">
+    <div class="container mx-auto p-10">
+        <header class="text-center">
+            <h1 class="text-5xl font-bold text-apricot-300">Your Name</h1>
+            <nav class="mt-4">
+                <a href="#about" class="text-melon-400 hover:text-melon-200 mx-4">About</a>
+                <a href="#projects" class="text-melon-400 hover:text-melon-200 mx-4">Projects</a>
+                <a href="#contact" class="text-melon-400 hover:text-melon-200 mx-4">Contact</a>
+            </nav>
+        </header>
+        
+        <section id="about" class="mt-16 text-center">
+            <h2 class="text-4xl text-apricot-400">About Me</h2>
+            <p class="text-lg mt-4">Brief introduction about yourself.</p>
         </section>
-        <section id="projects" class="mb-5">
-            <h1>Projects</h1>
-            <p class="lead">Showcase your work here.</p>
+        
+        <section id="projects" class="mt-16">
+            <h2 class="text-4xl text-apricot-400 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="bg-old_rose-500 p-6 rounded-lg shadow-lg">
+                    <img class="w-full rounded" src="project1.jpg" alt="Project 1">
+                    <h3 class="text-2xl mt-4">Project 1</h3>
+                    <p class="mt-2">Description of project 1.</p>
+                    <a href="#" class="text-melon-300 hover:text-melon-100 mt-4 inline-block">View Project</a>
+                </div>
+                <div class="bg-old_rose-500 p-6 rounded-lg shadow-lg">
+                    <img class="w-full rounded" src="project2.jpg" alt="Project 2">
+                    <h3 class="text-2xl mt-4">Project 2</h3>
+                    <p class="mt-2">Description of project 2.</p>
+                    <a href="#" class="text-melon-300 hover:text-melon-100 mt-4 inline-block">View Project</a>
+                </div>
+                <div class="bg-old_rose-500 p-6 rounded-lg shadow-lg">
+                    <img class="w-full rounded" src="project3.jpg" alt="Project 3">
+                    <h3 class="text-2xl mt-4">Project 3</h3>
+                    <p class="mt-2">Description of project 3.</p>
+                    <a href="#" class="text-melon-300 hover:text-melon-100 mt-4 inline-block">View Project</a>
+                </div>
+            </div>
         </section>
-        <section id="contact">
-            <h1>Contact</h1>
-            <p class="lead">Your email or social media links.</p>
+        
+        <section id="contact" class="mt-16 text-center">
+            <h2 class="text-4xl text-apricot-400">Contact</h2>
+            <p class="text-lg mt-4">Your email or social media links.</p>
         </section>
     </div>
 </body>
