@@ -1,19 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Contact Me</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {background-color: #72383D;}
-    h1 {color:#401b1b;}
-    p {color: #f2f2eb;}
-  </style>
+    <title>Glitch Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        light_coral: { DEFAULT: '#f08080', 100: '#420808', 200: '#830f0f', 300: '#c51717', 400: '#e83d3d', 500: '#f08080', 600: '#f39999', 700: '#f6b2b2', 800: '#f9cccc', 900: '#fce5e5' },
+                        coral_pink: { DEFAULT: '#f4978e', 100: '#470c07', 200: '#8d190e', 300: '#d42515', 400: '#ed5749', 500: '#f4978e', 600: '#f6ada6', 700: '#f8c1bc', 800: '#fbd6d2', 900: '#fdeae9' },
+                        melon: { DEFAULT: '#f8ad9d', 100: '#4b1205', 200: '#97240a', 300: '#e23610', 400: '#f36d50', 500: '#f8ad9d', 600: '#f9bdaf', 700: '#fbcdc3', 800: '#fcded7', 900: '#feeeeb' },
+                        apricot: { DEFAULT: '#fbc4ab', 100: '#511c04', 200: '#a23808', 300: '#f3550b', 400: '#f78d5b', 500: '#fbc4ab', 600: '#fcd1bd', 700: '#fddccd', 800: '#fde8de', 900: '#fef3ee' },
+                        light_orange: { DEFAULT: '#ffdab9', 100: '#582900', 200: '#af5200', 300: '#ff7b08', 400: '#ffaa60', 500: '#ffdab9', 600: '#ffe1c6', 700: '#ffe8d4', 800: '#fff0e2', 900: '#fff7f1' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .navbar {
+            position: relative;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            z-index: 20;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 36px;
+            margin: 20px 0;
+            color: #f08080;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 50;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Glitch Art</h1>
-    <img src="glitch1.png" alt="girl">
-    <img src="glitch2.png" alt="couple">
-    <img src="glitch3.png" alt="love">
+    <header>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="text-white">Menu</button>
+                <div class="dropdown-content">
+                    <a href="./">Home</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="title">My Art Portfolio</h1>
+        <p class="description">A collection of my favorite works of art.</p>
+        <div class="gallery">
+            <a href="#lightbox1"><img src="glitch1.jpg" alt="Artwork 1"></a>
+            <a href="#lightbox2"><img src="glitch2.jpg" alt="Artwork 2"></a>
+            <a href="#lightbox3"><img src="glitch3.jpg" alt="Artwork 3"></a>
+        </div>
+    </div>
+
+    <div id="lightbox1" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="glitch1.jpg" alt="Artwork 1">
+    </div>
+    <div id="lightbox2" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="glitch2.jpg" alt="Artwork 2">
+    </div>
+    <div id="lightbox3" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="glitch3.jpg" alt="Artwork 3">
+    </div>
 </body>
 </html>
