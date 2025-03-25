@@ -25,7 +25,8 @@
             font-family: 'DM Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fef3ee;
+            background-color: #fff5e1; /* Soft, light background color */
+            color: #333;
         }
 
         header {
@@ -33,28 +34,33 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #fbc4ab; /* Updated color */
+            background-color: #f4978e; /* Soft pink header */
             color: white;
-            padding: 10px;
+            padding: 20px 40px;
             z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
-            position: relative;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .dropdown button {
             background-color: #fef3ee;
-            color: white;
+            color: #333;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown button:hover {
+            background-color: #f78d5b; /* Hover effect for button */
         }
 
         .dropdown-content {
@@ -64,18 +70,20 @@
             background-color: #fff;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             min-width: 160px;
-            z-index: 20;
+            border-radius: 8px;
         }
 
         .dropdown-content a {
-            color: black;
-            padding: 10px;
+            color: #333;
+            padding: 12px 20px;
             text-decoration: none;
             display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
         }
 
         .dropdown-content a:hover {
-            background-color: #ddd;
+            background-color: #f78d5b;
         }
 
         .dropdown:hover .dropdown-content {
@@ -83,29 +91,44 @@
         }
 
         .container {
-            padding: 60px 20px;
+            padding: 80px 20px 40px;
             text-align: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #bf505d;
+            margin-bottom: 15px;
+        }
+
+        .italic {
+            font-style: italic;
+            color: #f4978e;
+            margin-bottom: 20px;
         }
 
         .gallery {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         .gallery img {
             max-width: 300px;
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery img:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .lightbox {
@@ -124,7 +147,7 @@
         .lightbox img {
             max-width: 90%;
             max-height: 80%;
-            border-radius: 8px;
+            border-radius: 15px;
         }
 
         .lightbox:target {
@@ -136,7 +159,7 @@
             top: 20px;
             right: 20px;
             color: white;
-            font-size: 24px;
+            font-size: 36px;
             text-decoration: none;
         }
 
@@ -146,11 +169,23 @@
             text-align: left;
             color: #333;
             font-size: 1.1em;
+            margin-top: 30px;
         }
 
         ul li {
-            margin-bottom: 15px;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .gallery {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -169,8 +204,8 @@
     </header>
 
     <div class="container">
-        <h1 class="title text-5xl font-bold text-[#bf505d]">Glitch Art</h1>
-        <h2 class="italic text-[#f4978e]">"Distance between us"</h2>
+        <h1 class="title">Glitch Art</h1>
+        <h2 class="italic">"Distance between us"</h2>
         <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
         <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
         <div class="gallery">
@@ -195,8 +230,8 @@
 
     <ul>
         <li>The first glitch resembles the difficulties of self-expression. In today's society, it seems unacceptable to dress or express our natural selves. With this glitch, it expresses the way society tries to block us from being ourselves.</li>
-        <li>The second glitch is the embodiment of being in a relationship. Being with your significant other is about closeness and bond. Sharing that bond and connection makes our personalities and personas become one.</li>
-        <li>The third glitch is the feeling of love. The coloring of this glitch was originally black and white but with the editing, it caused heat signature colors to be exposed. This vision allows us to view how love spreads.</li>
+        <li>The second glitch is the embodiment of confusion—how people may be perceived or misperceived due to miscommunication. It also represents technology and artificial intelligence taking over how we interact with one another.</li>
+        <li>The third glitch represents the emotional detachment and numbness people may experience due to the overwhelming flow of information in today's digital world.</li>
     </ul>
 </body>
 </html>
