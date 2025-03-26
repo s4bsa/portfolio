@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glitch Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <style>
         @font-face {
             font-family: 'ClashDisplay-Semibold';
-            src: url('https://your-cdn-link/ClashDisplay-Semibold.woff2') format('woff2'), 
-                 url('https://your-cdn-link/ClashDisplay-Semibold.woff') format('woff'), 
-                 url('https://your-cdn-link/ClashDisplay-Semibold.ttf') format('truetype');
+            src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+                url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
+                url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
             font-weight: 600;
             font-display: swap;
             font-style: normal;
@@ -27,173 +26,22 @@
             color: #333;
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f4978e;
-            color: white;
-            padding: 20px 40px;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown button {
-            background-color: transparent;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            color: black;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            min-width: 150px;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f4978e;
-            color: white;
-        }
-
-        .container {
-            padding: 80px 20px 40px;
-            text-align: center;
-        }
-
-        .title {
+        h1.title {
             font-family: 'ClashDisplay-Semibold', sans-serif;
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #bf505d;
-            margin-bottom: 15px;
-        }
-
-        .italic {
-            font-style: italic;
-            color: #f4978e;
-            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .glide {
             max-width: 800px;
             margin: 40px auto;
-            position: relative;
-        }
-
-        .glide__track {
-            display: flex;
-            justify-content: center;
-        }
-
-        .glide__slide {
-            text-align: center;
         }
 
         .glide__slide img {
             max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
             display: block;
             margin: 0 auto;
-        }
-
-        .glide__arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #333;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .glide__arrow:hover {
-            background-color: #f4978e;
-            color: white;
-        }
-
-        .glide__arrow--left {
-            left: -40px;
-        }
-
-        .glide__arrow--right {
-            right: -40px;
-        }
-
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 70%;
             border-radius: 15px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .lightbox-description {
-            color: white;
-            font-family: 'DM Sans', sans-serif;
-            margin-top: 15px;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background-color: #ffdab9;
-            color: #f8ad9d;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -201,8 +49,8 @@
     <header>
         <div class="navbar">
             <div class="dropdown">
-                <button onclick="toggleDropdown()">Menu</button>
-                <div class="dropdown-content" id="dropdownMenu">
+                <button class="text-white">Menu</button>
+                <div class="dropdown-content">
                     <a href="./">Home</a>
                     <a href="#">Portfolio</a>
                     <a href="#">Contact</a>
@@ -221,30 +69,23 @@
     <div class="glide">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-                <li class="glide__slide">
-                    <img src="glitch1.png" alt="Artwork 1" onclick="openLightbox(this.src, 'The first glitch resembles the difficulties of self-expression. In today's society, it seems unacceptable to dress or express our natural selves. With this glitch, it expresses the way society tries to block us from being ourselves.')">
-                </li>
-                <li class="glide__slide">
-                    <img src="glitch2.png" alt="Artwork 2" onclick="openLightbox(this.src, 'The second glitch is the embodiment of being in a relationship. Being with your significant other is about closeness and bond. Sharing that bond and connection makes our personalities and personas become one.<')">
-                </li>
-                <li class="glide__slide">
-                    <img src="glitch3.png" alt="Artwork 3" onclick="openLightbox(this.src, 'The third glitch is the feeling of love. The coloring of this glitch was originally black and white but with the editing, it caused heat signature colors to be exposed. This vision allows us to view how love spreads.')">
-                </li>
+                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
+                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
+                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
             </ul>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
             <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
         </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
     </div>
 
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">×</span>
-        <img id="lightbox-img" src="" alt="Artwork">
-        <p class="lightbox-description" id="lightbox-description"></p>
-    </div>
-
-    <footer>
+    <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
         <p>&copy; s4bsa, 2025.</p>
     </footer>
 
@@ -255,28 +96,6 @@
             autoplay: 3000,
             hoverpause: true,
         }).mount();
-
-        function openLightbox(src, description) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox-description').textContent = description;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-        }
-
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdownMenu');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        document.addEventListener('click', (event) => {
-            const dropdown = document.getElementById('dropdownMenu');
-            if (!event.target.closest('.dropdown')) {
-                dropdown.style.display = 'none';
-            }
-        });
     </script>
 </body>
 </html>
