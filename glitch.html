@@ -5,21 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glitch Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        light_coral: { DEFAULT: '#f08080', 100: '#420808', 200: '#830f0f', 300: '#c51717', 400: '#e83d3d', 500: '#f08080', 600: '#f39999', 700: '#f6b2b2', 800: '#f9cccc', 900: '#fce5e5' },
-                        coral_pink: { DEFAULT: '#f4978e', 100: '#470c07', 200: '#8d190e', 300: '#d42515', 400: '#ed5749', 500: '#f4978e', 600: '#f6ada6', 700: '#f8c1bc', 800: '#fbd6d2', 900: '#fdeae9' },
-                        melon: { DEFAULT: '#f8ad9d', 100: '#4b1205', 200: '#97240a', 300: '#e23610', 400: '#f36d50', 500: '#f8ad9d', 600: '#f9bdaf', 700: '#fbcdc3', 800: '#fcded7', 900: '#feeeeb' },
-                        apricot: { DEFAULT: '#fbc4ab', 100: '#511c04', 200: '#a23808', 300: '#f3550b', 400: '#f78d5b', 500: '#fbc4ab', 600: '#fcd1bd', 700: '#fddccd', 800: '#fde8de', 900: '#fef3ee' },
-                        light_orange: { DEFAULT: '#ffdab9', 100: '#582900', 200: '#af5200', 300: '#ff7b08', 400: '#ffaa60', 500: '#ffdab9', 600: '#ffe1c6', 700: '#ffe8d4', 800: '#fff0e2', 900: '#fff7f1' }
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <style>
     body {
         font-family: 'DM Sans', sans-serif;
@@ -29,174 +16,17 @@
         color: #333;
     }
 
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #f4978e;
-        color: white;
-        padding: 20px 40px;
-        z-index: 10;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    .glide {
+        max-width: 800px;
+        margin: 40px auto;
     }
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .dropdown button {
-        background-color: #fef3ee;
-        color: #333;
-        border: none;
-        padding: 12px 20px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 8px;
-        transition: background-color 0.3s ease;
-    }
-
-    .dropdown button:hover {
-        background-color: #f78d5b; 
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        left: 0;
-        background-color: #fff;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        min-width: 160px;
-        border-radius: 8px;
-    }
-
-    .dropdown-content a {
-        color: #333;
-        padding: 12px 20px;
-        text-decoration: none;
-        display: block;
-        font-weight: 500;
-        transition: background-color 0.3s ease;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #f78d5b;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .container {
-        padding: 80px 20px 40px;
-        text-align: center;
-    }
-
-    .title {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #bf505d;
-        margin-bottom: 15px;
-    }
-
-    .italic {
-        font-style: italic;
-        color: #f4978e;
-        margin-bottom: 20px;
-    }
-
-    .gallery {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
-        
-      .gallery img {
-        max-width: 300px;
-        height: 200px;
-        object-fit: cover;
+    .glide__slide img {
+        max-width: 100%;
         border-radius: 15px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
-    .gallery img:hover {
-        transform: scale(1.2); 
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-    .lightbox {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 50;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .lightbox img {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 15px;
-    }
-
-    .lightbox:target {
-        display: flex;
-    }
-
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        color: white;
-        font-size: 36px;
-        text-decoration: none;
-    }
-
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-        text-align: left;
-        color: #333;
-        font-size: 1.1em;
-        margin-top: 30px;
-    }
-
-    ul li {
-        margin-bottom: 20px;
-        padding: 12px;
-        border: 2px solid #f4978e;
-        border-radius: 8px;
-        background-color: #fff;
-        line-height: 1.8;
-        transition: box-shadow 0.3s ease;
-    }
-
-    ul li:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (max-width: 768px) {
-        .navbar {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .gallery {
-            flex-direction: column;
-            gap: 20px;
-        }
-    }
-</style>
-
+    </style>
 </head>
 <body>
     <header>
@@ -217,33 +47,39 @@
         <h2 class="italic">"Distance between us"</h2>
         <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
         <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
-        <div class="gallery">
-            <a href="#lightbox1"><img src="glitch1.png" alt="Artwork 1"></a>
-            <a href="#lightbox2"><img src="glitch2.png" alt="Artwork 2"></a>
-            <a href="#lightbox3"><img src="glitch3.png" alt="Artwork 3"></a>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
+                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
+                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
         </div>
     </div>
 
-    <div id="lightbox1" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="glitch1.png" alt="Artwork 1">
-    </div>
-    <div id="lightbox2" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="glitch2.png" alt="Artwork 2">
-    </div>
-    <div id="lightbox3" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="glitch3.png" alt="Artwork 3">
-    </div>
-
-    <ul>
-      <li>The first glitch resembles the difficulties of self-expression. In today's society, it seems unacceptable to dress or express our natural selves. With this glitch, it expresses the way society tries to block us from being ourselves.</li>
-        <li>The second glitch is the embodiment of being in a relationship. Being with your significant other is about closeness and bond. Sharing that bond and connection makes our personalities and personas become one.</li>
-        <li>The third glitch is the feeling of love. The coloring of this glitch was originally black and white but with the editing, it caused heat signature colors to be exposed. This vision allows us to view how love spreads.</li>
-    </ul>
-       <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
+    <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
         <p>&copy; s4bsa, 2025.</p>
     </footer>
+
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 3000,
+            hoverpause: true,
+        }).mount();
+    </script>
 </body>
 </html>
