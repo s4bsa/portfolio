@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glitch Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <style>
         body {
             font-family: 'DM Sans', sans-serif;
@@ -93,48 +95,19 @@
             margin-bottom: 20px;
         }
 
-        .image-gallery {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .glide {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
         }
 
-        .image-gallery img {
+        .glide__slide img {
             max-width: 100%;
-            width: 300px;
+            height: auto;
             border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-        }
-
-        .lightbox img {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 15px;
-        }
-
-        .lightbox.active {
-            display: flex;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 0 auto; /* Centers the image */
         }
 
         footer {
@@ -148,33 +121,56 @@
     </style>
 </head>
 <body>
-
-<header>
-    <div class="navbar">
-        <div class="dropdown">
-            <button class="text-white">Menu</button>
-            <div class="dropdown-content">
-                <a href="./">Home</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Contact</a>
+    <header>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="text-white">Menu</button>
+                <div class="dropdown-content">
+                    <a href="./">Home</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
+                </div>
             </div>
         </div>
+    </header>
+
+    <div class="container">
+        <h1 class="title">Glitch Art</h1>
+        <h2 class="italic">"Distance between us"</h2>
+        <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
+        <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
     </div>
-</header>
 
-<div class="container">
-    <h1 class="title">Glitch Art</h1>
-    <h2 class="italic">"Distance between us"</h2>
-    <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
-    <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
-</div>
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
+                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
+                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+    </div>
 
-<!-- Image Gallery -->
-<div class="image-gallery">
-    <img src="glitch1.png" alt="Artwork 1" onclick="openLightbox(this)">
-    <img src="glitch2.png" alt="Artwork 2" onclick="openLightbox(this)">
-    <img src="glitch3.png" alt="Artwork 3" onclick="openLightbox(this)">
-</div>
+    <footer>
+        <p>&copy; s4bsa, 2025.</p>
+    </footer>
 
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" onclick="closeLight
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 3000,
+            hoverpause: true,
+        }).mount();
+    </script>
+</body>
+</html>
