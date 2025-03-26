@@ -6,14 +6,14 @@
     <title>Glitch Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <style>
         @font-face {
             font-family: 'ClashDisplay-Semibold';
-            src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
-                 url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
-                 url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
+            src: url('https://your-cdn-link/ClashDisplay-Semibold.woff2') format('woff2'), 
+                 url('https://your-cdn-link/ClashDisplay-Semibold.woff') format('woff'), 
+                 url('https://your-cdn-link/ClashDisplay-Semibold.ttf') format('truetype');
             font-weight: 600;
             font-display: swap;
             font-style: normal;
@@ -23,7 +23,7 @@
             font-family: 'DM Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff5e1; 
+            background-color: #fff5e1;
             color: #333;
         }
 
@@ -47,7 +47,6 @@
 
         .dropdown {
             position: relative;
-            display: inline-block;
         }
 
         .dropdown button {
@@ -66,7 +65,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             min-width: 150px;
             border-radius: 5px;
-            z-index: 20;
         }
 
         .dropdown-content a {
@@ -74,7 +72,6 @@
             padding: 10px;
             text-decoration: none;
             color: #333;
-            font-size: 1rem;
         }
 
         .dropdown-content a:hover {
@@ -107,11 +104,22 @@
             position: relative;
         }
 
+        .glide__track {
+            display: flex;
+            justify-content: center;
+        }
+
+        .glide__slide {
+            text-align: center;
+        }
+
         .glide__slide img {
             max-width: 100%;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+            display: block;
+            margin: 0 auto;
         }
 
         .glide__arrow {
@@ -125,7 +133,6 @@
             border-radius: 50%;
             cursor: pointer;
             z-index: 10;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
@@ -154,11 +161,13 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            flex-direction: column;
+            text-align: center;
         }
 
         .lightbox img {
             max-width: 90%;
-            max-height: 90%;
+            max-height: 70%;
             border-radius: 15px;
         }
 
@@ -169,6 +178,13 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
+        }
+
+        .lightbox-description {
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            margin-top: 15px;
+            font-size: 1.2rem;
         }
 
         footer {
@@ -205,9 +221,15 @@
     <div class="glide">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1" onclick="openLightbox(this.src)"></li>
-                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2" onclick="openLightbox(this.src)"></li>
-                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3" onclick="openLightbox(this.src)"></li>
+                <li class="glide__slide">
+                    <img src="glitch1.png" alt="Artwork 1" onclick="openLightbox(this.src, 'The first glitch resembles the difficulties of self-expression. In today's society, it seems unacceptable to dress or express our natural selves. With this glitch, it expresses the way society tries to block us from being ourselves.')">
+                </li>
+                <li class="glide__slide">
+                    <img src="glitch2.png" alt="Artwork 2" onclick="openLightbox(this.src, 'The second glitch is the embodiment of being in a relationship. Being with your significant other is about closeness and bond. Sharing that bond and connection makes our personalities and personas become one.<')">
+                </li>
+                <li class="glide__slide">
+                    <img src="glitch3.png" alt="Artwork 3" onclick="openLightbox(this.src, 'The third glitch is the feeling of love. The coloring of this glitch was originally black and white but with the editing, it caused heat signature colors to be exposed. This vision allows us to view how love spreads.')">
+                </li>
             </ul>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
@@ -219,6 +241,7 @@
     <div class="lightbox" id="lightbox">
         <span class="lightbox-close" onclick="closeLightbox()">×</span>
         <img id="lightbox-img" src="" alt="Artwork">
+        <p class="lightbox-description" id="lightbox-description"></p>
     </div>
 
     <footer>
@@ -233,8 +256,9 @@
             hoverpause: true,
         }).mount();
 
-        function openLightbox(src) {
+        function openLightbox(src, description) {
             document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-description').textContent = description;
             document.getElementById('lightbox').style.display = 'flex';
         }
 
