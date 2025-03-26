@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glitch Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <style>
@@ -19,7 +20,7 @@
         }
 
         body {
-            font-family: 'ClashDisplay-Semibold', 'DM Sans', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #fff5e1; 
@@ -44,13 +45,51 @@
             align-items: center;
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            border-radius: 5px;
+            z-index: 20;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f4978e;
+            color: white;
+        }
+
         .container {
             padding: 80px 20px 40px;
             text-align: center;
         }
 
         .title {
-            font-size: 3rem;
+            font-family: 'ClashDisplay-Semibold', sans-serif;
+            font-size: 3.5rem;
             font-weight: bold;
             color: #bf505d;
             margin-bottom: 15px;
@@ -79,21 +118,29 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
             border: none;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 50%;
             cursor: pointer;
             z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .glide__arrow:hover {
+            background-color: #f4978e;
+            color: white;
         }
 
         .glide__arrow--left {
-            left: -50px;
+            left: -40px;
         }
 
         .glide__arrow--right {
-            right: -50px;
+            right: -40px;
         }
 
         .lightbox {
@@ -138,8 +185,8 @@
     <header>
         <div class="navbar">
             <div class="dropdown">
-                <button class="text-white">Menu</button>
-                <div class="dropdown-content">
+                <button onclick="toggleDropdown()">Menu</button>
+                <div class="dropdown-content" id="dropdownMenu">
                     <a href="./">Home</a>
                     <a href="#">Portfolio</a>
                     <a href="#">Contact</a>
@@ -194,6 +241,18 @@
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', (event) => {
+            const dropdown = document.getElementById('dropdownMenu');
+            if (!event.target.closest('.dropdown')) {
+                dropdown.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
