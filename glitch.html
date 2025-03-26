@@ -8,24 +8,112 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <style>
-    body {
-        font-family: 'DM Sans', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #fff5e1; 
-        color: #333;
-    }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5e1; 
+            color: #333;
+        }
 
-    .glide {
-        max-width: 800px;
-        margin: 40px auto;
-    }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f4978e;
+            color: white;
+            padding: 20px 40px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .glide__slide img {
-        max-width: 100%;
-        border-radius: 15px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown button {
+            background-color: #fef3ee;
+            color: #333;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown button:hover {
+            background-color: #f78d5b; 
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            border-radius: 8px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f78d5b;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #bf505d;
+            margin-bottom: 15px;
+        }
+
+        .italic {
+            font-style: italic;
+            color: #f4978e;
+            margin-bottom: 20px;
+        }
+
+        .glide {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .glide__slide img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #ffdab9;
+            color: #f8ad9d;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -69,7 +157,7 @@
         </div>
     </div>
 
-    <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
+    <footer>
         <p>&copy; s4bsa, 2025.</p>
     </footer>
 
