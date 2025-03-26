@@ -3,132 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Glitch Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <style>
-        header  {
-            font-family: 'DM Sans', sans-serif;
-        }
-         body {
+        body {
             font-family: 'DM Sans', sans-serif;
             margin: 0;
-            padding: 0; 
+            padding: 0;
+            background-color: #fff5e1; 
+            color: #333;
         }
-         .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px; 
-    }
-    .social-icon {
-        font-size: 2rem;
-        color: #ff6f61;
-        transition: color 0.3s ease;
-    }
-    .social-icon:hover {
-        color: #f4978e;
-    }
-    footer {
-    background-color: #ffdab9;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    position: relative; 
-    left: 0;
-    right: 0; 
-}
 
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f4978e;
+            color: white;
+            padding: 20px 40px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown button {
+            background-color: #fef3ee;
+            color: #333;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown button:hover {
+            background-color: #f78d5b; 
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            border-radius: 8px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f78d5b;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #bf505d;
+            margin-bottom: 15px;
+        }
+
+        .italic {
+            font-style: italic;
+            color: #f4978e;
+            margin-bottom: 20px;
+        }
+
+        .glide {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .glide__track {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .glide__slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .glide__slide img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+        }
+
+        footer {
+            background-color: #ffdab9;
+            color: #f8ad9d;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            width: 100%;
+        }
     </style>
 </head>
- <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        light_coral: { DEFAULT: '#f08080', 100: '#420808', 200: '#830f0f', 300: '#c51717', 400: '#e83d3d', 500: '#f08080', 600: '#f39999', 700: '#f6b2b2', 800: '#f9cccc', 900: '#fce5e5' },
-                        coral_pink: { DEFAULT: '#f4978e', 100: '#470c07', 200: '#8d190e', 300: '#d42515', 400: '#ed5749', 500: '#f4978e', 600: '#f6ada6', 700: '#f8c1bc', 800: '#fbd6d2', 900: '#fdeae9' },
-                        melon: { DEFAULT: '#f8ad9d', 100: '#4b1205', 200: '#97240a', 300: '#e23610', 400: '#f36d50', 500: '#f8ad9d', 600: '#f9bdaf', 700: '#fbcdc3', 800: '#fcded7', 900: '#feeeeb' },
-                        apricot: { DEFAULT: '#fbc4ab', 100: '#511c04', 200: '#a23808', 300: '#f3550b', 400: '#f78d5b', 500: '#fbc4ab', 600: '#fcd1bd', 700: '#fddccd', 800: '#fde8de', 900: '#fef3ee' },
-                        light_orange: { DEFAULT: '#ffdab9', 100: '#582900', 200: '#af5200', 300: '#ff7b08', 400: '#ffaa60', 500: '#ffdab9', 600: '#ffe1c6', 700: '#ffe8d4', 800: '#fff0e2', 900: '#fff7f1' }
-                    }
-                }
-            }
-        }
-    </script>
-
-</head>
-<body class="bg-apricot-900 text-dim_gray-100 font-sans">
-    <div class="container mx-auto p-10">
-<header class="text-center border-bottom pb-4 mb-4">
-    <h1 class="text-5xl font-bold text-[#bf505d]">Sabrina Hung</h1>
-    <nav class="mt-4">
-        <a href="about.html" class="text-melon-400 hover:text-melon-200 mx-4">About</a>
-        <a href="#projects" class="text-melon-400 hover:text-melon-200 mx-4">Projects</a>
-        <a href="contact.html" class="text-melon-400 hover:text-melon-200 mx-4">Contact</a>
-    </nav>
-</header>
-
-        <section id="projects" class="mt-16">
-            <h2 class="text-4xl text-apricot-400 text-center">Projects</h2>
-           
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-full rounded" src="glitch2.png" alt="Project 1">
-                    <h3 class="text-2xl mt-4">Glitch Art</h3>
-                    <p class="mt-2">Created using Audacity and Notepad++</p>
-                    <a href="glitch.html" 
-                       class="btn btn-primary py-2 px-4 mt-4 font-semibold shadow-lg">
-                       View Project
-                    </a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-full rounded" src="doremon.png" alt="Project 2">
-                    <h3 class="text-2xl mt-4">3-D Modeling</h3>
-                    <p class="mt-2">Created on Blender</p>
-                   <a href="3d.html" 
-                       class="btn btn-primary py-2 px-4 mt-4 font-semibold shadow-lg">
-                       View Project
-                    </a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-full rounded" src="daisies.jpg" alt="Project 3">
-                    <h3 class="text-2xl mt-4">net.art</h3>
-                    <p class="mt-2">HTML: Interactive Storyboard</p>
-                    <a href="net.html" 
-                       class="btn btn-primary py-2 px-4 mt-4 font-semibold shadow-lg">
-                       View Project
-                    </a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-full rounded" src="chill.png" alt="Project 4">
-                    <h3 class="text-2xl mt-4">Meme Mashup</h3>
-                    <p class="mt-2">Created using Adobe Photoshop</p>
-                    <a href="meme.html" class="btn btn-primary py-2 px-4 mt-4 font-semibold shadow-lg">View Project</a>
-                </div>
-                  <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-full rounded" src="IMAGE.JPG" alt="Project 5">
-                    <h3 class="text-2xl mt-4">Minecraft</h3>
-                    <p class="mt-2">Scupture recreation and Virtual Environment</p>
-                    <a href="minecraft.html" class="btn btn-primary py-2 px-4 mt-4 font-semibold shadow-lg">View Project</a>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="text-white">Menu</button>
+                <div class="dropdown-content">
+                    <a href="./">Home</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
                 </div>
             </div>
-        </section>
-<br> 
-<div class="social-icons">
-    <a href="https://www.instagram.com/ss4bsa" target="_blank" class="social-icon">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/sabrina-hung-6376212a9/" target="_blank" class="social-icon">
-        <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="mailto:sabrina.hung@sjsu.edu" class="social-icon">
-        <i class="fas fa-envelope"></i>
-    </a>
-</div>
-   <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="title">Glitch Art</h1>
+        <h2 class="italic">"Distance between us"</h2>
+        <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
+        <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
+    </div>
+
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
+                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
+                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+    </div>
+
+    <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
         <p>&copy; s4bsa, 2025.</p>
     </footer>
+
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 3000,
+            hoverpause: true,
+        }).mount();
+    </script>
 </body>
 </html>
