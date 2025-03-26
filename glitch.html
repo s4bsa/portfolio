@@ -1,100 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitch Art</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
-    <style>
-        @font-face {
-            font-family: 'ClashDisplay-Semibold';
-            src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
-                url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
-                url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
-            font-weight: 600;
-            font-display: swap;
-            font-style: normal;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Art</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+<style>
+    body {
+        font-family: 'DM Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff5e1; 
+    }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff5e1;
-            color: #333;
-        }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
 
-        h1.title {
-            font-family: 'ClashDisplay-Semibold', sans-serif;
-            font-weight: 600;
-        }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
 
-        .glide {
-            max-width: 800px;
-            margin: 40px auto;
-        }
+    .dropdown button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
 
-        .glide__slide img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-width: 150px;
+        border-radius: 5px;
+        z-index: 20;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f4978e;
+        color: white;
+    }
+
+    .container {
+        padding: 80px 20px 40px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #bf505d;
+        margin-bottom: 15px;
+    }
+
+    .glide__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #333;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .glide__arrow:hover {
+        background-color: #f4978e;
+        color: white;
+    }
+
+    .glide__arrow--left {
+        left: -40px;
+    }
+
+    .glide__arrow--right {
+        right: -40px;
+    }
+</style>
+
 <body>
-    <header>
-        <div class="navbar">
-            <div class="dropdown">
-                <button class="text-white">Menu</button>
-                <div class="dropdown-content">
-                    <a href="./">Home</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Contact</a>
-                </div>
+<header>
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="text-white">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="./">Home</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
             </div>
         </div>
-    </header>
-
-    <div class="container">
-        <h1 class="title">Glitch Art</h1>
-        <h2 class="italic">"Distance between us"</h2>
-        <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
-        <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
     </div>
+</header>
 
-    <!-- Image Carousel -->
-    <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
-                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
-                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
-            </ul>
-        </div>
-        <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
-        </div>
-        <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-        </div>
-    </div>
+<!-- Your content here -->
 
-    <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
-        <p>&copy; s4bsa, 2025.</p>
-    </footer>
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdownMenu');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
 
-    <script>
-        new Glide('.glide', {
-            type: 'carousel',
-            perView: 1,
-            autoplay: 3000,
-            hoverpause: true,
-        }).mount();
-    </script>
+    document.addEventListener('click', (event) => {
+        const dropdown = document.getElementById('dropdownMenu');
+        if (!event.target.closest('.dropdown')) {
+            dropdown.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
