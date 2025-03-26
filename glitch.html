@@ -1,172 +1,177 @@
+
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Glitch Art</title>
-     <script src="https://cdn.tailwindcss.com"></script>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
-     <style>
-            body {
-             font-family: 'DM Sans', sans-serif;
-             margin: 0;
-             padding: 0;
-             background-color: #fff5e1; 
-             color: #333;
-         }
- 
-         header {
-             position: fixed;
-             top: 0;
-             left: 0;
-             width: 100%;
-             background-color: #f4978e;
-             color: white;
-             padding: 20px 40px;
-             z-index: 10;
-             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-         }
- 
-         .navbar {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-         }
- 
-         .dropdown button {
-             background-color: #fef3ee;
-             color: #333;
-             border: none;
-             padding: 12px 20px;
-             cursor: pointer;
-             font-size: 16px;
-             font-weight: bold;
-             border-radius: 8px;
-             transition: background-color 0.3s ease;
-         }
- 
-         .dropdown button:hover {
-             background-color: #f78d5b; 
-         }
- 
-         .dropdown-content {
-             display: none;
-             position: absolute;
-             left: 0;
-             background-color: #fff;
-             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-             min-width: 160px;
-             border-radius: 8px;
-         }
- 
-         .dropdown-content a {
-             color: #333;
-             padding: 12px 20px;
-             text-decoration: none;
-             display: block;
-             font-weight: 500;
-             transition: background-color 0.3s ease;
-         }
- 
-         .dropdown-content a:hover {
-             background-color: #f78d5b;
-         }
- 
-         .dropdown:hover .dropdown-content {
-             display: block;
-         }
- 
-         .container {
-             padding: 80px 20px 40px;
-             text-align: center;
-         }
- 
-         .title {
-             font-size: 3rem;
-             font-weight: bold;
-             color: #bf505d;
-             margin-bottom: 15px;
-         }
- 
-         .italic {
-             font-style: italic;
-             color: #f4978e;
-             margin-bottom: 20px;
-         }
- 
-         .glide {
-             max-width: 800px;
-             margin: 40px auto;
-         }
- 
-         .glide__slide img {
-             max-width: 100%;
-             border-radius: 15px;
-             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-         }
- 
-         footer {
-             background-color: #ffdab9;
-             color: #f8ad9d;
-             padding: 20px;
-             text-align: center;
-             margin-top: 40px;
-             width: 100%;
-         }
-     </style>
- </head>
- <body>
-     <header>
-         <div class="navbar">
-             <div class="dropdown">
-                 <button class="text-white">Menu</button>
-                 <div class="dropdown-content">
-                     <a href="./">Home</a>
-                     <a href="#">Portfolio</a>
-                     <a href="#">Contact</a>
-                 </div>
-             </div>
-         </div>
-     </header>
- 
-     <div class="container">
-         <h1 class="title">Glitch Art</h1>
-         <h2 class="italic">"Distance between us"</h2>
-         <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
-         <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
-     </div>
- 
-     <div class="glide">
-         <div class="glide__track" data-glide-el="track">
-             <ul class="glide__slides">
-                 <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
-                 <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
-                 <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
-             </ul>
-         </div>
-         <div class="glide__arrows" data-glide-el="controls">
-             <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
-             <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
-         </div>
-         <div class="glide__bullets" data-glide-el="controls[nav]">
-             <button class="glide__bullet" data-glide-dir="=0"></button>
-             <button class="glide__bullet" data-glide-dir="=1"></button>
-             <button class="glide__bullet" data-glide-dir="=2"></button>
-         </div>
-     </div>
-      <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
-         <p>&copy; s4bsa, 2025.</p>
-     </footer>
- 
-     <script>
-         new Glide('.glide', {
-             type: 'carousel',
-             perView: 1,
-             autoplay: 3000,
-             hoverpause: true,
-         }).mount();
-     </script>
- </body>
- </html>
- 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5e1;
+            color: #333;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f4978e;
+            color: white;
+            padding: 20px 40px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown button {
+            background-color: #fef3ee;
+            color: #333;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown button:hover {
+            background-color: #f78d5b;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            border-radius: 8px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f78d5b;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #bf505d;
+            margin-bottom: 15px;
+        }
+
+        .italic {
+            font-style: italic;
+            color: #f4978e;
+            margin-bottom: 20px;
+        }
+
+        .glide {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .glide__slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 0 auto; /* Centers the image */
+        }
+
+        footer {
+            background-color: #ffdab9;
+            color: #f8ad9d;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="text-white">Menu</button>
+                <div class="dropdown-content">
+                    <a href="./">Home</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="title">Glitch Art</h1>
+        <h2 class="italic">"Distance between us"</h2>
+        <p>This series was created using Audacity and Notepad++. It required meticulous editing, cutting and pasting, and effects to glitch the original image.</p>
+        <p>Identity, love, and connection are the themes of these glitch art pieces.</p>
+    </div>
+
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="glitch1.png" alt="Artwork 1"></li>
+                <li class="glide__slide"><img src="glitch2.png" alt="Artwork 2"></li>
+                <li class="glide__slide"><img src="glitch3.png" alt="Artwork 3"></li>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">←</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">→</button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; s4bsa, 2025.</p>
+    </footer>
+
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 3000,
+            hoverpause: true,
+        }).mount();
+    </script>
+</body>
+</html>
