@@ -49,15 +49,58 @@
         theme: {
             extend: {
                 colors: {
-                    light_coral: { DEFAULT: '#f08080', 100: '#420808', 200: '#830f0f', 300: '#c51717', 400: '#e83d3d', 500: '#f08080', 600: '#f39999', 700: '#f6b2b2', 800: '#f9cccc', 900: '#fce5e5' },
-                    coral_pink: { DEFAULT: '#f4978e', 100: '#470c07', 200: '#8d190e', 300: '#d42515', 400: '#ed5749', 500: '#f4978e', 600: '#f6ada6', 700: '#f8c1bc', 800: '#fbd6d2', 900: '#fdeae9' },
-                    melon: { DEFAULT: '#f8ad9d', 100: '#4b1205', 200: '#97240a', 300: '#e23610', 400: '#f36d50', 500: '#f8ad9d', 600: '#f9bdaf', 700: '#fbcdc3', 800: '#fcded7', 900: '#feeeeb' },
-                    apricot: { DEFAULT: '#fbc4ab', 100: '#511c04', 200: '#a23808', 300: '#f3550b', 400: '#f78d5b', 500: '#fbc4ab', 600: '#fcd1bd', 700: '#fddccd', 800: '#fde8de', 900: '#fef3ee' },
-                    light_orange: { DEFAULT: '#ffdab9', 100: '#582900', 200: '#af5200', 300: '#ff7b08', 400: '#ffaa60', 500: '#ffdab9', 600: '#ffe1c6', 700: '#ffe8d4', 800: '#fff0e2', 900: '#fff7f1' }
-                }
-            }
-        }
-    }
+                    light_coral: {
+                        DEFAULT: '#f08080',
+                        100: '#feecec',
+                        200: '#f8d2d2',
+                        300: '#f2b8b8',
+                        400: '#ec9d9d',
+                        500: '#f08080',
+                        600: '#d96b6b',
+                        700: '#b35858',
+                        800: '#8d4545',
+                        900: '#662f2f',
+                    },
+                    melon: {
+                        DEFAULT: '#f4978e',
+                        100: '#fee9e7',
+                        200: '#fac5c0',
+                        300: '#f7a09a',
+                        400: '#f47b73',
+                        500: '#f4978e',
+                        600: '#d6817b',
+                        700: '#b06a66',
+                        800: '#8a5452',
+                        900: '#633d3d',
+                    },
+                    apricot: {
+                        DEFAULT: '#fbc4ab',
+                        100: '#fef3ef',
+                        200: '#fde3d7',
+                        300: '#fbd2bf',
+                        400: '#fbc2a7',
+                        500: '#fbc4ab',
+                        600: '#dfa489',
+                        700: '#b3846e',
+                        800: '#876553',
+                        900: '#5c4639',
+                    },
+                    light_orange: {
+                        DEFAULT: '#ffdab9',
+                        100: '#fff8f3',
+                        200: '#ffeadc',
+                        300: '#ffddc5',
+                        400: '#ffd0ae',
+                        500: '#ffdab9',
+                        600: '#e6bfa1',
+                        700: '#b3967e',
+                        800: '#806e5c',
+                        900: '#4d4539',
+                    },
+                },
+            },
+        },
+    };
 </script>
 
 <body class="bg-apricot-900 text-dim_gray-100 font-sans">
@@ -77,7 +120,7 @@
             <h2 class="text-4xl text-apricot-400 text-center">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                 <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-[300px] h-[300px] object-cover rounded" src="glitch2.png" alt="Project 1">
+                    <img class="w-72 h-72 rounded object-cover mx-auto" src="glitch2.png" alt="Project 1">
                     <h3 class="text-2xl mt-4">Glitch Art</h3>
                     <p class="mt-2">Created using Audacity and Notepad++</p>
                     <a href="glitch.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg">
@@ -85,7 +128,7 @@
                     </a>
                 </div>
                 <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-[300px] h-[300px] object-cover rounded" src="doremon.png" alt="Project 2">
+                    <img class="w-72 h-72 rounded object-cover mx-auto" src="doremon.png" alt="Project 2">
                     <h3 class="text-2xl mt-4">3-D Modeling</h3>
                     <p class="mt-2">Created on Blender</p>
                     <a href="3d.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg">
@@ -93,7 +136,7 @@
                     </a>
                 </div>
                 <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-[300px] h-[300px] object-cover rounded" src="daisies.jpg" alt="Project 3">
+                    <img class="w-72 h-72 rounded object-cover mx-auto" src="daisies.jpg" alt="Project 3">
                     <h3 class="text-2xl mt-4">net.art</h3>
                     <p class="mt-2">HTML: Interactive Storyboard</p>
                     <a href="net.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg">
@@ -101,7 +144,7 @@
                     </a>
                 </div>
                 <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-[300px] h-[300px] object-cover rounded" src="chill.png" alt="Project 4">
+                    <img class="w-72 h-72 rounded object-cover mx-auto" src="chill.png" alt="Project 4">
                     <h3 class="text-2xl mt-4">Meme Mashup</h3>
                     <p class="mt-2">Created using Adobe Photoshop</p>
                     <a href="meme.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg">
@@ -109,7 +152,7 @@
                     </a>
                 </div>
                 <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-[300px] h-[300px] object-cover rounded" src="IMAGE.JPG" alt="Project 5">
+                    <img class="w-72 h-72 rounded object-cover mx-auto" src="IMAGE.JPG" alt="Project 5">
                     <h3 class="text-2xl mt-4">Minecraft</h3>
                     <p class="mt-2">Sculpture recreation and Virtual Environment</p>
                     <a href="minecraft.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg">
