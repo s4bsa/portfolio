@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>netart - Sabrina Hung</title>
-    <!-- Google Font (DM Sans) -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'DM Sans', sans-serif;
-            background-color: #f5f0e1; /* light brown background */
+            background-color: #f5f0e1;
             margin: 0;
             padding: 0;
         }
-        /* Navigation Bar */
         nav {
-            background-color: #3e2a47; /* dark brown */
+            background-color: #3e2a47;
             padding: 10px 0;
             text-align: center;
         }
@@ -27,10 +25,9 @@
             font-size: 18px;
         }
         nav a:hover {
-            background-color: #523c5e; /* slightly lighter brown for hover effect */
+            background-color: #523c5e;
             border-radius: 5px;
         }
-        /* Header */
         header {
             text-align: center;
             margin-top: 50px;
@@ -39,7 +36,6 @@
             font-size: 36px;
             color: #3e2a47;
         }
-        /* Project Section */
         .project {
             text-align: center;
             margin: 50px auto;
@@ -62,45 +58,53 @@
             line-height: 1.6;
             margin-top: 15px;
         }
-        /* Center Image Section */
         .center-image {
             display: flex;
             justify-content: center;
             margin-top: 50px;
         }
         .center-image img {
-            max-width: 500px; /* Adjust the size of the image */
+            max-width: 500px;
             height: auto;
             border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            background-color: #3e2a47;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="/.">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Header -->
     <header>
-        <h1>netart - Sabrina Hung</h1>
+        <h1>net.art</h1>
     </header>
 
-    <!-- Centered Image with Redirect -->
     <div class="center-image">
         <a href="https://s4bsa.github.io/blossom/" target="_blank">
-            <img src="flowers-project.jpg" alt="Flower Project">
+            <img src="roses.jpg" alt="Flower Project">
         </a>
     </div>
 
-    <!-- Project Section -->
     <div class="project">
-        <h2>Flower Photography Collection</h2>
+        <h2>Blossom Boutique</h2>
         <p>This project showcases a series of captivating flower photographs, capturing the delicate beauty of nature. Each image brings a unique perspective to floral artistry, blending the natural elegance with artistic vision.</p>
     </div>
+
+    <footer>
+        <p>&copy; s4bsa, 2025.</p>
+    </footer>
 
 </body>
 </html>
