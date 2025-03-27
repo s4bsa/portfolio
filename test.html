@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio - Sabrina Hung</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400;700&display=swap" rel="stylesheet">
@@ -42,22 +42,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            border-radius: 0.375rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .button:hover {
-            transform: translateY(-2px);
-        }
-        .button:active {
-            transform: translateY(1px);
-        }
     </style>
 </head>
 <script>
@@ -65,129 +49,88 @@
         theme: {
             extend: {
                 colors: {
-                    light_coral: {
-                        DEFAULT: '#f08080',
-                        100: '#feecec',
-                        200: '#f8d2d2',
-                        300: '#f2b8b8',
-                        400: '#ec9d9d',
-                        500: '#f08080',
-                        600: '#d96b6b',
-                        700: '#b35858',
-                        800: '#8d4545',
-                        900: '#662f2f',
-                    },
-                    melon: {
-                        DEFAULT: '#f4978e',
-                        100: '#fee9e7',
-                        200: '#fac5c0',
-                        300: '#f7a09a',
-                        400: '#f47b73',
-                        500: '#f4978e',
-                        600: '#d6817b',
-                        700: '#b06a66',
-                        800: '#8a5452',
-                        900: '#633d3d',
-                    },
-                    apricot: {
-                        DEFAULT: '#fbc4ab',
-                        100: '#fef3ef',
-                        200: '#fde3d7',
-                        300: '#fbd2bf',
-                        400: '#fbc2a7',
-                        500: '#fbc4ab',
-                        600: '#dfa489',
-                        700: '#b3846e',
-                        800: '#876553',
-                        900: '#5c4639',
-                    },
-                    light_orange: {
-                        DEFAULT: '#ffdab9',
-                        100: '#fff8f3',
-                        200: '#ffeadc',
-                        300: '#ffddc5',
-                        400: '#ffd0ae',
-                        500: '#ffdab9',
-                        600: '#e6bfa1',
-                        700: '#b3967e',
-                        800: '#806e5c',
-                        900: '#4d4539',
-                    },
-                },
-            },
-        },
-    };
+                    light_coral: { DEFAULT: '#f08080', 100: '#420808', 200: '#830f0f', 300: '#c51717', 400: '#e83d3d', 500: '#f08080', 600: '#f39999', 700: '#f6b2b2', 800: '#f9cccc', 900: '#fce5e5' },
+                    coral_pink: { DEFAULT: '#f4978e', 100: '#470c07', 200: '#8d190e', 300: '#d42515', 400: '#ed5749', 500: '#f4978e', 600: '#f6ada6', 700: '#f8c1bc', 800: '#fbd6d2', 900: '#fdeae9' },
+                    melon: { DEFAULT: '#f8ad9d', 100: '#4b1205', 200: '#97240a', 300: '#e23610', 400: '#f36d50', 500: '#f8ad9d', 600: '#f9bdaf', 700: '#fbcdc3', 800: '#fcded7', 900: '#feeeeb' },
+                    apricot: { DEFAULT: '#fbc4ab', 100: '#511c04', 200: '#a23808', 300: '#f3550b', 400: '#f78d5b', 500: '#fbc4ab', 600: '#fcd1bd', 700: '#fddccd', 800: '#fde8de', 900: '#fef3ee' },
+                    light_orange: { DEFAULT: '#ffdab9', 100: '#582900', 200: '#af5200', 300: '#ff7b08', 400: '#ffaa60', 500: '#ffdab9', 600: '#ffe1c6', 700: '#ffe8d4', 800: '#fff0e2', 900: '#fff7f1' }
+                }
+            }
+        }
+    }
 </script>
 
 <body class="bg-apricot-900 text-dim_gray-100 font-sans">
     <div class="container mx-auto p-10">
-        <!-- Header Section -->
         <header class="text-center border-b pb-4 mb-4">
             <h1 class="text-5xl font-bold text-[#bf505d]">Sabrina Hung</h1>
             <nav class="mt-4">
                 <a href="about.html" class="text-melon-400 hover:text-melon-200 mx-4">About</a>
                 <a href="#projects" class="text-melon-400 hover:text-melon-200 mx-4">Projects</a>
-                <a href="#contact" class="text-melon-400 hover:text-melon-200 mx-4">Contact</a>
+                <a href="contact.html" class="text-melon-400 hover:text-melon-200 mx-4">Contact</a>
             </nav>
         </header>
 
-        <!-- Projects Section -->
         <section id="projects" class="mt-16">
             <h2 class="text-4xl text-apricot-400 text-center">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-72 h-72 rounded object-cover mx-auto" src="glitch2.png" alt="Project 1">
-                    <h3 class="text-2xl mt-4">Glitch Art</h3>
-                    <p class="mt-2">Created using Audacity and Notepad++</p>
-                    <a href="glitch.html" class="button bg-melon-400 hover:bg-melon-200 mt-4">View Project</a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-72 h-72 rounded object-cover mx-auto" src="doremon.png" alt="Project 2">
-                    <h3 class="text-2xl mt-4">3-D Modeling</h3>
-                    <p class="mt-2">Created on Blender</p>
-                    <a href="3d.html" class="button bg-melon-400 hover:bg-melon-200 mt-4">View Project</a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-72 h-72 rounded object-cover mx-auto" src="daisies.jpg" alt="Project 3">
-                    <h3 class="text-2xl mt-4">net.art</h3>
-                    <p class="mt-2">HTML: Interactive Storyboard</p>
-                    <a href="net.html" class="button bg-melon-400 hover:bg-melon-200 mt-4">View Project</a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-72 h-72 rounded object-cover mx-auto" src="chill.png" alt="Project 4">
-                    <h3 class="text-2xl mt-4">Meme Mashup</h3>
-                    <p class="mt-2">Created using Adobe Photoshop</p>
-                    <a href="meme.html" class="button bg-melon-400 hover:bg-melon-200 mt-4">View Project</a>
-                </div>
-                <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg">
-                    <img class="w-72 h-72 rounded object-cover mx-auto" src="IMAGE.JPG" alt="Project 5">
-                    <h3 class="text-2xl mt-4">Minecraft</h3>
-                    <p class="mt-2">Sculpture recreation and Virtual Environment</p>
-                    <a href="minecraft.html" class="button bg-melon-400 hover:bg-melon-200 mt-4">View Project</a>
-                </div>
+                   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <img class="w-full rounded" src="glitch2.png" alt="Project 1">
+                <h3 class="text-2xl mt-4">Glitch Art</h3>
+                <p class="mt-2">Created using Audacity and Notepad++</p>
+                <a href="glitch.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg self-start">
+                    View Project
+                </a>
             </div>
+            <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <img class="w-full rounded" src="doremon.png" alt="Project 2">
+                <h3 class="text-2xl mt-4">3-D Modeling</h3>
+                <p class="mt-2">Created on Blender</p>
+                <a href="3d.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg self-start">
+                    View Project
+                </a>
+            </div>
+            <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <img class="w-full rounded" src="daisies.jpg" alt="Project 3">
+                <h3 class="text-2xl mt-4">net.art</h3>
+                <p class="mt-2">HTML: Interactive Storyboard</p>
+                <a href="net.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg self-start">
+                    View Project
+                </a>
+            </div>
+            <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <img class="w-full rounded" src="chill.png" alt="Project 4">
+                <h3 class="text-2xl mt-4">Meme Mashup</h3>
+                <p class="mt-2">Created using Adobe Photoshop</p>
+                <a href="meme.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg self-start">
+                    View Project
+                </a>
+            </div>
+            <div class="bg-light_coral-500 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <img class="w-full rounded" src="IMAGE.JPG" alt="Project 5">
+                <h3 class="text-2xl mt-4">Minecraft</h3>
+                <p class="mt-2">Sculpture recreation and Virtual Environment</p>
+                <a href="minecraft.html" class="py-2 px-4 mt-4 text-white bg-melon-400 hover:bg-melon-200 font-semibold rounded-lg self-start">
+                    View Project
+                </a>
+            </div>
+        </div>
         </section>
 
-        <!-- Get in Touch Section -->
-        <section id="contact" class="mt-16">
-            <h2 class="text-4xl text-apricot-400 text-center">Get in Touch</h2>
-            <p class="text-center mt-4 text-light_coral-200">Feel free to reach out via email or connect with me on social media!</p>
-            <div class="social-icons mt-8">
-                <a href="https://www.instagram.com/ss4bsa" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sabrina-hung-6376212a9/" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:sabrina.hung@sjsu.edu" class="social-icon">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </section>
-        
-        <!-- Footer -->
+        <div class="social-icons mt-16">
+            <a href="https://www.instagram.com/ss4bsa" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sabrina-hung-6376212a9/" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:sabrina.hung@sjsu.edu" class="social-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+
         <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
-            <p>&copy; Sabrina Hung, 2025.</p>
+            <p>&copy; s4bsa, 2025.</p>
         </footer>
     </div>
 </body>
