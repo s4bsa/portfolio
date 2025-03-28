@@ -6,13 +6,28 @@
     <title>netart - Sabrina Hung</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Custom cursor using CSS variables */
+        :root {
+            --cursor-default: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAw0lEQVQ4y72TwQ3DIAxFv1A6QEdgBO+QQ0+9ZoSu0A2yQw7tDXaE7EA0xURqhEobpFT5AvKz+bYsO8BfrL5Qd9MYY9z6DGqtRQiBiajWqt576j1vTIQDIQQ1xmgzKaWGnW3EcFprLCLiADwAxG3+AViFqO+1dAghzDvhnNO+7wsR0eMBbDFRcgHm3UGSH/J+g62PDmbeHZRSXudKDswMe5xqrZC6gC0H77qDbVCt1YlIvXNyzumcM1JKej1e08DfPH4BC1RsJVj26eUAAAAASUVORK5CYII="), default;
+            --cursor-pointer: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVQ4y2NgGAXUBYwMDAwyDAwM/6H4PwMDgzQDAwMXKRpkGBgYIhl4mdawMLJ8ZGZi/M/CzPSfkYHhDwMDw2IGBgYZYg0QZGBg6GNgZv3PwsL0n4WZ6T8zI8N/RgaG/wwMDJPwGcAEFcyBCrKyMDBeYWFhvsHEzPSfhYXpPzMjw38GhMv2MzAwSJPiAgYGBq5xnDLfpaQUbrMJcHxhYmT8z8TA8J+JhQE5kIcBAD+8NFY/F4BqAAAAAElFTkSuQmCC"), pointer;
+        }
+        
         body {
             font-family: 'DM Sans', sans-serif;
             background-color: #f5f0e1;
             margin: 0;
             padding: 0;
-            cursor: url('cursor.png'), auto; /* Custom cursor added here */
+            cursor: var(--cursor-default);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+        
+        /* Apply pointer cursor to clickable elements */
+        a, button, input[type="submit"], input[type="button"] {
+            cursor: var(--cursor-pointer);
+        }
+        
         nav {
             background-color: #3e2a47;
             padding: 10px 0;
@@ -46,7 +61,6 @@
             width: 300px; 
             height: 300px; 
             border-radius: 10px;
-            cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .project h2 {
@@ -66,18 +80,23 @@
             margin-top: 50px;
         }
         .center-image img {
-            width: 300px; /* Set the width to 300px */
-            height: 300px; /* Set the height to 300px */
+            width: 300px;
+            height: 300px;
             border-radius: 10px;
         }
+        
+        main {
+            flex: 1;
+        }
+        
         footer {
             text-align: center;
             background-color: #3e2a47;
             color: white;
             padding: 10px;
-            position: absolute;
-            bottom: 0;
+            /* Removed position: absolute and bottom: 0 */
             width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -89,20 +108,22 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <header>
-        <h1>net.art</h1>
-    </header>
+    <main>
+        <header>
+            <h1>net.art</h1>
+        </header>
 
-    <div class="center-image">
-        <a href="https://s4bsa.github.io/blossom/" target="_blank">
-            <img src="roses.jpg" alt="Flower Project">
-        </a>
-    </div>
+        <div class="center-image">
+            <a href="https://s4bsa.github.io/blossom/" target="_blank">
+                <img src="roses.jpg" alt="Flower Project">
+            </a>
+        </div>
 
-    <div class="project">
-        <h2>Blossom Boutique</h2>
-        <p>This project showcases a series of captivating flower photographs, capturing the delicate beauty of nature. Each image brings a unique perspective to floral artistry, blending the natural elegance with artistic vision.</p>
-    </div>
+        <div class="project">
+            <h2>Blossom Boutique</h2>
+            <p>This project showcases a series of captivating flower photographs, capturing the delicate beauty of nature. Each image brings a unique perspective to floral artistry, blending the natural elegance with artistic vision.</p>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; s4bsa, 2025.</p>
