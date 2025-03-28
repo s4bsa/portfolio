@@ -6,21 +6,17 @@
     <title>netart - Sabrina Hung</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom cursor using CSS variables */
-        :root {
-            --cursor-default: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAw0lEQVQ4y72TwQ3DIAxFv1A6QEdgBO+QQ0+9ZoSu0A2yQw7tDXaE7EA0xURqhEobpFT5AvKz+bYsO8BfrL5Qd9MYY9z6DGqtRQiBiajWqt576j1vTIQDIQQ1xmgzKaWGnW3EcFprLCLiADwAxG3+AViFqO+1dAghzDvhnNO+7wsR0eMBbDFRcgHm3UGSH/J+g62PDmbeHZRSXudKDswMe5xqrZC6gC0H77qDbVCt1YlIvXNyzumcM1JKej1e08DfPH4BC1RsJVj26eUAAAAASUVORK5CYII="), default;
-            --cursor-pointer: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVQ4y2NgGAXUBYwMDAwyDAwM/6H4PwMDgzQDAwMXKRpkGBgYIhl4mdawMLJ8ZGZi/M/CzPSfkYHhDwMDw2IGBgYZYg0QZGBg6GNgZv3PwsL0n4WZ6T8zI8N/RgaG/wwMDJPwGcAEFcyBCrKyMDBeYWFhvsHEzPSfhYXpPzMjw38GhMv2MzAwSJPiAgYGBq5xnDLfpaQUbrMJcHxhYmT8z8TA8J+JhQE5kIcBAD+8NFY/F4BqAAAAAElFTkSuQmCC"), pointer;
-        }
-        
+
         body {
             font-family: 'DM Sans', sans-serif;
             background-color: #f5f0e1;
             margin: 0;
             padding: 0;
-            cursor: var(--cursor-default);
+            cursor: url("cursor.png"), auto;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+
         }
         
         /* Apply pointer cursor to clickable elements */
