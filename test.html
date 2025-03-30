@@ -3,204 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Sabrina Hung</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>About Me - RPG Style</title>
+    <link href="""https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="""styleshe
     <style>
-        :root {
-            --purple-dark: #2a1a4a;
-            --purple-light: #4b306f;
-            --yellow: #f9d923;
-            --yellow-light: #ffe066;
-            --white: #ffffff;
-        }
-
         body {
-        font-family: 'DM Sans', sans-serif;
-        background-color: var(--purple-dark);
-        color: var(--white);
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        cursor: url('cursor.cur'), auto; /* Ensure the file path is correct */
-    }
-
-        header {
-            background-color: var(--purple-light);
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+            font-family: 'Press Start 2P', cursive;
             padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--yellow);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            color: var(--yellow);
-            font-weight: bold;
+            line-height: 1.6;
             margin: 0;
         }
-
-        nav {
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: var(--yellow-light);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--yellow);
-        }
-
-        .welcome-section {
-            background-color: var(--purple-light);
-            margin: 20px auto;
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #333;
             padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border: 4px solid #555;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
-
-        .welcome-section h2 {
-            font-size: 2rem;
-            color: var(--yellow);
-            margin-bottom: 10px;
+        
+        .character-card {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 20px;
         }
-
-        .welcome-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--white);
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            background-color: #444;
+            border: 3px solid #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
         }
-
-        .projects-section {
-            margin: 40px auto;
-            max-width: 1200px;
-            padding: 20px;
+        
+        .character-info {
+            flex: 1;
         }
-
-        .projects-section h2 {
-            font-size: 2.5rem;
-            color: var(--yellow);
-            text-align: center;
+        
+        .character-name {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 0 #000;
+        }
+        
+        .title {
+            font-size: 16px;
+            color: #aaffaa;
             margin-bottom: 20px;
         }
-
-        .project-card {
-            background-color: var(--purple-light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .stat-container {
+            margin-bottom: 30px;
         }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            color: var(--yellow);
-            margin-bottom: 10px;
-        }
-
-        .project-description {
-            font-size: 1rem;
-            color: var(--white);
+        
+        .stat {
             margin-bottom: 15px;
         }
-
-        .btn-primary {
-            background-color: var(--yellow);
-            color: var(--purple-dark);
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        
+        .stat-name {
+            display: inline-block;
+            width: 150px;
+            color: #aaccff;
         }
-
-        .btn-primary:hover {
-            background-color: var(--yellow-light);
-            transform: translateY(-2px);
+        
+        .stat-bar {
+            display: inline-block;
+            height: 15px;
+            background-color: #555;
+            width: 200px;
+            margin-left: 10px;
+            position: relative;
         }
-
-        footer {
-            background-color: var(--purple-light);
-            color: var(--yellow-light);
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
+        
+        .stat-fill {
+            height: 100%;
+            background-color: #5d9cec;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .bio {
+            background-color: #3a3a3a;
+            padding: 15px;
+            border: 2px solid #555;
+            margin-bottom: 30px;
+            font-size: 12px;
+        }
+        
+        .achievements {
+            border-top: 2px solid #555;
+            padding-top: 20px;
+        }
+        
+        .achievement {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #666;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: #ffcc00;
+        }
+        
+        h2 {
+            color: #ffcc00;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 #000;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Sabrina Hung</h1>
-        <nav>
-            <a href="about.html">About</a>
-            <a href="#projects">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <section class="welcome-section">
-        <h2>Welcome!</h2>
-        <p>
-            I made this site out of pure boredom because I thought it sounded cool! I hope you enjoy whatever I decide to put here. This site is mostly for my music, art, and fun projects. Stay tuned for updates!
-        </p>
-    </section>
-
-    <section id="projects" class="projects-section">
-        <h2>Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="project-card">
-                <img class="project-image" src="glitch2.png" alt="Glitch Art Project">
-                <div class="project-content">
-                    <h3 class="project-title">Glitch Art</h3>
-                    <p class="project-description">Created using Audacity and Notepad++</p>
-                    <a href="glitch.html" class="btn-primary">View Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img class="project-image" src="doremon.png" alt="3D Modeling Project">
-                <div class="project-content">
-                    <h3 class="project-title">3-D Modeling</h3>
-                    <p class="project-description">Created on Blender</p>
-                    <a href="3d.html" class="btn-primary">View Project</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img class="project-image" src="daisies.jpg" alt="Net Art Project">
-                <div class="project-content">
-                    <h3 class="project-title">net.art</h3>
-                    <p class="project-description">HTML: Interactive Storyboard</p>
-                    <a href="net.html" class="btn-primary">View Project</a>
+    <div class="container">
+        <div class="character-card">
+            <div class="avatar">🧙</div>
+            <div class="character-info">
+                <div class="character-name">PLAYER NAME</div>
+                <div class="title">Web Developer | Level 24</div>
+                <div class="bio">
+                    Welcome to my character page! I'm a passionate developer with a love for creating immersive digital experiences. My journey in coding began 5 years ago, and I've been leveling up my skills ever since.
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; Sabrina Hung, 2025. All rights reserved.</p>
-    </footer>
+        
+        <h2>CHARACTER STATS</h2>
+        <div class="stat-container">
+            <div class="stat">
+                <span class="stat-name">HTML</span>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 90%;"></div>
+                </div>
+                <span>90%</span>
+            </div>
+            <div class="stat">
+                <span class="stat-name">CSS</span>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 85%;"></div>
+                </div>
+                <span>85%</span>
+            </div>
+            <div class="stat">
+                <span class="stat-name">JavaScript</span>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 75%;"></div>
+                </div>
+                <span>75%</span>
+            </div>
+            <div class="stat">
+                <span class="stat-name">Design</span>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 70%;"></div>
+                </div>
+                <span>70%</span>
+            </div>
+            <div class="stat">
+                <span class="stat-name">Teamwork</span>
+                <div class="stat-bar">
+                    <div class="stat-fill" style="width: 95%;"></div>
+                </div>
+                <span>95%</span>
+            </div>
+        </div>
+        
+        <h2>ACHIEVEMENTS UNLOCKED</h2>
+        <div class="achievements">
+            <div class="achievement">
+                <div class="achievement-icon">🏆</div>
+                <div>Completed 50+ Web Projects</div>
+            </div>
+            <div class="achievement">
+                <div class="achievement-icon">🌟</div>
+                <div>Master of Responsive Design</div>
+            </div>
+            <div class="achievement">
+                <div class="achievement-icon">📚</div>
+                <div>Continuous Learner - 10 Courses Completed</div>
+            </div>
+        </div>
+    </div>
 </body>
-</html>
+</html>et">
