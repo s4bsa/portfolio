@@ -251,8 +251,12 @@
 
         .content-area h3 {
             font-family: 'Clash Display', sans-serif;
-            font-weight: 700;
+            font-weight: 900;
             color: #00BFFF; /* Blue */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -329,7 +333,7 @@
             // Make sure lightbox is initialized when DOM is loaded
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxCaption = document.getElementById('lightbox-caption';
+            const lightboxCaption = document.getElementById('lightbox-caption');
             
             // Also close lightbox when clicking outside the image
             lightbox.addEventListener('click', function(e) {
