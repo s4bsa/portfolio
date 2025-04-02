@@ -190,6 +190,18 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        .content-section {
+            background-color: #FFF4F4;
+            padding: 20px;
+            border: 2px solid #FFD6E0;
+            border-radius: 8px;
+        }
+
+        .content-section h2 {
+            color: #D97A91;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -230,14 +242,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="header clash-display">3-D Art</h2>
-                <div class="gallery">
-                    <img src="doremon.png" alt="Doremon" class="gallery-image" onclick="openLightbox('doremon.png')">
-                    <img src="hana.jpg" alt="Hana" class="gallery-image" onclick="openLightbox('hana.jpg')">
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h2 class="header clash-display">3-D Art</h2>
+                    <div class="gallery">
+                        <img src="doremon.png" alt="Doremon" class="gallery-image" onclick="openLightbox('doremon.png')">
+                        <img src="hana.jpg" alt="Hana" class="gallery-image" onclick="openLightbox('hana.jpg')">
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,7 +257,6 @@
             <span class="close" onclick="closeLightbox()">&times;</span>
             <img id="lightbox-image" class="lightbox-content">
         </div>
-        
         <footer>
             &copy; s4bsa 2025
         </footer>
