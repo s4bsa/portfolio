@@ -155,15 +155,18 @@
 
         .gallery {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             gap: 25px;
             margin-top: 20px;
+            justify-content: flex-start;
         }
 
         .gallery-item {
             position: relative;
             transition: all 0.3s ease;
             max-width: 300px;
+            flex: 0 0 auto;
         }
 
         .gallery-image {
@@ -328,6 +331,10 @@
                         <div class="gallery-item">
                             <img src="doremon.png" alt="Doraemon" class="gallery-image">
                             <div class="gallery-title">Doraemon</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="desk.jpg" alt="Desk" class="gallery-image">
+                            <div class="gallery-title">Desk</div>
                         </div>
                         <div class="gallery-item">
                             <img src="hana.jpg" alt="Usahana" class="gallery-image">
