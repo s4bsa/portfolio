@@ -207,6 +207,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About Me</a>
                     </li>
                     <li class="nav-item">
@@ -240,6 +243,7 @@
                         </div>
                     </div>
                     <div class="panel-content">
+                        <a href="#home" class="nav-item d-block mb-2">Home</a>
                         <hr class="panel-divider">
                         <a href="#about" class="nav-item d-block mb-2">About Me</a>
                         <hr class="panel-divider">
@@ -305,8 +309,26 @@
                     e.preventDefault();
                     const target = this.getAttribute('href').substring(1);
                     
-                    let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
-                    contentArea.innerHTML = content;
+                    if (target === 'home') {
+                        contentArea.innerHTML = `
+                            <h3 id="home">Welcome to my site!</h3>
+                            <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
+                            <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
+                            <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
+                            <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
+                            <p class="mt-3">Feel free to explore using the navigation panels!</p>
+                            <p><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
+                            <p><span class="star-bullet">☆</span> Check back often for new content and updates</p>
+                            <p><span class="star-bullet">☆</span> Connect with me through the contact page</p>
+                            <h4>Currently working on:</h4>
+                            <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
+                            <p><span class="star-bullet">☆</span> Pixel art + more 3-D art</p>
+                            <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>
+                        `;
+                    } else {
+                        let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
+                        contentArea.innerHTML = content;
+                    }
                 });
             });
         });
