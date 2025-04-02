@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #fcefb4;
+            background-color: #fcefb4; /* Match panel's off-white color */
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
-            background-image: radial-gradient(#FFFFFF 15%, transparent 15%);
-            background-size: 10px 10px;
+            background-image: radial-gradient(#FFFFFF 15%, transparent 15%); /* Smaller white dots */
+            background-size: 10px 10px; /* Reduced size for smaller dots */
             cursor: url('Cursor.png'), auto;
         }
         
@@ -22,14 +22,14 @@
         }
         
         .brand-link {
-            color: #FFB7C5 !important;
+            color: #FFB7C5 !important; /* Soft pink */
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
         }
         
         .brand-link:hover {
-            color: #FF8FA3 !important;
+            color: #FF8FA3 !important; /* Darker pink */
         }
 
         .clash-display {
@@ -41,7 +41,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #FFF9F9;
+            background-color: #FFF9F9; /* Very light peach */
         }
         
         .header {
@@ -50,7 +50,7 @@
         }
         
         .header h1 {
-            color: #FFB7C5;
+            color: #FFB7C5; /* Soft pink */
             letter-spacing: 0.05em;
             font-size: 3em;
             margin-bottom: 0;
@@ -67,13 +67,13 @@
         }
         
         .panel {
-            border: 2px solid #FFD6E0;
+            border: 2px solid #FFD6E0; /* Light pink border */
             margin-bottom: 20px;
-            background-color: #FFF4F4;
+            background-color: #FFF4F4; /* Soft peach background */
         }
         
         .panel-header {
-            background-color: #FFD6E0;
+            background-color: #FFD6E0; /* Light pink header */
             padding: 5px 10px;
             display: flex;
             justify-content: space-between;
@@ -81,7 +81,7 @@
         }
         
         .panel-title {
-            color: #D97A91;
+            color: #D97A91; /* Darker pink for contrast */
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
             letter-spacing: 0.03em;
@@ -94,12 +94,12 @@
         .panel-button {
             width: 15px;
             height: 15px;
-            border: 1px solid #D97A91;
+            border: 1px solid #D97A91; /* Darker pink border */
             margin-left: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #D97A91;
+            color: #D97A91; /* Darker pink text */
             font-size: 10px;
             cursor: pointer;
         }
@@ -110,13 +110,13 @@
         
         .panel-divider {
             height: 1px;
-            background-color: #D97A91;
+            background-color: #D97A91; /* Darker pink for better visibility */
             margin: 8px 0;
             border: none;
         }
         
         .nav-item {
-            color: #FFB7C5;
+            color: #FFB7C5; /* Soft pink links */
             transition: color 0.3s;
             text-decoration: none;
             font-family: 'Clash Display', sans-serif;
@@ -125,13 +125,13 @@
         }
         
         .nav-item:hover {
-            color: #FF8FA3;
+            color: #FF8FA3; /* Darker pink on hover */
             text-decoration: none;
         }
         
         .content-area {
-            background-color: #FFF9F9;
-            border: 1px solid #FFD6E0;
+            background-color: #FFF9F9; /* Very light peach */
+            border: 1px solid #FFD6E0; /* Light pink border */
             border-radius: 5px;
             padding: 20px;
             min-height: 300px;
@@ -140,25 +140,25 @@
         .content-area h3 {
             font-family: 'Clash Display', sans-serif;
             font-weight: 700;
-            color: #FFB7C5;
+            color: #FFB7C5; /* Soft pink headings */
         }
         
         .navbar {
-            background-color: #FFF4F4 !important;
+            background-color: #FFF4F4 !important; /* Soft peach navbar */
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
         
         .navbar-nav .nav-link {
-            color: #FFB7C5 !important;
+            color: #FFB7C5 !important; /* Soft pink nav links */
             font-family: 'Cormorant Infant', serif;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            font-size: 1.1rem;
+            font-weight: 600; /* Slightly increased for better visibility with this font */
+            letter-spacing: 0.02em; /* Adjusted letter spacing for this font */
+            font-size: 1.1rem; /* Slightly larger size for better readability */
         }
         
         .navbar-nav .nav-link:hover {
-            color: #FF8FA3 !important;
+            color: #FF8FA3 !important; /* Darker pink on hover */
         }
         
         footer {
@@ -166,11 +166,11 @@
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #FFB7C5;
+            color: #FFB7C5; /* Soft pink footer text */
         }
         
         .star-bullet {
-            color: #FF8FA3;
+            color: #FF8FA3; /* Darker pink for star bullets */
         }
 
         .panel-button-link {
@@ -207,7 +207,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./">Home</a>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About Me</a>
@@ -261,11 +261,11 @@
                         </div>
                     </div>
                     <div class="panel-content">
-                        <a href="./glitch.html" class="panel-button-link" target="_blank">Glitch Art</a>
-                        <a href="./minecraft.html" class="panel-button-link" target="_blank">Minecraft</a>
-                        <a href="./meme.html" class="panel-button-link" target="_blank">Meme Mashup</a>
-                        <a href="./3d.html" class="panel-button-link" target="_blank">3-D Art</a>
-                        <a href="./net.html" class="panel-button-link" target="_blank">Net.Art</a>
+                        <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link">Net.Art</a>
                     </div>
                 </div>
             </div>
@@ -275,7 +275,7 @@
                     <h3 id="home">Welcome to my site!</h3>
                     <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
                     
-                    <p><span class="star-bullet">★</span> Creative projects using digital tools such as Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
+                    <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
                     <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
                     <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
                     
@@ -306,17 +306,29 @@
             
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    if (this.classList.contains('nav-link') && this.textContent.trim() === 'Home') {
-                        e.preventDefault();
-                        location.reload();
-                        return;
-                    }
-                    
                     e.preventDefault();
                     const target = this.getAttribute('href').substring(1);
                     
-                    let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
-                    contentArea.innerHTML = content;
+                    if (target === 'home') {
+                        contentArea.innerHTML = `
+                            <h3 id="home">Welcome to my site!</h3>
+                            <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
+                            <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
+                            <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
+                            <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
+                            <p class="mt-3">Feel free to explore using the navigation panels!</p>
+                            <p><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
+                            <p><span class="star-bullet">☆</span> Check back often for new content and updates</p>
+                            <p><span class="star-bullet">☆</span> Connect with me through the contact page</p>
+                            <h4>Currently working on:</h4>
+                            <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
+                            <p><span class="star-bullet">☆</span> Pixel art + more 3-D art</p>
+                            <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>
+                        `;
+                    } else {
+                        let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
+                        contentArea.innerHTML = content;
+                    }
                 });
             });
         });
