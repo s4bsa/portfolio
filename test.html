@@ -134,6 +134,24 @@
             transform: translateY(-2px);
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
+        
+        .panel-button-link.active {
+            background-color: #00BFFF; /* Blue */
+            color: #FFFFFF !important; /* White */
+            font-weight: 700;
+            border-width: 2px;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+            position: relative;
+        }
+        
+        .panel-button-link.active::after {
+            content: "▶";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
 
         .gallery {
             display: flex;
@@ -251,12 +269,17 @@
 
         .content-area h3 {
             font-family: 'Clash Display', sans-serif;
-            font-weight: 900;
+            font-weight: 700;
             color: #00BFFF; /* Blue */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
             font-size: 1.8rem;
             letter-spacing: 0.05em;
             margin-bottom: 20px;
+            padding: 8px 15px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #00BFFF;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
         }
     </style>
 </head>
@@ -293,7 +316,7 @@
                         <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
                         <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
                         <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
-                        <a href="./3d.html" class="panel-button-link">3-D Art</a>
+                        <a href="./3d.html" class="panel-button-link active">3-D Art</a>
                         <a href="./net.html" class="panel-button-link">Net.Art</a>
                     </div>
                 </div>
