@@ -109,7 +109,7 @@
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #00BFFF; /* Blue */
+            color: #FFFFFF; /* White */
         }
 
         .panel-button-link {
@@ -303,11 +303,11 @@
                     <h3 class="header clash-display content-area">3-D Art</h3>
                     <div class="gallery">
                         <div class="gallery-item">
-                            <img src="doremon.png" alt="Doremon" class="gallery-image" onclick="openLightbox('doremon.png', 'Doremon')">
-                            <div class="gallery-title">Doremon</div>
+                            <img src="doremon.png" alt="Doraemon" class="gallery-image">
+                            <div class="gallery-title">Doraemon</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="hana.jpg" alt="Usahana" class="gallery-image" onclick="openLightbox('hana.jpg', 'Usahana')">
+                            <img src="hana.jpg" alt="Usahana" class="gallery-image">
                             <div class="gallery-title">Usahana</div>
                         </div>
                     </div>
@@ -330,14 +330,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Make sure lightbox is initialized when DOM is loaded
+            // Set up lightbox elements
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
             const lightboxCaption = document.getElementById('lightbox-caption');
             
-            // Also close lightbox when clicking outside the image
+            // Add click event listeners to gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('.gallery-image');
+                    const title = this.querySelector('.gallery-title').textContent;
+                    openLightbox(img.src, title);
+                });
+            });
+            
+            // Close lightbox when clicking outside the image
             lightbox.addEventListener('click', function(e) {
                 if (e.target === this || e.target.classList.contains('lightbox-container')) {
+                    closeLightbox();
+                }
+            });
+            
+            // Add keyboard support for closing lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
                     closeLightbox();
                 }
             });
@@ -348,14 +365,21 @@
             const lightboxImage = document.getElementById('lightbox-image');
             const lightboxCaption = document.getElementById('lightbox-caption');
             
-            // First set display to block/flex, then set the image source
-            lightbox.style.display = 'block';
-            
-            // Add a slight delay to ensure the lightbox is visible before setting the image
-            setTimeout(() => {
+            // Preload the image before showing lightbox
+            const img = new Image();
+            img.onload = function() {
+                // Image loaded successfully, now display lightbox
                 lightboxImage.src = imageSrc;
                 lightboxCaption.textContent = caption;
-            }, 10);
+                lightbox.style.display = 'block';
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imageSrc);
+                alert('Sorry, we could not load the image.');
+            };
+            
+            img.src = imageSrc;
         }
 
         function closeLightbox() {
