@@ -304,47 +304,20 @@
             const contentArea = document.querySelector('.content-area');
             const links = document.querySelectorAll('.nav-item, .nav-link');
             
-            // Function to display home content
-            function showHomeContent() {
-                contentArea.innerHTML = `<h3>Welcome to my site!</h3>
-                <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
-                
-                    <p><span class="star-bullet">★</span> Creative projects using digital tools such as Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
-                    <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
-                    <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
-                    
-                    <p class="mt-3">Feel free to explore using the navigation panels!</p>
-                    <p><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
-                    <p><span class="star-bullet">☆</span> Check back often for new content and updates</p>
-                    <p><span class="star-bullet">☆</span> Connect with me through the contact page</p>
-                    
-                    <h4>Currently working on:</h4>
-                    <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
-                    <p><span class="star-bullet">☆</span> Pixel art + more 3-D art</p>
-                    <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>`;
-            }
-            
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
                     // Handle the Home link in the top navigation
                     if (this.classList.contains('nav-link') && this.textContent.trim() === 'Home') {
-                        e.preventDefault(); // Prevent page reload
-                        showHomeContent(); // Show home content
+                        e.preventDefault(); // Prevent default behavior
+                        location.reload(); // Reload the page
                         return;
                     }
                     
                     e.preventDefault();
                     const target = this.getAttribute('href').substring(1);
                     
-                    let content = '';
-                    switch(target) {
-                        case 'home':
-                            showHomeContent(); // Reuse the same function
-                            break;
-                        default:
-                            content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
-                            contentArea.innerHTML = content;
-                    }
+                    let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
+                    contentArea.innerHTML = content;
                 });
             });
         });
