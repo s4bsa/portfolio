@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #fcefb4;
+            background-color: #333333; /* Dark gray */
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
             background-image: radial-gradient(#FFFFFF 15%, transparent 15%);
@@ -22,14 +22,14 @@
         }
         
         .brand-link {
-            color: #FFB7C5 !important;
+            color: #00BFFF !important; /* Blue */
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
         }
         
         .brand-link:hover {
-            color: #FF8FA3 !important;
+            color: #87CEEB !important; /* Light blue */
         }
 
         .clash-display {
@@ -45,7 +45,7 @@
         }
         
         .header h1 {
-            color: #FFB7C5;
+            color: #00BFFF; /* Blue */
             letter-spacing: 0.05em;
             font-size: 3em;
             font-family: 'Clash Display', sans-serif;
@@ -53,13 +53,13 @@
         }
         
         .panel {
-            border: 2px solid #FFD6E0;
+            border: 2px solid #555555; /* Medium gray */
             margin-bottom: 20px;
-            background-color: #FFF4F4;
+            background-color: #444444; /* Darker gray */
         }
         
         .panel-header {
-            background-color: #FFD6E0;
+            background-color: #555555; /* Medium gray */
             padding: 5px 10px;
             display: flex;
             justify-content: space-between;
@@ -67,7 +67,7 @@
         }
         
         .panel-title {
-            color: #D97A91;
+            color: #00BFFF; /* Blue */
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
             letter-spacing: 0.03em;
@@ -80,12 +80,12 @@
         .panel-button {
             width: 15px;
             height: 15px;
-            border: 1px solid #D97A91;
+            border: 1px solid #00BFFF; /* Blue */
             margin-left: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #D97A91;
+            color: #00BFFF; /* Blue */
             font-size: 10px;
             cursor: pointer;
         }
@@ -95,13 +95,13 @@
         }
         
         .navbar {
-            background-color: #FFF4F4 !important;
+            background-color: #444444 !important; /* Darker gray */
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
         
         .navbar-nav .nav-link {
-            color: #FFB7C5 !important;
+            color: #00BFFF !important; /* Blue */
             font-family: 'Cormorant Infant', serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -109,7 +109,7 @@
         }
         
         .navbar-nav .nav-link:hover {
-            color: #FF8FA3 !important;
+            color: #87CEEB !important; /* Light blue */
         }
         
         footer {
@@ -117,13 +117,13 @@
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #FFB7C5;
+            color: #00BFFF; /* Blue */
         }
 
         .panel-button-link {
             display: block;
-            background-color: #FFD6E0;
-            color: #D97A91 !important;
+            background-color: #555555; /* Medium gray */
+            color: #00BFFF !important; /* Blue */
             text-align: center;
             padding: 8px 12px;
             border-radius: 4px;
@@ -132,13 +132,13 @@
             text-decoration: none;
             font-family: 'Clash Display', sans-serif;
             font-weight: 500;
-            border: 1px solid #FFB7C5;
+            border: 1px solid #00BFFF; /* Blue */
             letter-spacing: 0.02em;
         }
         
         .panel-button-link:hover {
-            background-color: #FFB7C5;
-            color: #FFFFFF !important;
+            background-color: #00BFFF; /* Blue */
+            color: #FFFFFF !important; /* White */
             transform: translateY(-2px);
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
@@ -153,7 +153,7 @@
             width: 150px;
             height: auto;
             cursor: pointer;
-            border: 2px solid #FFD6E0;
+            border: 2px solid #00BFFF; /* Blue */
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
@@ -192,15 +192,21 @@
         }
 
         .content-section {
-            background-color: #FFF4F4;
+            background-color: #444444; /* Darker gray */
             padding: 20px;
-            border: 2px solid #FFD6E0;
+            border: 2px solid #555555; /* Medium gray */
             border-radius: 8px;
         }
 
         .content-section h2 {
-            color: #D97A91;
+            color: #00BFFF; /* Blue */
             margin-bottom: 20px;
+        }
+
+        .content-area h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            color: #00BFFF; /* Blue */
         }
     </style>
 </head>
@@ -244,7 +250,7 @@
             </div>
             <div class="col-md-9">
                 <div class="content-section">
-                    <h2 class="header clash-display">3-D Art</h2>
+                    <h3 class="header clash-display content-area">3-D Art</h3>
                     <div class="gallery">
                         <img src="doremon.png" alt="Doremon" class="gallery-image" onclick="openLightbox('doremon.png')">
                         <img src="hana.jpg" alt="Hana" class="gallery-image" onclick="openLightbox('hana.jpg')">
