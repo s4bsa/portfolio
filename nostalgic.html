@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #FFD4C4; /* Orangey-pink pastel background */
-            font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+            background-color: #FFCB8E; /* Orange-yellow sunset pastel background */
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
             background-image: radial-gradient(#FFFFFF 22%, transparent 22%); /* Slightly larger white dots for visibility */
             background-size: 20px 20px;
@@ -167,6 +167,28 @@
         .star-bullet {
             color: #FF8FA3; /* Darker pink for star bullets */
         }
+
+        .panel-button-link {
+            display: block;
+            background-color: #FFD6E0;
+            color: #D97A91 !important;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border: 1px solid #FFB7C5;
+        }
+        
+        .panel-button-link:hover {
+            background-color: #FFB7C5;
+            color: #FFFFFF !important;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -233,15 +255,11 @@
                         </div>
                     </div>
                     <div class="panel-content">
-                        <a href="./glitch.html" class="nav-item d-block mb-2" target="_blank">Glitch Art</a>
-                        <hr class="panel-divider">
-                        <a href="./minecraft.html" class="nav-item d-block mb-2" target="_blank">Minecraft</a>
-                        <hr class="panel-divider">
-                        <a href="./meme.html" class="nav-item d-block mb-2" target="_blank">Meme Mashup</a>
-                        <hr class="panel-divider">
-                        <a href="./3d.html" class="nav-item d-block mb-2" target="_blank">3-D Art</a>
-                        <hr class="panel-divider">
-                        <a href="./net.html" class="nav-item d-block mb-2" target="_blank">Net.Art</a>
+                        <a href="./glitch.html" class="panel-button-link" target="_blank">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link" target="_blank">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link" target="_blank">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link" target="_blank">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link" target="_blank">Net.Art</a>
                     </div>
                 </div>
             </div>
