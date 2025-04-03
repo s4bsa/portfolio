@@ -3,109 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>netart - Sabrina Hung</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sabrina Hung - Net Art</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: #f5f0e1;
-            margin: 0;
-            padding: 0;
+            background-color: #ffe4e1; /* Pastel pink */
+            background-image: radial-gradient(#ffc1cc 15%, transparent 15%);
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            margin: 30px;
+            background-size: 10px 10px;
+            cursor: url('Cursor.png'), auto;
         }
-        nav {
-            background-color: #3e2a47;
-            padding: 10px 0;
-            text-align: center;
+        
+        .cormorant-infant {
+            font-family: 'Cormorant Infant', serif;
         }
-        nav a {
-            color: white;
+        
+        .brand-link {
+            color: #ffb6c1 !important; /* Light pastel pink */
+            font-size: 1.8rem;
+            font-weight: 600;
             text-decoration: none;
-            padding: 14px 20px;
-            margin: 0 15px;
-            font-size: 18px;
         }
-        nav a:hover {
-            background-color: #523c5e;
-            border-radius: 5px;
+        
+        .brand-link:hover {
+            color: #ff99aa !important; /* Slightly darker pastel pink */
         }
-        header {
-            text-align: center;
-            margin-top: 50px;
+
+        .clash-display {
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
         }
-        header h1 {
-            font-size: 36px;
-            color: #3e2a47;
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffd1dc; /* Soft pastel pink */
+            border: 3px solid #ffb6c1; /* Light pastel pink */
         }
-        .project {
-            text-align: center;
-            margin: 50px auto;
-            max-width: 800px;
+        
+        .panel {
+            border: 2px solid #ffb6c1; /* Light pastel pink */
+            margin-bottom: 20px;
+            background-color: #ffc1cc; /* Medium pastel pink */
         }
-        .project img {
-            width: 300px; 
-            height: 300px; 
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        
+        .panel-header {
+            background-color: #ffccd5; /* Bright pastel pink */
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .project h2 {
-            font-size: 28px;
-            color: #3e2a47;
-            margin-top: 20px;
+        
+        .panel-title {
+            color: #ffb6c1; /* Light pastel pink */
+            font-weight: bold;
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
         }
-        .project p {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
-            margin-top: 15px;
+        
+        .panel-buttons {
+            display: flex;
         }
-        .center-image {
+        
+        .panel-button {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #ffb6c1; /* Light pastel pink */
+            margin-left: 5px;
             display: flex;
             justify-content: center;
-            margin-top: 50px;
+            align-items: center;
+            color: #ffb6c1; /* Light pastel pink */
+            font-size: 10px;
+            cursor: pointer;
         }
-        .center-image img {
-            width: 300px; /* Set the width to 300px */
-            height: 300px; /* Set the height to 300px */
-            border-radius: 10px;
+        
+        .panel-content {
+            padding: 10px;
         }
+        
+        .navbar {
+            background-color: #ffd1dc !important; /* Soft pastel pink */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #ffb6c1 !important; /* Light pastel pink */
+            font-family: 'Cormorant Infant', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.1rem;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #ff99aa !important; /* Slightly darker pastel pink */
+        }
+        
         footer {
             text-align: center;
-            background-color: #3e2a47;
-            color: white;
-            padding: 10px;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-family: 'Clash Display', sans-serif;
+            color: #ffb6c1; /* Light pastel pink */
+        }
+
+        .panel-button-link {
+            display: block;
+            background-color: #ffc1cc; /* Medium pastel pink */
+            color: #ffb6c1 !important; /* Light pastel pink */
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border: 1px solid #ffb6c1; /* Light pastel pink */
+            letter-spacing: 0.02em;
+        }
+        
+        .panel-button-link:hover {
+            background-color: #ffb6c1; /* Light pastel pink */
+            color: #ffc1cc !important; /* Medium pastel pink */
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px #ffb6c1;
+        }
+        
+        .panel-button-link.active {
+            background-color: #ffccd5; /* Bright pastel pink */
+            color: #FFFFFF !important; /* White */
+            font-weight: 700;
+            border-width: 2px;
+            border-color: #ffb6c1; /* Light pastel pink */
+            box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+            position: relative;
+        }
+        
+        .panel-button-link.active::after {
+            content: "▶";
             position: absolute;
-            bottom: 0;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            justify-content: flex-start;
+        }
+
+        .gallery-item {
+            position: relative;
+            transition: all 0.3s ease;
+            max-width: 300px;
+            flex: 0 0 auto;
+        }
+
+        .gallery-image {
             width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 3px solid #ffb6c1; /* Light pastel pink */
+            border-radius: 0px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05) skew(2deg, 1deg);
+            border-color: #ff99aa; /* Slightly darker pastel pink */
+            box-shadow: 0 0 30px rgba(255, 153, 170, 0.8);
+        }
+
+        .gallery-title {
+            display: none; /* Remove hover title effect */
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 228, 225, 0.95); /* Pastel pink */
+            display: none;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 0;
+            border: 5px solid #ffb6c1; /* Light pastel pink */
+            box-shadow: 0 0 40px rgba(255, 182, 193, 0.8);
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffb6c1; /* Light pastel pink */
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ffc1cc; /* Medium pastel pink */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            border: 2px solid #ffb6c1; /* Light pastel pink */
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover {
+            background-color: #ffccd5; /* Bright pastel pink */
+            color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .content-section {
+            background-color: #ffc1cc; /* Medium pastel pink */
+            padding: 20px;
+            border: 2px solid #ffb6c1; /* Light pastel pink */
+            border-radius: 8px; /* Added rounded corners */
+        }
+
+        h3.header.clash-display.content-area {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            color: #ffb6c1 !important; /* Light pastel pink */
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0; /* Removed rounded corners */
+            display: inline-block;
+            text-shadow: 3px 3px 0px #ffccd5; /* Bright pastel pink */
+            text-align: center; /* Center the header */
         }
     </style>
 </head>
 <body>
-
-    <nav>
-        <a href="./">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <header>
-        <h1>net.art</h1>
-    </header>
-
-    <div class="center-image">
-        <a href="https://s4bsa.github.io/blossom/" target="_blank">
-            <img src="roses.jpg" alt="Flower Project">
-        </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Digital Art</div>
+                        <div class="panel-buttons">
+                            <div class="panel-button">－</div>
+                            <div class="panel-button">□</div>
+                            <div class="panel-button">✕</div>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link active">Net.Art</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h3 class="header clash-display content-area">net.art</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="glitch1.png" alt="Glitch 1" class="gallery-image">
+                            <div class="gallery-title">Glitch 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-container">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" style="color: #ffb6c1; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif; font-size: 1.2rem; text-shadow: 1px 1px 3px #ffccd5;"></div>
+            </div>
+        </div>
+        <footer>
+            &copy; s4bsa 2025
+        </footer>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('.gallery-image');
+                    openLightbox(img.src, "lorenipsm");
+                });
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this || e.target.classList.contains('lightbox-container')) {
+                    closeLightbox();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
 
-    <div class="project">
-        <h2>Blossom Boutique</h2>
-        <p>This project showcases a series of captivating flower photographs, capturing the delicate beauty of nature. Each image brings a unique perspective to floral artistry, blending the natural elegance with artistic vision.</p>
-    </div>
+        function openLightbox(imageSrc, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            const img = new Image();
+            img.onload = function() {
+                lightboxImage.src = imageSrc;
+                lightboxCaption.textContent = caption;
+                lightbox.style.display = 'block';
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imageSrc);
+                alert('Sorry, we could not load the image.');
+            };
+            
+            img.src = imageSrc;
+        }
 
-    <footer>
-        <p>&copy; s4bsa, 2025.</p>
-    </footer>
-
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
