@@ -1,150 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3d Art - Sabrina Hung</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'DM Sans', sans-serif;
-      background-color: #121212;
-      color: #E0E0E0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabrina Hung - My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a; /* Off-black */
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            margin: 30px;
+            background-image: radial-gradient(#333333 15%, transparent 15%);
+            background-size: 10px 10px;
+            cursor: url('Cursor.png'), auto;
+        }
+        
+        .cormorant-infant {
+            font-family: 'Cormorant Infant', serif;
+        }
+        
+        .brand-link {
+            color: #00BFFF !important; /* Blue */
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .brand-link:hover {
+            color: #87CEEB !important; /* Light blue */
+        }
 
-    /* Navigation Bar Styling */
-    nav {
-      background-color: #333333;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    }
+        .clash-display {
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2a2a2a; /* Darker gray for content background */
+        }
+        
+        .panel {
+            border: 2px solid #555555; /* Medium gray */
+            margin-bottom: 20px;
+            background-color: #333333; /* Slightly lighter than container */
+        }
+        
+        .panel-header {
+            background-color: #555555; /* Medium gray */
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .panel-title {
+            color: #00BFFF; /* Blue */
+            font-weight: bold;
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        
+        .panel-buttons {
+            display: flex;
+        }
+        
+        .panel-button {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #00BFFF; /* Blue */
+            margin-left: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #00BFFF; /* Blue */
+            font-size: 10px;
+            cursor: pointer;
+        }
+        
+        .panel-content {
+            padding: 10px;
+        }
+        
+        .navbar {
+            background-color: #2a2a2a !important; /* Match container color */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #00BFFF !important; /* Blue */
+            font-family: 'Cormorant Infant', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.1rem;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #87CEEB !important; /* Light blue */
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-family: 'Clash Display', sans-serif;
+            color: #FFFFFF; /* White */
+        }
 
-    nav a {
-      color: #00BFFF;
-      text-decoration: none;
-      padding: 10px 15px;
-      margin: 0 15px;
-      font-size: 1.1rem;
-    }
+        .panel-button-link {
+            display: block;
+            background-color: #555555; /* Medium gray */
+            color: #00BFFF !important; /* Blue */
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border: 1px solid #00BFFF; /* Blue */
+            letter-spacing: 0.02em;
+        }
+        
+        .panel-button-link:hover {
+            background-color: #00BFFF; /* Blue */
+            color: #FFFFFF !important; /* White */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .panel-button-link.active {
+            background-color: #00BFFF; /* Blue */
+            color: #FFFFFF !important; /* White */
+            font-weight: 700;
+            border-width: 2px;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+            position: relative;
+        }
+        
+        .panel-button-link.active::after {
+            content: "▶";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
 
-    nav a:hover {
-      color: #E0E0E0;
-      border-bottom: 2px solid #E0E0E0;
-    }
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            justify-content: flex-start;
+        }
 
-    .header {
-      background-color: #333333;
-      color: #00BFFF;
-      padding: 20px;
-      text-align: center;
-      font-size: 2rem;
-      letter-spacing: 2px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    }
+        .gallery-item {
+            position: relative;
+            transition: all 0.3s ease;
+            max-width: 300px;
+            flex: 0 0 auto;
+        }
 
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      background-color: #1E1E1E;
-    }
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid #00BFFF;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
 
-    .art-container {
-      width: 60%;
-      height: 60%;
-      border: 2px solid #00BFFF;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
 
-    img {
-      max-width: 46%; 
-      max-height: 46%; 
-      width: auto;
-      height: auto;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
+        .gallery-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #00BFFF;
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 10px;
+        }
 
-    img:hover {
-      transform: scale(1.05); 
-    }
+        .gallery-item:hover .gallery-title {
+            opacity: 1;
+        }
 
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: none;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
+        .lightbox-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .lightbox:target {
-      display: flex;
-    }
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 3px solid #00BFFF;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            object-fit: contain;
+        }
 
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #333333;
-      color: #E0E0E0;
-      text-align: center;
-      padding: 10px;
-      font-size: 1rem;
-    }
-  </style>
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid #00BFFF;
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover {
+            background-color: #00BFFF;
+            color: #000;
+        }
+
+        .content-section {
+            background-color: #333333; /* Match panel color */
+            padding: 20px;
+            border: 2px solid #555555; /* Medium gray */
+            border-radius: 8px;
+        }
+
+        .content-area h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600; /* Changed from 500 to 600 */
+            color: #eb1f1f; /* Changed to yellow */
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
+        }
+        
+        h3.content-area, h3.header.clash-display.content-area {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600; /* Changed from 500 to 600 */
+            color: #ffee83 !important; /* Changed to orange for better contrast */
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="./">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <header class="header">
-    3-D Rendering
-  </header>
-
-  <div class="content">
-    <div class="art-container">
-      <a href="#lightbox1">
-        <img src="doremon.png" alt="3D Art Image">
-      </a>
-      <a href="#lightbox2">
-        <img src="hana.jpg" alt="3D Art Image">
-      </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Digital Art</div>
+                        <div class="panel-buttons">
+                            <div class="panel-button">－</div>
+                            <div class="panel-button">□</div>
+                            <div class="panel-button">✕</div>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link active">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link">Net.Art</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h3 class="header clash-display content-area" style="color: #FF3333;">3-D Art</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="doremon.png" alt="Doraemon" class="gallery-image">
+                            <div class="gallery-title">Doraemon</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="desk.jpg" alt="Desk" class="gallery-image">
+                            <div class="gallery-title">Desk</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="hana.jpg" alt="Usahana" class="gallery-image">
+                            <div class="gallery-title">Usahana</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-container">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" style="color: white; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif;"></div>
+            </div>
+        </div>
+        <footer>
+            &copy; s4bsa 2025
+        </footer>
     </div>
-  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up lightbox elements
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Add click event listeners to gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('.gallery-image');
+                    const title = this.querySelector('.gallery-title').textContent;
+                    openLightbox(img.src, title);
+                });
+            });
+            
+            // Close lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this || e.target.classList.contains('lightbox-container')) {
+                    closeLightbox();
+                }
+            });
+            
+            // Add keyboard support for closing lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
 
-  <div id="lightbox1" class="lightbox">
-    <img src="doremon.png" alt="Doremon Art" />
-  </div>
-  <div id="lightbox2" class="lightbox">
-    <img src="hana.jpg" alt="Hana Art" />
-  </div>
+        function openLightbox(imageSrc, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Preload the image before showing lightbox
+            const img = new Image();
+            img.onload = function() {
+                // Image loaded successfully, now display lightbox
+                lightboxImage.src = imageSrc;
+                lightboxCaption.textContent = caption;
+                lightbox.style.display = 'block';
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imageSrc);
+                alert('Sorry, we could not load the image.');
+            };
+            
+            img.src = imageSrc;
+        }
 
-  <footer>
-    <p>&copy; s4bsa, 2025.</p>
-  </footer>
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
