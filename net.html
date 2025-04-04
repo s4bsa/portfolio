@@ -9,266 +9,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #ffe4e1; /* Pastel pink */
+            background-color: #ffe4e1;
             background-image: radial-gradient(#ffc1cc 15%, transparent 15%);
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
             background-size: 10px 10px;
             cursor: url('Cursor.png'), auto;
         }
-        
         .cormorant-infant {
             font-family: 'Cormorant Infant', serif;
         }
-        
         .brand-link {
-            color: #d47b8a !important; /* Darker pink for better readability */
+            color: #d47b8a !important;
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
         }
-        
         .brand-link:hover {
-            color: #b35f70 !important; /* Slightly darker pink */
+            color: #b35f70 !important;
         }
-
-        .clash-display {
-            font-family: 'Clash Display', sans-serif;
-            letter-spacing: 0.03em;
-        }
-        
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f8cdd0; /* Softer pink */
+            background-color: #f8cdd0;
         }
-        
         .panel {
             margin-bottom: 20px;
-            background-color: #f3b6bc; /* Medium pink */
-            border: none; /* Removed border */
+            background-color: #f3b6bc;
         }
-        
         .panel-header {
-            background-color: #e89fa6; /* Bright pink */
+            background-color: #e89fa6;
             padding: 5px 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .panel-title {
-            color: #d47b8a; /* Darker pink */
+            color: #d47b8a;
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
-            letter-spacing: 0.03em;
         }
-        
-        .panel-buttons {
-            display: flex;
-        }
-        
-        .panel-button {
-            width: 15px;
-            height: 15px;
-            border: 1px solid #d47b8a; /* Darker pink */
-            margin-left: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #b35f70; /* Slightly darker pink */
-            font-size: 10px;
-            cursor: pointer;
-        }
-        
         .panel-content {
             padding: 10px;
-            border: none; /* Removed border */
         }
-        
         .navbar {
-            background-color: #ffd1dc !important; /* Soft pastel pink */
+            background-color: #ffd1dc !important;
             box-shadow: 0 2px 4px rgba(0,0,0,0.3);
             margin-bottom: 20px;
         }
-        
         .navbar-nav .nav-link {
-            color: #d47b8a !important; /* Darker pink for better readability */
+            color: #d47b8a !important;
             font-family: 'Cormorant Infant', serif;
             font-weight: 600;
-            letter-spacing: 0.02em;
             font-size: 1.1rem;
         }
-        
         .navbar-nav .nav-link:hover {
-            color: #ff99aa !important; /* Slightly darker pastel pink */
+            color: #ff99aa !important;
         }
-        
         footer {
             text-align: center;
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #d47b8a; /* Darker pink for better readability */
-        }
-
-        .panel-button-link {
-            display: block;
-            background-color: #f3b6bc; /* Medium pink */
-            color: #d47b8a !important; /* Darker pink */
-            text-align: center;
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-family: 'Clash Display', sans-serif;
-            font-weight: 500;
-            border: 1px solid #d47b8a; /* Darker pink */
-            letter-spacing: 0.02em;
-        }
-        
-        .panel-button-link:hover {
-            background-color: #d47b8a; /* Darker pink */
-            color: #f3b6bc !important; /* Medium pink */
-            transform: translateY(-2px);
-            box-shadow: 0 0 10px #d47b8a;
-        }
-        
-        .panel-button-link.active {
-            background-color: #e89fa6; /* Bright pink */
-            color: #FFFFFF !important; /* White */
-            font-weight: 700;
-            border-width: 2px;
-            border-color: #d47b8a; /* Darker pink */
-            box-shadow: 0 0 15px rgba(212, 123, 138, 0.7);
-            position: relative;
-            font-size: 1.2rem; /* Increased font size */
-            text-transform: uppercase; /* Made text uppercase */
-        }
-        
-        .panel-button-link.active::after {
-            content: "▶";
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.8rem;
-        }
-
-        .gallery {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
-            justify-content: flex-start;
-        }
-
-        .gallery-item {
-            position: relative;
-            transition: all 0.3s ease;
-            max-width: 300px;
-            flex: 0 0 auto;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-            border: 3px solid #d47b8a; /* Darker pink */
-            border-radius: 0px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 0 20px rgba(212, 123, 138, 0.5); /* Subtle shadow */
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05) skew(2deg, 1deg);
-            border-color: #b35f70; /* Slightly darker pink */
-            box-shadow: 0 0 30px rgba(179, 95, 112, 0.8); /* Stronger shadow */
-        }
-
-        .gallery-title {
-            display: none; /* Remove hover title effect */
-        }
-
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 228, 225, 0.95); /* Pastel pink */
-            display: none;
-            z-index: 1000;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .lightbox-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox-content {
-            max-width: 80%;
-            max-height: 80vh;
-            border-radius: 0;
-            border: 5px solid #d47b8a; /* Darker pink */
-            box-shadow: 0 0 40px rgba(212, 123, 138, 0.8); /* Subtle shadow */
-            object-fit: contain;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #ffb6c1; /* Light pastel pink */
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            background-color: #f3b6bc; /* Medium pink */
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 0;
-            border: 2px solid #d47b8a; /* Darker pink */
-            transition: all 0.3s ease;
-        }
-        
-        .close:hover {
-            background-color: #e89fa6; /* Bright pink */
-            color: #fff;
-            transform: rotate(90deg);
-        }
-
-        .content-section {
-            background-color: #f3b6bc; /* Medium pink */
-            padding: 20px;
-            border: none; /* Removed border */
-            border-radius: 8px; /* Added rounded corners */
-            text-align: center; /* Center content header */
-        }
-
-        h3.header.clash-display.content-area {
-            font-family: 'Clash Display', sans-serif;
-            font-weight: 700;
-            color: #d47b8a !important; /* Darker pink */
-            font-size: 2rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
-            padding: 8px 15px;
-            border-radius: 0; /* Removed rounded corners */
-            display: inline-block;
-            text-align: center; /* Ensure header is centered */
+            color: #d47b8a;
         }
     </style>
 </head>
@@ -295,11 +99,6 @@
                 <div class="panel">
                     <div class="panel-header">
                         <div class="panel-title">Digital Art</div>
-                        <div class="panel-buttons">
-                            <div class="panel-button">－</div>
-                            <div class="panel-button">□</div>
-                            <div class="panel-button">✕</div>
-                        </div>
                     </div>
                     <div class="panel-content">
                         <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
@@ -320,76 +119,12 @@
                         </div>
                     </div>
                     <a href="https://s4bsa.github.io/blossom/" target="_blank" style="display: block; margin-top: 15px; text-align: center; font-family: 'Clash Display', sans-serif; font-size: 1.1rem; color: #d47b8a; text-decoration: none;">Visit Blossom</a>
-                    <div class="gallery">
-                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- Lightbox -->
-        <div id="lightbox" class="lightbox">
-            <div class="lightbox-container">
-                <span class="close" onclick="closeLightbox()">&times;</span>
-                <img id="lightbox-image" class="lightbox-content">
-                <div id="lightbox-caption" style="color: #ffb6c1; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif; font-size: 1.2rem; text-shadow: 1px 1px 3px #ffccd5;"></div>
             </div>
         </div>
         <footer>
             &copy; s4bsa 2025
         </footer>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            galleryItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const img = this.querySelector('.gallery-image');
-                    openLightbox(img.src, "lorenipsm");
-                });
-            });
-            
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === this || e.target.classList.contains('lightbox-container')) {
-                    closeLightbox();
-                }
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                }
-            });
-        });
-
-        function openLightbox(imageSrc, caption) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            
-            const img = new Image();
-            img.onload = function() {
-                lightboxImage.src = imageSrc;
-                lightboxCaption.textContent = caption;
-                lightbox.style.display = 'block';
-            };
-            
-            img.onerror = function() {
-                console.error('Failed to load image:', imageSrc);
-                alert('Sorry, we could not load the image.');
-            };
-            
-            img.src = imageSrc;
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-        }
-    </script>
 </body>
 </html>
