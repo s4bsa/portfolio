@@ -50,6 +50,21 @@
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
         }
+        .panel-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .panel-button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #d47b8a;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .panel-button:hover {
+            background-color: #b35f70;
+        }
         .panel-content {
             padding: 10px;
         }
@@ -99,6 +114,11 @@
                 <div class="panel">
                     <div class="panel-header">
                         <div class="panel-title">Digital Art</div>
+                        <div class="panel-buttons">
+                            <div class="panel-button">－</div>
+                            <div class="panel-button">□</div>
+                            <div class="panel-button">✕</div>
+                        </div>
                     </div>
                     <div class="panel-content">
                         <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
@@ -109,7 +129,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-mwd-9">
                 <div class="content-section">
                     <h3 class="header clash-display content-area">net.art</h3>
                     <img src="shake.gif" alt="Shake Animation" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
