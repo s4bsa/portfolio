@@ -42,13 +42,12 @@
             margin: 0 auto;
             padding: 20px;
             background-color: #f8cdd0; /* Softer pink */
-            border: 3px solid #d47b8a; /* Darker pink */
         }
         
         .panel {
-            border: 2px solid #d47b8a; /* Darker pink */
             margin-bottom: 20px;
             background-color: #f3b6bc; /* Medium pink */
+            border: none; /* Removed border */
         }
         
         .panel-header {
@@ -85,6 +84,7 @@
         
         .panel-content {
             padding: 10px;
+            border: none; /* Removed border */
         }
         
         .navbar {
@@ -94,7 +94,7 @@
         }
         
         .navbar-nav .nav-link {
-            color: #ffb6c1 !important; /* Light pastel pink */
+            color: #d47b8a !important; /* Darker pink for better readability */
             font-family: 'Cormorant Infant', serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -110,7 +110,7 @@
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #ffb6c1; /* Light pastel pink */
+            color: #d47b8a; /* Darker pink for better readability */
         }
 
         .panel-button-link {
@@ -144,6 +144,8 @@
             border-color: #d47b8a; /* Darker pink */
             box-shadow: 0 0 15px rgba(212, 123, 138, 0.7);
             position: relative;
+            font-size: 1.2rem; /* Increased font size */
+            text-transform: uppercase; /* Made text uppercase */
         }
         
         .panel-button-link.active::after {
@@ -251,7 +253,7 @@
         .content-section {
             background-color: #f3b6bc; /* Medium pink */
             padding: 20px;
-            border: 2px solid #d47b8a; /* Darker pink */
+            border: none; /* Removed border */
             border-radius: 8px; /* Added rounded corners */
             text-align: center; /* Center content header */
         }
