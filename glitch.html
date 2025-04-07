@@ -181,35 +181,22 @@
             box-shadow: 0 0 20px rgba(255, 0, 238, 0.5);
         }
 
-        @keyframes glitch {
-            0% {
-                transform: translate(0, 0);
-                clip-path: inset(0 0 0 0);
-            }
-            20% {
-                transform: translate(-2px, 2px);
-                clip-path: inset(10% 0 0 0);
-            }
-            40% {
-                transform: translate(2px, -2px);
-                clip-path: inset(0 10% 0 0);
-            }
-            60% {
-                transform: translate(-2px, -2px);
-                clip-path: inset(0 0 10% 0);
-            }
-            80% {
-                transform: translate(2px, 2px);
-                clip-path: inset(0 0 0 10%);
-            }
-            100% {
-                transform: translate(0, 0);
-                clip-path: inset(0 0 0 0);
-            }
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-5px, 0); }
+            20% { transform: translate(5px, 0); }
+            30% { transform: translate(-5px, 0); }
+            40% { transform: translate(5px, 0); }
+            50% { transform: translate(-5px, 0); }
+            60% { transform: translate(5px, 0); }
+            70% { transform: translate(-5px, 0); }
+            80% { transform: translate(5px, 0); }
+            90% { transform: translate(-5px, 0); }
+            100% { transform: translate(0, 0); }
         }
 
         .gallery-item:hover .gallery-image {
-            animation: glitch 0.5s infinite;
+            animation: shake 3s infinite;
             border-color: #00ffd9; /* Cyan */
             box-shadow: 0 0 30px rgba(0, 255, 217, 0.8);
         }
