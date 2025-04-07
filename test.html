@@ -82,7 +82,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bookavy</a>
+            <a class="navbar-brand" href="./">s4bsa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -95,7 +95,7 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="#about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Basket</a>
@@ -107,7 +107,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 sidebar">
-                <h5>Rhett Butler</h5>
+                <h5>Sabrina Hung</h5>
                 <a href="#">Account</a>
                 <a href="#">Notifications</a>
                 <a href="#">My Orders</a>
@@ -115,26 +115,56 @@
                 <a href="#">Settings</a>
             </div>
             <div class="col-md-9">
-                <div class="book-details mt-4">
-                    <h1>The Little Prince</h1>
-                    <h5>Antoine de Saint-Exupéry</h5>
-                    <p><span class="badge bg-secondary">philosophy</span> <span class="badge bg-secondary">fairytale</span> <span class="badge bg-secondary">from 0 to 100 y.o.</span></p>
-                    <p>The most famous work of Antoine de Saint-Exupéry with author's drawings. A wise fairy tale is a parable that simply and soulfully speaks about the most important things: about friendship and love, about duty and loyalty, about beauty and evil.</p>
-                    <button class="price-btn">Paperback 10.99 $</button>
-                    <button class="price-btn">E-book 4.99 $</button>
-                </div>
-                <div class="recommendations mt-5">
-                    <h4>You may like</h4>
-                    <div class="d-flex">
-                        <img src="book1.jpg" alt="Book 1">
-                        <img src="book2.jpg" alt="Book 2">
-                        <img src="book3.jpg" alt="Book 3">
-                        <img src="book4.jpg" alt="Book 4">
+                <div class="content-area">
+                    <!-- Default content goes here -->
+                    <div class="book-details mt-4">
+                        <h1>The Little Prince</h1>
+                        <h5>Antoine de Saint-Exupéry</h5>
+                        <p><span class="badge bg-secondary">philosophy</span> <span class="badge bg-secondary">fairytale</span> <span class="badge bg-secondary">from 0 to 100 y.o.</span></p>
+                        <p>The most famous work of Antoine de Saint-Exupéry with author's drawings. A wise fairy tale is a parable that simply and soulfully speaks about the most important things: about friendship and love, about duty and loyalty, about beauty and evil.</p>
+                        <button class="price-btn">Paperback 10.99 $</button>
+                        <button class="price-btn">E-book 4.99 $</button>
+                    </div>
+                    <div class="recommendations mt-5">
+                        <h4>You may like</h4>
+                        <div class="d-flex">
+                            <img src="book1.jpg" alt="Book 1">
+                            <img src="book2.jpg" alt="Book 2">
+                            <img src="book3.jpg" alt="Book 3">
+                            <img src="book4.jpg" alt="Book 4">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentArea = document.querySelector('.content-area');
+            const links = document.querySelectorAll('.nav-item .nav-link');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href').substring(1);
+
+                    if (target === 'about') {
+                        contentArea.innerHTML = `
+                            <h3 id="about">About Me</h3>
+                            <p>Hey there!<br> I'm Sabrina Hung, a digital artist working towards a BFA in Digital Media at SJSU. My passions include:</p>
+                            <ul>
+                                <li>★Digital media and design</li>
+                                <li>★3D modeling</li>
+                                <li>★Creative coding and interactive art</li>
+                            </ul>
+                            <p>...</p>
+                        `;
+                    }
+                    // Add other conditions here if needed
+                });
+            });
+        });
+    </script>
 </body>
 </html>
