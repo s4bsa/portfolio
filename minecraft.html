@@ -214,8 +214,13 @@
             border: 2px solid #535353; 
             border-radius: 0px; 
             image-rendering: pixelated;
-            box-shadow: none; 
+            box-shadow: 0 0 10px rgba(127, 191, 50, 0.8); /* Added green glow effect */
+            transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
             background-color: rgba(127, 191, 50, 0.3); /* Updated background color */
+        }
+
+        .gallery-image:hover {
+            box-shadow: 0 0 20px rgba(127, 191, 50, 1); /* Intensify glow on hover */
         }
 
         .gallery-title {
