@@ -351,7 +351,8 @@
             galleryItems.forEach(item => {
                 item.addEventListener('click', function() {
                     const img = this.querySelector('.gallery-image');
-                    openLightbox(img.src, "lorenipsm");
+                    const caption = img.alt; // Use the alt attribute for the caption
+                    openLightbox(img.src, caption); // Pass the correct caption
                 });
             });
             
@@ -373,19 +374,9 @@
             const lightboxImage = document.getElementById('lightbox-image');
             const lightboxCaption = document.getElementById('lightbox-caption');
             
-            const img = new Image();
-            img.onload = function() {
-                lightboxImage.src = imageSrc;
-                lightboxCaption.textContent = caption;
-                lightbox.style.display = 'block';
-            };
-            
-            img.onerror = function() {
-                console.error('Failed to load image:', imageSrc);
-                alert('Sorry, we could not load the image.');
-            };
-            
-            img.src = imageSrc;
+            lightboxImage.src = imageSrc; // Set the image source directly
+            lightboxCaption.textContent = caption; // Set the caption
+            lightbox.style.display = 'block';
         }
 
         function closeLightbox() {
