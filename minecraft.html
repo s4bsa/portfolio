@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabrina Hung - Minecraft</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+        body {
+            background-color: #5A4C3F; /* Dirt brown */
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            margin: 30px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC45bDN+TgAAAHhJREFUOE+9k0EOgCAMBH0TX7Hxa3yBX+RoYmWbHYgxJiY9QGlnC6wCIIcxls1ictVHTEJCjeC2HgMJwRHkxAiSBhzchvQCAlrMQwgcY3yIz/3DBKmNMQbSqERNi8W5YwTU4N6MbgHFJUgRpCKIF3RXCMbw3Bf2zgQ+iggOvQAAAABJRU5ErkJggg=='); /* Dirt texture */
+            background-size: 16px 16px;
+            cursor: url('Cursor.png'), auto;
+        }
+        
+        .cormorant-infant {
+            font-family: 'Cormorant Infant', serif;
+        }
+        
+        .brand-link {
+            color: #7FBF32 !important; /* Minecraft green */
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .brand-link:hover {
+            color: #61A31B !important; /* Lighter green */
+        }
+
+        .clash-display {
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #8B8B8B; /* Stone gray */
+            border: 3px solid #535353; /* Dark gray border like stone blocks */
+            image-rendering: pixelated;
+        }
+        
+        .panel {
+            border: 2px solid #535353; /* Dark gray */
+            margin-bottom: 20px;
+            background-color: #7D7D7D; /* Light stone gray */
+        }
+        
+        .panel-header {
+            background-color: #535353; /* Dark gray like coal ore */
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .panel-title {
+            color: #FFFFFF; /* White */
+            font-weight: bold;
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        
+        .panel-buttons {
+            display: flex;
+        }
+        
+        .panel-button {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #FFFFFF; /* White */
+            margin-left: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF; /* White */
+            font-size: 10px;
+            cursor: pointer;
+        }
+        
+        .panel-content {
+            padding: 10px;
+        }
+        
+        .navbar {
+            background-color: #535353 !important; /* Dark gray */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #FFFFFF !important; /* White */
+            font-family: 'Cormorant Infant', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.1rem;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #7FBF32 !important; /* Minecraft green */
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-family: 'Clash Display', sans-serif;
+            color: #FFFFFF; /* White */
+        }
+
+        .panel-button-link {
+            display: block;
+            background-color: #7D7D7D; /* Light stone gray */
+            color: #FFFFFF !important; /* White */
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 0px; /* Minecraft has no rounded corners */
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border: 1px solid #535353; /* Dark gray */
+            letter-spacing: 0.02em;
+        }
+        
+        .panel-button-link:hover {
+            background-color: #7FBF32; /* Minecraft green */
+            color: #FFFFFF !important; /* White */
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(127, 191, 50, 0.7);
+        }
+        
+        .panel-button-link.active {
+            background-color: #5A871D; /* Darker green */
+            color: #FFFFFF !important; /* White */
+            font-weight: 700;
+            border-width: 2px;
+            border-color: #7FBF32; /* Minecraft green */
+            box-shadow: 0 0 15px rgba(90, 135, 29, 0.7);
+            position: relative;
+        }
+        
+        .panel-button-link.active::after {
+            content: "▶";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            justify-content: flex-start;
+        }
+
+        .gallery-item {
+            position: relative;
+            transition: all 0.3s ease;
+            max-width: 300px;
+            flex: 0 0 auto;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 3px solid #535353; /* Dark gray */
+            border-radius: 0px; /* Minecraft has no rounded corners */
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            image-rendering: pixelated;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+            border-color: #7FBF32; /* Minecraft green */
+            box-shadow: 0 0 30px rgba(127, 191, 50, 0.6);
+        }
+
+        .gallery-title {
+            display: none; /* Remove hover title effect */
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(40, 30, 20, 0.95); /* Darker dirt color */
+            display: none;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 0;
+            border: 5px solid #7FBF32; /* Minecraft green */
+            box-shadow: 0 0 40px rgba(127, 191, 50, 0.8);
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #FFFFFF; /* White */
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #535353; /* Dark gray */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            border: 2px solid #7FBF32; /* Minecraft green */
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover {
+            background-color: #7FBF32; /* Minecraft green */
+            color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .content-section {
+            background-color: #7D7D7D; /* Light stone gray */
+            padding: 20px;
+            border: 2px solid #535353; /* Dark gray */
+            border-radius: 0px; /* Minecraft has no rounded corners */
+        }
+
+        h3.header.clash-display.content-area {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            color: #FFFFFF !important; /* White */
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0; /* Removed rounded corners */
+            display: inline-block;
+            text-shadow: 3px 3px 0px #535353; /* Dark gray */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Digital Art</div>
+                        <div class="panel-buttons">
+                            <div class="panel-button">－</div>
+                            <div class="panel-button">□</div>
+                            <div class="panel-button">✕</div>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link active">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link">Net.Art</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h3 class="header clash-display content-area">Minecraft</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="minecraft1.png" alt="Minecraft 1" class="gallery-image">
+                            <div class="gallery-title">Minecraft 1</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="minecraft2.png" alt="Minecraft 2" class="gallery-image">
+                            <div class="gallery-title">Minecraft 2</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="minecraft3.png" alt="Minecraft 3" class="gallery-image">
+                            <div class="gallery-title">Minecraft 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-container">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" style="color: #FFFFFF; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif; font-size: 1.2rem; text-shadow: 1px 1px 3px #535353;"></div>
+            </div>
+        </div>
+        <footer>
+            &copy; s4bsa 2025
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('.gallery-image');
+                    openLightbox(img.src, img.alt);
+                });
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this || e.target.classList.contains('lightbox-container')) {
+                    closeLightbox();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
+
+        function openLightbox(imageSrc, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            const img = new Image();
+            img.onload = function() {
+                lightboxImage.src = imageSrc;
+                lightboxCaption.textContent = caption;
+                lightbox.style.display = 'block';
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imageSrc);
+                alert('Sorry, we could not load the image.');
+            };
+            
+            img.src = imageSrc;
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
