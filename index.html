@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,600&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #fcefb4; /* Light yellow background */
@@ -49,16 +48,6 @@
             letter-spacing: 0.03em;
         }
         
-        .general-sans-regular {
-            font-family: 'General Sans', sans-serif;
-            font-weight: 400;
-        }
-
-        .general-sans-semibold {
-            font-family: 'General Sans', sans-serif;
-            font-weight: 600;
-        }
-
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -293,7 +282,7 @@
             <div class="col-md-9">
                 <div class="content-area">
                     <h3 id="home" class="telma">Welcome to my site!</h3>
-                    <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
+                    <p class="clash-display">Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
                     
                     <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
                     <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
@@ -304,7 +293,7 @@
                     <p><span class="star-bullet">☆</span> Check back often for new content and updates</p>
                     <p><span class="star-bullet">☆</span> Connect with me through the contact page</p>
                     
-                    <h4>Currently working on:</h4>
+                    <h4 class="clash-display">Currently working on:</h4>
                     <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
                     <p><span class="star-bullet">☆</span> Pixel art + more 3-D art</p>
                     <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>
@@ -332,34 +321,34 @@
                     if (target === 'home') {
                         contentArea.innerHTML = `
                             <h3 id="home" class="telma">Welcome to my site!</h3>
-                            <p class="general-sans-regular">Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
-                            <p class="general-sans-regular"><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
-                            <p class="general-sans-regular"><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
-                            <p class="general-sans-regular"><span class="star-bullet">★</span> Cute and introspective concept art</p>
-                            <p class="general-sans-regular mt-3">Feel free to explore using the navigation panels!</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> Check back often for new content and updates</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> Connect with me through the contact page</p>
-                            <h4 class="general-sans-semibold">Currently working on:</h4>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> Pixel art + 3D figures</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> Photography + Illustrations section</p>
+                            <p class="clash-display">Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
+                            <p class="clash-display"><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
+                            <p class="clash-display"><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
+                            <p class="clash-display"><span class="star-bullet">★</span> Cute and introspective concept art</p>
+                            <p class="clash-display mt-3">Feel free to explore using the navigation panels!</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> Check back often for new content and updates</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> Connect with me through the contact page</p>
+                            <h4 class="clash-display">Currently working on:</h4>
+                            <p class="clash-display"><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> Pixel art + 3D figures</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> Photography + Illustrations section</p>
                         `;
                     } else if (target === 'about') {
                         contentArea.innerHTML = `
                             <h3 id="about" class="telma">ABOUT ME</h3>
-                            <p class="general-sans-regular">Hey there! My name is Sabrina Hung, I'm a 19 y/o artist, majoring in Digital Media at SJSU.
+                            <p class="clash-display">Hey there! My name is Sabrina Hung, I'm a 19 y/o artist, majoring in Digital Media at SJSU.
                             <br>I am a multidisciplinary artist currently focusing on <strong style="font-weight: 500;">creative coding</strong> and <strong style="font-weight: 500;">3D rendering</strong>. My work dives into themes exploring <strong style="font-weight: 500;">love, existentialism, and fantasy</strong>.</p>
                          `;
                     } else if (target === 'contact') {
                         contentArea.innerHTML = `
                             <h3 id="contact" class="telma">CONTACT</h3>
-                            <p class="general-sans-regular">I'm here for you! Feel free to reach out through these links and connect with me on social media:</p>
+                            <p class="clash-display">I'm here for you! Feel free to reach out through these links and connect with me on social media:</p>
                             
                             <div style="display: flex; justify-content: center; align-items: center; margin: 25px 0;">
                                 <a href="mailto:sabrina.hung@sjsu.edu" target="_blank" style="margin: 0 15px; text-decoration: none; text-align: center;">
                                     <div style="display: inline-block; width: 60px; height: 60px; background-color: rgba(255, 183, 197, 0.8); border-radius: 50%; text-align: center; line-height: 60px; margin-bottom: 5px;">
-                                        <img src="email.png" alt="Email" style="width: 28px; height: 28px;">
+                                        <span style="font-size: 28px;">✉️</span>
                                     </div>
                                     <div style="font-size: 14px; color: #D97A91;">Email</div>
                                 </a>
@@ -379,12 +368,12 @@
                                 </a>
                             </div>
                             
-                            <p class="general-sans-regular" style="margin-top: 20px;">I typically respond within 24-48 hours. Looking forward to connecting with you!</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> For collaborations: sabrina.hung@sjsu.edu</p>
-                            <p class="general-sans-regular"><span class="star-bullet">☆</span> For quick questions: DM me on Instagram</p>
+                            <p class="clash-display" style="margin-top: 20px;">I typically respond within 24-48 hours. Looking forward to connecting with you!</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> For collaborations: sabrina.hung@sjsu.edu</p>
+                            <p class="clash-display"><span class="star-bullet">☆</span> For quick questions: DM me on Instagram</p>
                         `;
                     } else {
-                        let content = `<h3 class="general-sans-semibold">${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p class="general-sans-regular">Content for ${target} will be added soon!</p>`;
+                        let content = `<h3 class="clash-display">${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p class="clash-display">Content for ${target} will be added soon!</p>`;
                         contentArea.innerHTML = content;
                     }
                 });
