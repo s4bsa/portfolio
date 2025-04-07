@@ -186,33 +186,33 @@
         .gallery {
             display: flex;
             flex-direction: row;
-            flex-wrap: nowrap; /* Prevent wrapping to force horizontal line */
-            gap: 15px; /* Reduced gap between items */
+            flex-wrap: wrap; /* Allow wrapping so images don't have to be side by side */
+            gap: 20px; /* Slightly increased gap between items */
             margin-top: 20px;
             justify-content: center; /* Center the items horizontally */
         }
 
         .gallery-item {
             position: relative;
-            width: 220px; /* Reduced width to fit all three in a row */
-            height: 220px; /* Maintained square aspect ratio */
+            width: 250px; /* Slightly larger width */
+            height: auto; /* Allow height to adjust based on content */
             flex: 0 0 auto;
-            margin-bottom: 15px;
-            background-color: transparent; /* Changed from #535353 to transparent */
-            border: none; /* Removed border */
-            box-shadow: 0 0 20px rgba(127, 191, 50, 0.7); /* Green glow effect */
+            margin-bottom: 20px;
+            background-color: transparent;
+            border: none;
+            box-shadow: none; /* Removed green glow effect */
         }
 
         .gallery-image {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Changed from cover to contain to prevent cropping */
+            object-fit: contain; /* Maintain aspect ratio without cropping */
             cursor: pointer;
-            border: 2px solid #7FBF32; /* Added thin green border */
+            border: 2px solid #535353; /* Changed to dark gray border */
             border-radius: 0px; /* Minecraft has no rounded corners */
             image-rendering: pixelated;
-            box-shadow: 0 0 15px rgba(127, 191, 50, 0.8) inset; /* Inner green glow */
-            background-color: rgba(0, 0, 0, 0.2); /* Slightly dark background to make glow more visible */
+            box-shadow: none; /* Removed inner green glow */
+            background-color: rgba(0, 0, 0, 0.1); /* Lighter background */
         }
 
         .gallery-title {
