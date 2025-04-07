@@ -88,6 +88,14 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+        /* Additional cursor rules for different elements to ensure consistent experience */
+        a, button, .nav-link, .price-btn {
+            cursor: url('Cursor.png'), pointer !important;
+        }
+        /* For hover states */
+        a:hover, button:hover, .nav-link:hover {
+            cursor: url('Cursor.png'), pointer !important;
+        }
     </style>
 </head>
 <body>
@@ -175,6 +183,12 @@
                     // Add other conditions here if needed
                 });
             });
+        });
+
+        // Ensure cursor preloading for smoother experience
+        window.addEventListener('load', function() {
+            const cursorPreload = new Image();
+            cursorPreload.src = 'Cursor.png';
         });
     </script>
 </body>
