@@ -166,8 +166,7 @@
 
         .gallery-item {
             position: relative;
-            --mouse-x: 0;
-            --mouse-y: 0;
+            transition: all 0.3s ease;
             max-width: 300px;
             flex: 0 0 auto;
         }
@@ -182,13 +181,8 @@
             box-shadow: 0 0 20px rgba(255, 0, 238, 0.5);
         }
 
-        @keyframes move-away {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(calc(var(--mouse-x) * -0.2), calc(var(--mouse-y) * -0.2)); }
-        }
-
         .gallery-item:hover .gallery-image {
-            animation: move-away 0.5s forwards;
+            transform: scale(1.05) skew(2deg, 1deg) translate(calc(-5px + 10px * (random() - 0.5)), calc(-5px + 10px * (random() - 0.5)));
             border-color: #00ffd9; /* Cyan */
             box-shadow: 0 0 30px rgba(0, 255, 217, 0.8);
         }
@@ -288,13 +282,6 @@
                         <a class="nav-link" href="./">Home</a>
                     </li>
                 </ul>
-                <div class="ms-auto">
-                    <select id="language-selector" class="form-select form-select-sm" style="width: auto;">
-                        <option value="en" selected>English</option>
-                        <option value="es">Español</option>
-                        <option value="fr">Français</option>
-                    </select>
-                </div>
             </div>
         </div>
     </nav>
@@ -322,19 +309,19 @@
             </div>
             <div class="col-md-9">
                 <div class="content-section">
-                    <h3 id="glitch-art-title" class="header clash-display content-area">Glitch Art</h3>
+                    <h3 class="header clash-display content-area">Glitch Art</h3>
                     <div class="gallery">
                         <div class="gallery-item">
                             <img src="./images/glitch1.png" alt="Glitch 1" class="gallery-image">
-                            <div class="gallery-title" data-translation="glitch1">Glitch 1</div>
+                            <div class="gallery-title">Glitch 1</div>
                         </div>
                         <div class="gallery-item">
                             <img src="./images/glitch2.png" alt="Glitch 2" class="gallery-image">
-                            <div class="gallery-title" data-translation="glitch2">Glitch 2</div>
+                            <div class="gallery-title">Glitch 2</div>
                         </div>
                         <div class="gallery-item">
                             <img src="./images/glitch3.png" alt="Glitch 3" class="gallery-image">
-                            <div class="gallery-title" data-translation="glitch3">Glitch 3</div>
+                            <div class="gallery-title">Glitch 3</div>
                         </div>
                     </div>
                 </div>
@@ -379,46 +366,6 @@
                 if (e.key === 'Escape') {
                     closeLightbox();
                 }
-            });
-
-            document.addEventListener('mousemove', function(e) {
-                document.querySelectorAll('.gallery-item').forEach(item => {
-                    const rect = item.getBoundingClientRect();
-                    const mouseX = e.clientX - (rect.left + rect.width / 2);
-                    const mouseY = e.clientY - (rect.top + rect.height / 2);
-                    item.style.setProperty('--mouse-x', mouseX);
-                    item.style.setProperty('--mouse-y', mouseY);
-                });
-            });
-
-            const translations = {
-                en: {
-                    "glitch-art-title": "Glitch Art",
-                    "glitch1": "Glitch 1",
-                    "glitch2": "Glitch 2",
-                    "glitch3": "Glitch 3"
-                },
-                es: {
-                    "glitch-art-title": "Arte Glitch",
-                    "glitch1": "Glitch 1",
-                    "glitch2": "Glitch 2",
-                    "glitch3": "Glitch 3"
-                },
-                fr: {
-                    "glitch-art-title": "Art Glitch",
-                    "glitch1": "Glitch 1",
-                    "glitch2": "Glitch 2",
-                    "glitch3": "Glitch 3"
-                }
-            };
-
-            document.getElementById('language-selector').addEventListener('change', function() {
-                const selectedLanguage = this.value;
-                document.querySelectorAll('[data-translation]').forEach(element => {
-                    const key = element.getAttribute('data-translation');
-                    element.textContent = translations[selectedLanguage][key];
-                });
-                document.getElementById('glitch-art-title').textContent = translations[selectedLanguage]['glitch-art-title'];
             });
         });
 
