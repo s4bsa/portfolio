@@ -5,47 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #fddde6, #d1d9f0);
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             color: #2c3e50;
+            margin: 0;
+            padding: 0;
         }
         .navbar {
             background-color: #2c3e50;
+            border-radius: 15px;
+            margin: 10px;
+            padding: 10px 20px;
         }
         .navbar-brand, .nav-link {
             color: #fddde6 !important;
+            font-weight: 600;
         }
         .sidebar {
-            background-color: #fddde6;
+            background: linear-gradient(135deg, #fddde6, #ffffff);
             height: 100vh;
             padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .sidebar a {
             color: #2c3e50;
             text-decoration: none;
             display: block;
             margin: 10px 0;
+            font-weight: 500;
+        }
+        .sidebar h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
         }
         .book-details {
             color: #2c3e50;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .book-details h1 {
+            font-weight: 600;
         }
         .price-btn {
             background-color: #2c3e50;
             color: #fddde6;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 25px;
             margin-right: 10px;
+            font-weight: 500;
         }
         .price-btn:hover {
             background-color: #34495e;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendations h4 {
+            font-weight: 600;
         }
         .recommendations img {
             width: 100px;
             height: auto;
             margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
