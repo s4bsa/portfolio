@@ -198,9 +198,9 @@
             height: 220px; /* Maintained square aspect ratio */
             flex: 0 0 auto;
             margin-bottom: 15px;
-            background-color: #535353; /* Added dark background for contained images */
-            border: 3px solid #535353; /* Dark gray */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: transparent; /* Changed from #535353 to transparent */
+            border: none; /* Removed border */
+            box-shadow: 0 0 20px rgba(127, 191, 50, 0.7); /* Green glow effect */
         }
 
         .gallery-image {
@@ -208,9 +208,11 @@
             height: 100%;
             object-fit: contain; /* Changed from cover to contain to prevent cropping */
             cursor: pointer;
-            border: none; /* Removed border as it's now on the parent */
+            border: 2px solid #7FBF32; /* Added thin green border */
             border-radius: 0px; /* Minecraft has no rounded corners */
             image-rendering: pixelated;
+            box-shadow: 0 0 15px rgba(127, 191, 50, 0.8) inset; /* Inner green glow */
+            background-color: rgba(0, 0, 0, 0.2); /* Slightly dark background to make glow more visible */
         }
 
         .gallery-title {
