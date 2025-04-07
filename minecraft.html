@@ -12,16 +12,17 @@
    <style>
         body {
             background-color: #5A4C3F; /* Dirt brown */
-            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Changed to apply pixel font globally */
             margin: 30px;
-            background-image: url('lavender.jpg'); /* Changed to lavender.jpg background */
-            background-size: cover; /* Changed to cover to properly display the lavender image */
-            background-attachment: fixed; /* Added to keep the background fixed while scrolling */
+            background-image: url('lavender.jpg');
+            background-size: cover;
+            background-attachment: fixed;
             cursor: url('Cursor.png'), auto;
         }
         
         .cormorant-infant {
-            font-family: 'Cormorant Infant', serif;
+            font-family: 'Press Start 2P', cursive; /* Changed from Cormorant Infant */
+            font-size: 0.9rem; /* Smaller font size due to pixel font */
         }
         
         .pixel-font {
@@ -32,9 +33,10 @@
         
         .brand-link {
             color: #7FBF32 !important; /* Minecraft green */
-            font-size: 1.4rem;
+            font-size: 1.1rem; /* Reduced for pixel font */
             font-weight: 600;
             text-decoration: none;
+            font-family: 'Press Start 2P', cursive; /* Explicitly set pixel font */
         }
         
         .brand-link:hover {
@@ -52,8 +54,9 @@
         }
         
         .clash-display {
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Changed from Clash Display */
             letter-spacing: 0.03em;
+            font-size: 0.9rem; /* Smaller size for pixel font */
         }
         
         .container {
@@ -82,8 +85,9 @@
         .panel-title {
             color: #FFFFFF; /* White */
             font-weight: bold;
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Changed to pixel font */
             letter-spacing: 0.03em;
+            font-size: 0.8rem; /* Reduced size */
         }
         
         .panel-buttons {
@@ -116,10 +120,11 @@
         
         .navbar-nav .nav-link {
             color: #FFFFFF !important; /* White */
-            font-family: 'Cormorant Infant', serif;
+            font-family: 'Press Start 2P', cursive; /* Changed from Cormorant Infant */
             font-weight: 600;
             letter-spacing: 0.02em;
-            font-size: 1.1rem;
+            font-size: 0.8rem; /* Reduced size for pixel font */
+            padding: 12px 15px; /* More padding for readability */
         }
         
         .navbar-nav .nav-link:hover {
@@ -130,8 +135,9 @@
             text-align: center;
             padding: 20px 0;
             margin-top: 20px;
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Changed from Clash Display */
             color: #FFFFFF; /* White */
+            font-size: 0.7rem; /* Smaller footer font size */
         }
 
         .panel-button-link {
@@ -139,15 +145,16 @@
             background-color: #7D7D7D; /* Light stone gray */
             color: #FFFFFF !important; /* White */
             text-align: center;
-            padding: 8px 12px;
-            border-radius: 0px; /* Minecraft has no rounded corners */
-            margin-bottom: 10px;
+            padding: 10px 12px; /* Slightly more padding */
+            border-radius: 0px;
+            margin-bottom: 15px; /* More margin for pixel font */
             transition: all 0.3s ease;
             text-decoration: none;
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Changed to pixel font */
             font-weight: 500;
             border: 1px solid #535353; /* Dark gray */
             letter-spacing: 0.02em;
+            font-size: 0.7rem; /* Smaller size for pixel font */
         }
         
         .panel-button-link:hover {
@@ -179,28 +186,30 @@
         .gallery {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
-            gap: 25px;
+            flex-wrap: nowrap; /* Prevent wrapping to force horizontal line */
+            gap: 15px; /* Reduced gap between items */
             margin-top: 20px;
-            justify-content: flex-start;
+            justify-content: center; /* Center the items horizontally */
         }
 
         .gallery-item {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 220px; /* Reduced width to fit all three in a row */
+            height: 220px; /* Maintained square aspect ratio */
             flex: 0 0 auto;
             margin-bottom: 15px;
+            background-color: #535353; /* Added dark background for contained images */
+            border: 3px solid #535353; /* Dark gray */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         .gallery-image {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Changed from cover to contain to prevent cropping */
             cursor: pointer;
-            border: 3px solid #535353; /* Dark gray */
+            border: none; /* Removed border as it's now on the parent */
             border-radius: 0px; /* Minecraft has no rounded corners */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             image-rendering: pixelated;
         }
 
@@ -273,16 +282,23 @@
         }
 
         h3.header.clash-display.content-area {
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Changed from Clash Display */
             font-weight: 700;
             color: #FFFFFF !important; /* White */
-            font-size: 2rem;
+            font-size: 1.5rem; /* Adjusted size for pixel font */
             letter-spacing: 0.05em;
-            margin-bottom: 20px;
-            padding: 8px 15px;
-            border-radius: 0; /* Removed rounded corners */
+            margin-bottom: 25px; /* More space below */
+            padding: 12px 15px;
+            border-radius: 0;
             display: inline-block;
             text-shadow: 3px 3px 0px #535353; /* Dark gray */
+            line-height: 1.6; /* More line height for readability */
+        }
+        
+        #lightbox-caption {
+            font-family: 'Press Start 2P', cursive !important; /* Force pixel font in lightbox */
+            font-size: 0.9rem !important; /* Adjusted size */
+            line-height: 1.5 !important; /* Better line height for pixel font */
         }
     </style>
 </head>
@@ -329,15 +345,15 @@
                     <h3 class="header clash-display content-area" style="color: #55FFFF !important; text-shadow: 3px 3px 0px #0a7d7d;">Minecraft</h3>
                     <div class="gallery">
                         <div class="gallery-item">
-                            <img src="minecraft.png" alt="Minecraft 1" class="gallery-image">
+                            <img src="minecraft.png" alt="2D doraemon sculpture" class="gallery-image">
                             <div class="gallery-title">2D doraemon sculpture</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="sculpture.png" alt="Minecraft 2" class="gallery-image">
+                            <img src="sculpture.png" alt="3D doraemon sculpture" class="gallery-image">
                             <div class="gallery-title">3D doraemon sculpture</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="melody.png" alt="Minecraft 3" class="gallery-image">
+                            <img src="melody.png" alt="My Melody 2D sculpture" class="gallery-image">
                             <div class="gallery-title">My Melody sculpture</div>
                         </div>
                     </div>
@@ -349,7 +365,7 @@
             <div class="lightbox-container">
                 <span class="close" onclick="closeLightbox()">&times;</span>
                 <img id="lightbox-image" class="lightbox-content">
-                <div id="lightbox-caption" style="color: #FFFFFF; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif; font-size: 1.2rem; text-shadow: 1px 1px 3px #535353;"></div>
+                <div id="lightbox-caption" style="color: #FFFFFF; text-align: center; margin-top: 10px; font-family: 'Press Start 2P', cursive !important; font-size: 0.9rem !important; line-height: 1.5 !important; text-shadow: 1px 1px 3px #535353;"></div>
             </div>
         </div>
         <footer>
