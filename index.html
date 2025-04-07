@@ -310,7 +310,7 @@
                         contentArea.innerHTML = `
                             <h3 id="home">Welcome to my site!</h3>
                             <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
-                            <p><span class="star-bullet">★</span> Creative projects using digital tools<br> Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
+                            <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
                             <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
                             <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
                             <p class="mt-3">Feel free to explore using the navigation panels!</p>
@@ -321,6 +321,42 @@
                             <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
                             <p><span class="star-bullet">☆</span> Pixel art + more 3-D art</p>
                             <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>
+                        `;
+                    } else if (target === 'about') {
+                        contentArea.innerHTML = `
+                            <h3 id="about">About Me</h3>
+                            <p>Hey there!<br> I'm Sabrina Hung, a digital artist working towards a BFA in Digital Media at SJSU. My passions include:</p>
+                            <ul>
+                                <li>★Digital media and design</li>
+                                <li>★3D modeling</li>
+                                <li>★Creative coding and interactive art</li>
+                            </ul>
+                            <p>...</p>
+                        `;
+                    } else if (target === 'contact') {
+                        contentArea.innerHTML = `
+                            <h3 id="contact">Contact</h3>
+                            <p>I'd love to hear from you! You can reach me through the following channels:</p>
+                            <ul>
+                                <li>
+                                    <a href="mailto:sabrina.hung@sjsu.edu" target="_blank">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" style="width: 20px; height: 20px; margin-right: 8px;">
+                                        sabrina.hung@sjsu.edu
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://linkedin.com/in/s4bsa" target="_blank">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" style="width: 20px; height: 20px; margin-right: 8px;">
+                                        LinkedIn Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://instagram.com/s4bsa" target="_blank">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Icon" style="width: 20px; height: 20px; margin-right: 8px;">
+                                        @ss4bsa
+                                    </a>
+                                </li>
+                            </ul>
                         `;
                     } else {
                         let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
