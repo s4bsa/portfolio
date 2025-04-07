@@ -277,12 +277,14 @@
         .content-section {
             background-color: #7D7D7D; 
             background-image: url('./images/inventory.jpg'); 
-            background-size: cover;
+            background-size: contain; /* Changed from 'cover' to 'contain' */
             background-position: center;
-            background-repeat: no-repeat;
+            background-repeat: repeat; /* Changed from 'no-repeat' to 'repeat' */
             padding: 20px;
             border: 2px solid #535353;
             border-radius: 8px;
+            min-height: 600px; /* Added minimum height */
+            overflow: auto; /* Added overflow handling */
         }
 
         h3.header.clash-display.content-area {
