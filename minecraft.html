@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
    <style>
         body {
-            background-color: #5A4C3F; /* Dirt brown */
-            font-family: 'Press Start 2P', cursive; /* Changed to apply pixel font globally */
+            background-color: #5A4C3F; /* Dirt brown as fallback */
+            font-family: 'Press Start 2P', cursive;
             margin: 30px;
-            background-image: url('lavender.jpg');
+            background-image: url('./images/lavender.jpg'); /* Updated path with proper directory */
             background-size: cover;
             background-attachment: fixed;
             cursor: url('Cursor.png'), auto;
@@ -279,14 +279,14 @@
         }
 
         .content-section {
-            background-color: #7D7D7D; /* Light stone gray */
-            background-image: url('inventory.jpg'); /* Added inventory background */
-            background-size: cover; /* Cover the entire section */
-            background-position: center; /* Center the background */
-            background-repeat: no-repeat; /* Don't repeat the image */
+            background-color: #7D7D7D; /* Light stone gray as fallback */
+            background-image: url('./images/inventory.jpg'); /* Updated path with proper directory */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 20px;
-            border: 2px solid #535353; /* Dark gray */
-            border-radius: 8px; /* Added rounded corners */
+            border: 2px solid #535353;
+            border-radius: 8px;
         }
 
         h3.header.clash-display.content-area {
