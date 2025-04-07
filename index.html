@@ -8,14 +8,15 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #fcefb4; /* Light yellow background */
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
             background-image: 
-                linear-gradient(to bottom, transparent 0%, transparent 97%, #FFB7C5 97%, #FFB7C5 100%),
-                linear-gradient(to bottom, transparent 0%, transparent 48.5%, #FFB7C5 48.5%, #FFB7C5 50%);
+                linear-gradient(to bottom, transparent 0%, transparent 98.5%, #FFB7C5 98.5%, #FFB7C5 99%), /* Thinner horizontal line */
+                linear-gradient(to bottom, transparent 0%, transparent 49.25%, #FFB7C5 49.25%, #FFB7C5 49.75%); /* Thinner middle line */
             background-size: 100% 28px, 100% 56px;
             cursor: url('Cursor.png'), auto;
         }
@@ -26,6 +27,10 @@
         
         .outfit {
             font-family: 'Outfit', sans-serif;
+        }
+        
+        .telma {
+            font-family: 'Telma', sans-serif;
         }
         
         .brand-link {
@@ -207,7 +212,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
+            <a class="navbar-brand telma brand-link" href="./">Sabrina Hung</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
