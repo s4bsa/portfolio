@@ -326,37 +326,42 @@
                         contentArea.innerHTML = `
                             <h3 id="about">About Me</h3>
                             <p>Hey there!<br> I'm Sabrina Hung, a digital artist working towards a BFA in Digital Media at SJSU. My passions include:</p>
-                            <ul>
-                                <li>★Digital media and design</li>
-                                <li>★3D modeling</li>
-                                <li>★Creative coding and interactive art</li>
-                            </ul>
+                            <p><span class="star-bullet">★</span> Digital media and design</p>
+                            <p><span class="star-bullet">★</span> 3D modeling</p>
+                            <p><span class="star-bullet">★</span> Creative coding and interactive art</p>
                             <p>...</p>
                         `;
                     } else if (target === 'contact') {
                         contentArea.innerHTML = `
                             <h3 id="contact">Contact</h3>
-                            <p>I'd love to hear from you! You can reach me through the following channels:</p>
-                            <ul>
-                                <li>
-                                    <a href="mailto:sabrina.hung@sjsu.edu" target="_blank">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" style="width: 20px; height: 20px; margin-right: 8px;">
-                                        sabrina.hung@sjsu.edu
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://linkedin.com/in/s4bsa" target="_blank">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" style="width: 20px; height: 20px; margin-right: 8px;">
-                                        LinkedIn Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://instagram.com/s4bsa" target="_blank">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Icon" style="width: 20px; height: 20px; margin-right: 8px;">
-                                        @ss4bsa
-                                    </a>
-                                </li>
-                            </ul>
+                            <p>I'm here for you! Feel free to reach out through these links and connect with me on social media:</p>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                            <p class="mt-4 text-center">Or connect with me:</p>
+                            <div class="d-flex justify-content-center gap-4">
+                                <a href="mailto:sabrina.hung@sjsu.edu" target="_blank">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" style="width: 40px; height: 40px; filter: hue-rotate(-20deg) saturate(2);">
+                                </a>
+                                <a href="https://linkedin.com/in/s4bsa" target="_blank">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" style="width: 40px; height: 40px; filter: hue-rotate(-20deg) saturate(2);">
+                                </a>
+                                <a href="https://instagram.com/s4bsa" target="_blank">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Icon" style="width: 40px; height: 40px; filter: hue-rotate(-20deg) saturate(2);">
+                                </a>
+                            </div>
                         `;
                     } else {
                         let content = `<h3>${target.charAt(0).toUpperCase() + target.slice(1)}</h3><p>Content for ${target} will be added soon!</p>`;
