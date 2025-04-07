@@ -166,7 +166,8 @@
 
         .gallery-item {
             position: relative;
-            transition: all 0.3s ease;
+            --mouse-x: 0;
+            --mouse-y: 0;
             max-width: 300px;
             flex: 0 0 auto;
         }
@@ -181,22 +182,13 @@
             box-shadow: 0 0 20px rgba(255, 0, 238, 0.5);
         }
 
-        @keyframes shake {
+        @keyframes move-away {
             0% { transform: translate(0, 0); }
-            10% { transform: translate(-5px, 0); }
-            20% { transform: translate(5px, 0); }
-            30% { transform: translate(-5px, 0); }
-            40% { transform: translate(5px, 0); }
-            50% { transform: translate(-5px, 0); }
-            60% { transform: translate(5px, 0); }
-            70% { transform: translate(-5px, 0); }
-            80% { transform: translate(5px, 0); }
-            90% { transform: translate(-5px, 0); }
-            100% { transform: translate(0, 0); }
+            100% { transform: translate(calc(var(--mouse-x) * -0.2), calc(var(--mouse-y) * -0.2)); }
         }
 
         .gallery-item:hover .gallery-image {
-            animation: shake 3s infinite;
+            animation: move-away 0.5s forwards;
             border-color: #00ffd9; /* Cyan */
             box-shadow: 0 0 30px rgba(0, 255, 217, 0.8);
         }
@@ -380,6 +372,16 @@
                 if (e.key === 'Escape') {
                     closeLightbox();
                 }
+            });
+
+            document.addEventListener('mousemove', function(e) {
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    const rect = item.getBoundingClientRect();
+                    const mouseX = e.clientX - (rect.left + rect.width / 2);
+                    const mouseY = e.clientY - (rect.top + rect.height / 2);
+                    item.style.setProperty('--mouse-x', mouseX);
+                    item.style.setProperty('--mouse-y', mouseY);
+                });
             });
         });
 
