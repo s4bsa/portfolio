@@ -8,16 +8,13 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f8f8; /* Light paper color */
-            font-family: 'Outfit', sans-serif;
+            background-color: #fcefb4; /* Match panel's off-white color */
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
-            background-image: 
-                linear-gradient(#e8e8e8 1px, transparent 1px); /* Horizontal notebook lines */
-            background-size: 100% 25px;
+            background-image: radial-gradient(#FFFFFF 15%, transparent 15%); /* Smaller white dots */
+            background-size: 10px 10px; /* Reduced size for smaller dots */
             cursor: url('Cursor.png'), auto;
         }
         
@@ -29,26 +26,15 @@
             font-family: 'Outfit', sans-serif;
         }
         
-        .handwritten {
-            font-family: 'Caveat', cursive;
-        }
-        
-        .notebook-title {
-            font-family: 'Indie Flower', cursive;
-            color: #3a559f; /* Blue pen color */
-            font-size: 2.5rem;
-        }
-        
         .brand-link {
-            color: #3a559f !important; /* Blue pen color */
+            color: #FFB7C5 !important; /* Soft pink */
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
-            font-family: 'Indie Flower', cursive;
         }
         
         .brand-link:hover {
-            color: #5271c5 !important; /* Lighter blue */
+            color: #FF8FA3 !important; /* Darker pink */
         }
 
         .clash-display {
@@ -60,49 +46,22 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff; /* White paper */
-            box-shadow: 3px 3px 10px rgba(0,0,0,0.1); /* Subtle notebook shadow */
-            border-left: 1px solid #e0e0e0; /* Left edge binding */
-            position: relative;
-        }
-        
-        /* Add a spiral binding effect */
-        .container::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 0;
-            height: 100%;
-            width: 10px;
-            background: repeating-linear-gradient(
-                0deg,
-                #ff6b6b 0px,
-                #ff6b6b 5px,
-                #ffffff 5px,
-                #ffffff 10px,
-                #6b88ff 10px,
-                #6b88ff 15px,
-                #ffffff 15px,
-                #ffffff 20px
-            );
-            border-radius: 5px;
+            background-color: #FFF9F9; /* Very light peach */
         }
         
         .header {
             text-align: center;
             margin-bottom: 20px;
-            border-bottom: 2px dashed #6b88ff; /* Blue dashed border */
-            padding-bottom: 15px;
         }
         
         .header h1 {
-            color: #3a559f; /* Blue pen color */
+            color: #FFB7C5; /* Soft pink */
             letter-spacing: 0.05em;
             font-size: 3em;
             margin-bottom: 0;
             position: relative;
             display: inline-block;
-            font-family: 'Indie Flower', cursive;
+            font-family: 'Clash Display', sans-serif;
             font-weight: 700;
         }
         
@@ -113,45 +72,23 @@
         }
         
         .panel {
-            border: 2px solid #e0e0e0; /* Light gray border */
-            border-radius: 0;
+            border: 2px solid #FFD6E0; /* Light pink border */
             margin-bottom: 20px;
-            background-color: #f8f8f8; /* Light paper background */
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            background-color: #FFF4F4; /* Soft peach background */
         }
         
         .panel-header {
-            background-color: #e0e0e0; /* Light gray header */
+            background-color: #FFD6E0; /* Light pink header */
             padding: 5px 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        /* Digital Art Panel - Keep it with the original style */
-        .digital-art-panel {
-            border: 2px solid #FFD6E0; /* Light pink border */
-            margin-bottom: 20px;
-            background-color: #FFF4F4; /* Soft peach background */
-        }
-        
-        .digital-art-panel .panel-header {
-            background-color: #FFD6E0; /* Light pink header */
-        }
-        
-        .digital-art-panel .panel-title {
-            color: #D97A91; /* Darker pink for contrast */
-        }
-        
-        .digital-art-panel .panel-button {
-            border: 1px solid #D97A91; /* Darker pink border */
-            color: #D97A91; /* Darker pink text */
-        }
-        
         .panel-title {
-            color: #3a559f; /* Blue pen color */
+            color: #D97A91; /* Darker pink for contrast */
             font-weight: bold;
-            font-family: 'Indie Flower', cursive;
+            font-family: 'Clash Display', sans-serif;
             letter-spacing: 0.03em;
         }
         
@@ -162,12 +99,12 @@
         .panel-button {
             width: 15px;
             height: 15px;
-            border: 1px solid #3a559f; /* Blue pen color */
+            border: 1px solid #D97A91; /* Darker pink border */
             margin-left: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #3a559f; /* Blue pen color */
+            color: #D97A91; /* Darker pink text */
             font-size: 10px;
             cursor: pointer;
         }
@@ -178,97 +115,69 @@
         
         .panel-divider {
             height: 1px;
-            background-color: #b8c5e9; /* Light blue for divider */
+            background-color: #D97A91; /* Darker pink for better visibility */
             margin: 8px 0;
             border: none;
         }
         
         .nav-item {
-            color: #3a559f; /* Blue pen color */
+            color: #FFB7C5; /* Soft pink links */
             transition: color 0.3s;
             text-decoration: none;
-            font-family: 'Caveat', cursive;
+            font-family: 'Clash Display', sans-serif;
             font-weight: 500;
             letter-spacing: 0.03em;
-            font-size: 1.2rem;
         }
         
         .nav-item:hover {
-            color: #5271c5; /* Lighter blue on hover */
+            color: #FF8FA3; /* Darker pink on hover */
             text-decoration: none;
         }
         
         .content-area {
-            background-color: #ffffff; /* White paper */
-            border: 1px solid #e0e0e0; /* Light gray border */
-            border-radius: 0;
+            background-color: #FFF9F9; /* Very light peach */
+            border: 1px solid #FFD6E0; /* Light pink border */
+            border-radius: 5px;
             padding: 20px;
             min-height: 300px;
-            background-image: linear-gradient(#e8e8e8 1px, transparent 1px); /* Horizontal notebook lines */
-            background-size: 100% 25px;
-            line-height: 25px; /* Match the line height to background */
-            position: relative;
-            font-family: 'Caveat', cursive;
-            font-size: 1.2rem;
-        }
-        
-        /* Red margin line on the left */
-        .content-area::before {
-            content: '';
-            position: absolute;
-            left: 25px;
-            top: 0;
-            height: 100%;
-            width: 1px;
-            background-color: #ff6b6b; /* Red margin line */
         }
         
         .content-area h3 {
-            font-family: 'Indie Flower', cursive;
+            font-family: 'Clash Display', sans-serif;
             font-weight: 700;
-            color: #3a559f; /* Blue pen color */
-            margin-left: 30px; /* Align beyond the margin line */
-        }
-        
-        .content-area p {
-            margin-left: 30px; /* Align beyond the margin line */
+            color: #FFB7C5; /* Soft pink headings */
         }
         
         .navbar {
-            background-color: #ffffff !important; /* White navbar */
+            background-color: #FFF4F4 !important; /* Soft peach navbar */
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
         }
         
         .navbar-nav .nav-link {
-            color: #3a559f !important; /* Blue pen color */
-            font-family: 'Caveat', cursive;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            font-size: 1.3rem;
+            color: #FFB7C5 !important; /* Soft pink nav links */
+            font-family: 'Cormorant Infant', serif;
+            font-weight: 600; /* Slightly increased for better visibility with this font */
+            letter-spacing: 0.02em; /* Adjusted letter spacing for this font */
+            font-size: 1.1rem; /* Slightly larger size for better readability */
         }
         
         .navbar-nav .nav-link:hover {
-            color: #5271c5 !important; /* Lighter blue on hover */
+            color: #FF8FA3 !important; /* Darker pink on hover */
         }
         
         footer {
             text-align: center;
             padding: 20px 0;
             margin-top: 20px;
-            font-family: 'Caveat', cursive;
-            color: #3a559f; /* Blue pen color */
-            border-top: 2px dashed #6b88ff; /* Blue dashed border */
-            padding-top: 15px;
+            font-family: 'Clash Display', sans-serif;
+            color: #FFB7C5; /* Soft pink footer text */
         }
         
         .star-bullet {
-            color: #5271c5; /* Blue star bullets */
-            font-family: sans-serif;
+            color: #FF8FA3; /* Darker pink for star bullets */
         }
 
-        /* Keep the original style for Digital Art panel buttons */
         .panel-button-link {
             display: block;
             background-color: #FFD6E0;
@@ -291,53 +200,12 @@
             transform: translateY(-2px);
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
-        
-        /* Notebook page tape effect */
-        .tape {
-            position: absolute;
-            width: 100px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.5);
-            opacity: 0.7;
-            transform: rotate(-5deg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .tape-top-right {
-            top: -5px;
-            right: 50px;
-            transform: rotate(5deg);
-        }
-        
-        .tape-top-left {
-            top: -5px;
-            left: 50px;
-            transform: rotate(-5deg);
-        }
-        
-        /* Notebook stickers and doodles */
-        .sticker {
-            position: absolute;
-            font-size: 1.5rem;
-            transform: rotate(10deg);
-        }
-        
-        .sticker-1 {
-            top: 60px;
-            right: 30px;
-        }
-        
-        .sticker-2 {
-            bottom: 40px;
-            left: 40px;
-            transform: rotate(-5deg);
-        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand brand-link" href="./">Sabrina's Notes</a>
+            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -358,26 +226,18 @@
     </nav>
 
     <div class="container">
-        <!-- Decorative tape elements -->
-        <div class="tape tape-top-right"></div>
-        <div class="tape tape-top-left"></div>
-        
-        <!-- Stickers/doodles -->
-        <div class="sticker sticker-1">✿</div>
-        <div class="sticker sticker-2">♥</div>
-        
         <div class="header">
-            <h1 class="notebook-title">Sabrina's Portfolio Notebook</h1>
-            <p class="handwritten">Welcome to my creative space!</p><br>
-            <p class="handwritten">digital media / coding / 3-d modeling / more</p>
-            <p class="handwritten"><strong>@s4bsa</strong></p>
+            <h1>⋆˚₊ ♡ ⋆｡°✩°｡⋆ ♡ ₊˚⋆</h1>
+            <p>Welcome to my webpage!</p><br>
+            <p>digital media / coding / 3-d modeling / more</p>
+            <p><strong>@s4bsa</strong></p>
         </div>
         
         <div class="row">
             <div class="col-md-3">
                 <div class="panel">
                     <div class="panel-header">
-                        <div class="panel-title">Site Map</div>
+                        <div class="panel-title">Site</div>
                         <div class="panel-buttons">
                             <div class="panel-button">－</div>
                             <div class="panel-button">□</div>
@@ -393,8 +253,7 @@
                     </div>
                 </div>
                 
-                <!-- Keep Digital Art panel with original styling -->
-                <div class="panel digital-art-panel">
+                <div class="panel">
                     <div class="panel-header">
                         <div class="panel-title">Digital Art</div>
                         <div class="panel-buttons">
@@ -415,20 +274,20 @@
             
             <div class="col-md-9">
                 <div class="content-area">
-                    <h3 id="home">Dear Visitor,</h3>
-                    <p>Thanks for flipping through my notebook! Here's what you'll find in these pages:</p>
+                    <h3 id="home">Hey there!</h3>
+                    <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
                     
                     <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
                     <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
                     <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
                     
-                    <p class="mt-3">Feel free to explore using the tabs on the side!</p>
-                    <p><span class="star-bullet">☆</span> Click on different sections to read through my work</p>
-                    <p><span class="star-bullet">☆</span> Check back often for new pages and updates</p>
+                    <p class="mt-3">Feel free to explore using the navigation panels!</p>
+                    <p><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
+                    <p><span class="star-bullet">☆</span> Check back often for new content and updates</p>
                     <p><span class="star-bullet">☆</span> Connect with me through the contact page</p>
                     
-                    <h4>Currently scribbling:</h4>
-                    <p><span class="star-bullet">☆</span> Notebook redesign (the one you're looking at!)</p>
+                    <h4>Currently working on:</h4>
+                    <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
                     <p><span class="star-bullet">☆</span> Pixel art + more 3-D art</p>
                     <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>
                 </div>
@@ -436,7 +295,7 @@
         </div>
         
         <footer>
-            &copy; s4bsa 2025 | Thanks for reading my notebook!
+            &copy; s4bsa 2025
         </footer>
     </div>
     
@@ -454,43 +313,39 @@
                     
                     if (target === 'home') {
                         contentArea.innerHTML = `
-                            <h3 id="home">Dear Visitor,</h3>
-                            <p>Thanks for flipping through my notebook! Here's what you'll find in these pages:</p>
+                            <h3 id="home">Welcome to my site!</h3>
+                            <p>Thanks for visiting my digital collection! Here's what you'll find on my site:</p>
                             <p><span class="star-bullet">★</span> Creative projects using digital tools<br>Adobe Photoshop, Adobe Illustrator, Blender, & Github</p>
                             <p><span class="star-bullet">★</span> Links to all my latest creations and projects </p>
                             <p><span class="star-bullet">★</span> Cute and introspective concept art</p>
-                            <p class="mt-3">Feel free to explore using the tabs on the side!</p>
-                            <p><span class="star-bullet">☆</span> Click on different sections to read through my work</p>
-                            <p><span class="star-bullet">☆</span> Check back often for new pages and updates</p>
+                            <p class="mt-3">Feel free to explore using the navigation panels!</p>
+                            <p><span class="star-bullet">☆</span> Click on different sections to view my artwork</p>
+                            <p><span class="star-bullet">☆</span> Check back often for new content and updates</p>
                             <p><span class="star-bullet">☆</span> Connect with me through the contact page</p>
-                            <h4>Currently scribbling:</h4>
-                            <p><span class="star-bullet">☆</span> Notebook redesign (the one you're looking at!)</p>
+                            <h4>Currently working on:</h4>
+                            <p><span class="star-bullet">☆</span> Website redesign (coming soon!)</p>
                             <p><span class="star-bullet">☆</span> Pixel art + 3D figures</p>
                             <p><span class="star-bullet">☆</span> Photography + Illustrations section</p>
                         `;
                     } else if (target === 'about') {
                         contentArea.innerHTML = `
                             <h3 id="about">About Me</h3>
-                            <p>Hey there! My name is Sabrina Hung, I'm a 19 y/o artist, majoring in Digital Media at SJSU.
+                            <p class="outfit">Hey there! My name is Sabrina Hung, I'm a 19 y/o artist, majoring in Digital Media at SJSU.
                             <br>I am a multidisciplinary artist currently focusing on <strong style="font-weight: 500;">creative coding</strong> and <strong style="font-weight: 500;">3D rendering</strong>.</p> 
                             <br>My work dives into themes exploring <strong style="font-weight: 500;">love, existentialism, and fantasy</strong>.</p>
-                            <p class="mt-4">Things I love:</p>
-                            <p><span class="star-bullet">★</span> Digital illustration</p>
-                            <p><span class="star-bullet">★</span> Creative coding</p>
-                            <p><span class="star-bullet">★</span> Notebook doodling!</p>
                          `;
                     } else if (target === 'contact') {
                         contentArea.innerHTML = `
-                            <h3 id="contact">Let's Connect!</h3>
-                            <p>Tear out a page and write to me! Or just use these modern methods:</p>
+                            <h3 id="contact">Contact</h3>
+                            <p>I'm here for you! Feel free to reach out through these links and connect with me on social media:</p>
                                 <a href="mailto:sabrina.hung@sjsu.edu" target="_blank">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" style="width: 40px; height: 40px; filter: hue-rotate(170deg) saturate(1.2);">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Icon" style="width: 40px; height: 40px; filter: hue-rotate(-20deg) saturate(2);">
                                 </a>
                                 <a href="https://linkedin.com/in/s4bsa" target="_blank">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" style="width: 40px; height: 40px; filter: hue-rotate(170deg) saturate(1.2);">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" style="width: 40px; height: 40px; filter: hue-rotate(-20deg) saturate(2);">
                                 </a>
                                 <a href="https://instagram.com/s4bsa" target="_blank">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Icon" style="width: 40px; height: 40px; filter: hue-rotate(170deg) saturate(1.2);">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Icon" style="width: 40px; height: 40px; filter: hue-rotate(-20deg) saturate(2);">
                                 </a>
                             </div>
                         `;
