@@ -353,15 +353,15 @@
                     <h3 class="header clash-display content-area" style="color: #55FFFF !important; text-shadow: 3px 3px 0px #0a7d7d;">Minecraft</h3>
                     <div class="gallery">
                         <div class="gallery-item">
-                            <img src="minecraft.png" alt="Pixel Art Doraemon" class="gallery-image">
+                            <img src="./images/minecraft.png" alt="Pixel Art Doraemon" class="gallery-image" onerror="this.src='./images/placeholder.png';this.onerror=null;">
                             <div class="gallery-title">Pixel Art Doraemon</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="sculpture.png" alt="3D Doraemon sculpture" class="gallery-image">
+                            <img src="./images/sculpture.png" alt="3D Doraemon sculpture" class="gallery-image" onerror="this.src='./images/placeholder.png';this.onerror=null;">
                             <div class="gallery-title">3D Doraemon sculpture</div>
                         </div>
                         <div class="gallery-item">
-                            <img src="melody.png" alt="My Melody 2D sculpture" class="gallery-image">
+                            <img src="./images/melody.png" alt="My Melody 2D sculpture" class="gallery-image" onerror="this.src='./images/placeholder.png';this.onerror=null;">
                             <div class="gallery-title">My Melody sculpture</div>
                         </div>
                     </div>
@@ -406,6 +406,18 @@
                 if (e.key === 'Escape') {
                     closeLightbox();
                 }
+            });
+
+            // Check if images are loaded correctly
+            const imgElements = document.querySelectorAll('.gallery-image');
+            imgElements.forEach(img => {
+                img.addEventListener('error', function() {
+                    console.error('Failed to load image:', this.src);
+                    // Try alternative path structure if the ./images/ path fails
+                    if(this.src.includes('./images/')) {
+                        this.src = this.src.replace('./images/', '');
+                    }
+                });
             });
         });
 
