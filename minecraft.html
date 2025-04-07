@@ -8,6 +8,7 @@
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
    <style>
         body {
             background-color: #5A4C3F; /* Dirt brown */
@@ -23,9 +24,15 @@
             font-family: 'Cormorant Infant', serif;
         }
         
+        .pixel-font {
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 0.05em;
+            line-height: 1.5;
+        }
+        
         .brand-link {
             color: #7FBF32 !important; /* Minecraft green */
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 600;
             text-decoration: none;
         }
@@ -61,11 +68,11 @@
         .panel {
             border: 2px solid #535353; /* Dark gray */
             margin-bottom: 20px;
-            background-color: #7D7D7D; /* Light stone gray */
+            background-color: #8D8D8D; /* Softer light stone gray */
         }
         
         .panel-header {
-            background-color: #535353; /* Dark gray like coal ore */
+            background-color: #5D5D5D; /* Softer dark gray like coal ore */
             padding: 5px 10px;
             display: flex;
             justify-content: space-between;
@@ -98,6 +105,7 @@
         
         .panel-content {
             padding: 10px;
+            background-color: #8D8D8D; /* Softer light stone gray */
         }
         
         .navbar {
@@ -179,7 +187,6 @@
 
         .gallery-item {
             position: relative;
-            transition: all 0.3s ease;
             max-width: 300px;
             flex: 0 0 auto;
         }
@@ -190,37 +197,8 @@
             cursor: pointer;
             border: 3px solid #535353; /* Dark gray */
             border-radius: 0px; /* Minecraft has no rounded corners */
-            transition: transform 0.3s ease;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             image-rendering: pixelated;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-            border-color: #7FBF32; /* Minecraft green */
-            box-shadow: 0 0 30px rgba(90, 205, 0, 0.9); /* Brighter green glow */
-            filter: brightness(0.8) sepia(0.2) hue-rotate(55deg) saturate(2); /* Add creeper-like tint */
-        }
-        
-        /* Creeper face overlay styles */
-        .gallery-item::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF8WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjAuMCIgeG1wOkNyZWF0ZURhdGU9IjIwMjMtMDktMjdUMTA6MTA6NDktMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTA5LTI3VDEwOjEzOjQwLTA1OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTA5LTI3VDEwOjEzOjQwLTA1OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmU4ZWI5YTczLTk1NGEtNDRkYi05YzNjLTE0OWNkZGYzYTNlZCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpkMDBiOWEyMC01ZmYwLTQxNWItYjg0YS1mNzY2NTQzNjQzMDIiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkMDBiOWEyMC01ZmYwLTQxNWItYjg0YS1mNzY2NTQzNjQzMDIiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmQwMGI5YTIwLTVmZjAtNDE1Yi1iODRhLWY3NjY1NDM2NDMwMiIgc3RFdnQ6d2hlbj0iMjAyMy0wOS0yN1QxMDoxMDo0OS0wNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIwLjAiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmU4ZWI5YTczLTk1NGEtNDRkYi05YzNjLTE0OWNkZGYzYTNlZCIgc3RFdnQ6d2hlbj0iMjAyMy0wOS0yN1QxMDoxMzo0MC0wNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIwLjAiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+HyalxgAAAhFJREFUeNrt3cFtwkAUBVAzUVqwS8jSLVBlKSWQEugAOqAEOoAO6CAdhA5gR0osWZFQNp9h3pWsXwGWfO7HGI+ncRzFszmGvn+ruq5P6fuHXNbpOaTX67f/CwC4DXcAsOtHt21rTtfp/J32Mpy/awFgKQ+pLh/SuUqv+/T6mM51KsxVOqIAYKTg7wGwJADz1k7xXWr5Q/Fh4QIA0+JZQPNQAGD9AFxJ17umAoDMFgB2T7U/7ARg9XuA1qMNALbdCfxXxIwEAFIAwIgDAECoCQAAQNgByNoAdD+HiCLKi++76z8HAMgF4LV435sKAHIBGAQAwBIAxPa6EIAM9wDpPtDEAACSDQAA2QH0AgBgCQCaAACQrQXMEQAAEG4GkDUAqrpuBADAEgBEEQUA5PIvRu3R1QKAbXcC/xUxIwEAIwAAAAAAAAAAAAAAAAAAAAAAAACAbQIw7OgZQQDAfDQPRcTVxQKA9QN4mPwMbPdYnC5cAABfhztCvwQAAAAAAAAAAAAAAAAAAAAAAAAAAABYFIDox+JFRAEANQCiT8Z5quriFABI9gGIPhnnOZhBAMi6BwAAAAAAAAAAAAAAhAYAAAAAAACEBgAAAAAAAAQHMAgAgOAA4ugSAEDsNbD1KABg2wjuRQOArAA+BQDACgCUUQoAyArgNz95/DokzYuaAAAAAElFTkSuQmCC');
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none; /* Allow clicks to pass through */
-            z-index: 5;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 0.8;
         }
 
         .gallery-title {
@@ -308,7 +286,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand cormorant-infant brand-link lavender-brand" href="./">Sabrina Hung</a>
+            <a class="navbar-brand pixel-font brand-link lavender-brand" href="./">Sabrina Hung</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
