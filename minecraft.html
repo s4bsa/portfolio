@@ -187,13 +187,16 @@
 
         .gallery-item {
             position: relative;
-            max-width: 300px;
+            width: 300px;
+            height: 300px;
             flex: 0 0 auto;
+            margin-bottom: 15px;
         }
 
         .gallery-image {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             cursor: pointer;
             border: 3px solid #535353; /* Dark gray */
             border-radius: 0px; /* Minecraft has no rounded corners */
@@ -327,11 +330,15 @@
                     <div class="gallery">
                         <div class="gallery-item">
                             <img src="minecraft.png" alt="Minecraft 1" class="gallery-image">
-                            <div class="gallery-title">Minecraft 1</div>
+                            <div class="gallery-title">2D doraemon sculpture</div>
                         </div>
                         <div class="gallery-item">
                             <img src="sculpture.png" alt="Minecraft 2" class="gallery-image">
-                            <div class="gallery-title">Minecraft 2</div>
+                            <div class="gallery-title">3D doraemon sculpture</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="melody.png" alt="Minecraft 3" class="gallery-image">
+                            <div class="gallery-title">My Melody sculpture</div>
                         </div>
                     </div>
                 </div>
