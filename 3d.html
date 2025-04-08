@@ -186,6 +186,11 @@
             flex: 0 0 auto;
         }
 
+        .gallery-item:hover {
+            transform: scale(1.05); /* Add hover effect */
+            transition: transform 0.3s ease; /* Smooth scaling */
+        }
+
         .gallery-image {
             width: 100%;
             height: auto;
@@ -195,26 +200,7 @@
         }
 
         .gallery-title {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: #FDF6E3; /* Cream - gallery title text */
-            border-radius: 6px;
-            font-family: 'DM Sans', sans-serif;
-            opacity: 0; /* Initially hidden */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 10px;
-            transition: opacity 0.3s ease; /* Smooth hover effect */
-        }
-
-        .gallery-item:hover .gallery-title {
-            opacity: 1; /* Show title on hover */
+            display: none; /* Remove hover title */
         }
 
         .lightbox {
