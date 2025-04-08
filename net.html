@@ -73,6 +73,23 @@
             background-color: transparent;
         }
 
+        .panel-button-link {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #CDA4DE; /* Slightly darker pastel purple */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: bold;
+        }
+
+        .panel-button-link:hover {
+            background-color: #B58BC6; /* Even darker pastel purple */
+        }
+
         footer {
             text-align: center;
             padding: 20px 0;
@@ -83,6 +100,12 @@
 
         .content-area h3 {
             text-align: center; /* Center the header */
+        }
+
+        .content-area h3::after {
+            content: " - You're on the net.art page!";
+            font-size: 0.8em;
+            color: #CDA4DE; /* Slightly darker pastel purple */
         }
     </style>
 </head>
