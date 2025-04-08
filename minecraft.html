@@ -15,11 +15,11 @@
             background-image: url('./images/lavender.jpg'); 
             background-size: cover;
             background-attachment: fixed;
-            cursor: url('bottle.png'), auto;
+            cursor: url('./images/bottle.png'), auto; /* Corrected file path */
         }
 
         body:hover {
-        cursor: url('orb.png'), auto; /* Added hover cursor */
+        cursor: url('./images/orb.png'), auto; /* Corrected file path */
         }
         
         .minecraft-text {
@@ -64,8 +64,10 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            background-image: url('./images/stonebrick.jpg'); /* Changed to use stonebrick.jpg */
-            background-size: cover; /* Ensure the image covers the container */
+            background-image: url('./images/stonebrick.jpg'); 
+            background-size: auto; /* Prevent stretching */
+            background-repeat: repeat; /* Tile the image */
+            background-position: center; /* Center the image */
             border: 3px solid #535353; 
             image-rendering: pixelated;
         }
@@ -74,8 +76,10 @@
             border: 2px solid #535353; 
             margin-bottom: 20px;
             background-color: #8D8D8D; 
-            background-image: url('./images/stonebrick.jpg'); /* Added background image */
-            background-size: cover; /* Ensure the image covers the panel */
+            background-image: url('./images/stonebrick.jpg'); 
+            background-size: auto; /* Prevent stretching */
+            background-repeat: repeat; /* Tile the image */
+            background-position: center; /* Center the image */
         }
         
         .panel-header {
@@ -144,8 +148,10 @@
             font-family: 'Press Start 2P', cursive; 
             color: #FFFFFF; 
             font-size: 0.7rem; 
-            background-image: url('./images/stonebrick.jpg'); /* Added background image */
-            background-size: cover; /* Ensure the image covers the footer */
+            background-image: url('./images/stonebrick.jpg'); 
+            background-size: auto; /* Prevent stretching */
+            background-repeat: repeat; /* Tile the image */
+            background-position: center; /* Center the image */
         }
 
         .panel-button-link {
