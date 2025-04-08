@@ -10,12 +10,12 @@
     <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #F8EDEB; /* Pastel pink - page background */
+            background-color: #FFCCBC; /* Soft orange - sunset background */
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
-            background-image: url('./images/background.png'); /* Updated to use background.png */
-            background-size: cover; /* Ensure the image covers the entire background */
-            background-repeat: no-repeat; /* Prevent repeating of the image */
+            background-image: url('./images/sunset-background.png'); /* Updated to use a sunset-themed background */
+            background-size: cover;
+            background-repeat: no-repeat;
             cursor: url('Cursor.png'), auto;
         }
 
@@ -24,15 +24,15 @@
         }
 
         .brand-link {
-            font-family: 'Telma', sans-serif; /* Changed font to Telma */
-            color: #D8A7CA !important; /* Soft purple - navbar brand link */
+            font-family: 'Telma', sans-serif;
+            color: #FF7043 !important; /* Sunset orange - navbar brand link */
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
         }
 
         .brand-link:hover {
-            color: #FDF6E3 !important; /* Cream - navbar brand link hover */
+            color: #FFD180 !important; /* Light orange - navbar brand link hover */
         }
 
         .clash-display {
@@ -48,9 +48,9 @@
         }
 
         .panel {
-            border: 2px solid #FDF6E3; /* Cream - panel border */
+            border: 2px solid #FFD180; /* Light orange - panel border */
             margin-bottom: 20px;
-            background-color: #F8EDEB; /* Pastel pink - panel background */
+            background-color: #FFCCBC; /* Soft orange - panel background */
         }
 
         .panel-header {
@@ -62,7 +62,7 @@
         }
 
         .panel-title {
-            color: #6D597A; /* Dark purple - panel title text */
+            color: #BF360C; /* Deep orange - panel title text */
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
             letter-spacing: 0.03em;
@@ -75,12 +75,12 @@
         .panel-button {
             width: 15px;
             height: 15px;
-            border: 1px solid #6D597A; /* Dark purple - panel button border */
+            border: 1px solid #BF360C; /* Deep orange - panel button border */
             margin-left: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #6D597A; /* Dark purple - panel button text */
+            color: #BF360C; /* Deep orange - panel button text */
             font-size: 10px;
             cursor: pointer;
         }
@@ -90,13 +90,13 @@
         }
 
         .navbar {
-            background-color: #F3D9FA !important; /* Light purple - navbar background */
+            background-color: #FFAB91 !important; /* Light sunset orange - navbar background */
             box-shadow: 0 2px 4px rgba(0,0,0,0.3);
             margin-bottom: 20px;
         }
 
         .navbar-nav .nav-link {
-            color: #6D597A !important; /* Dark purple - navbar link text */
+            color: #BF360C !important; /* Deep orange - navbar link text */
             font-family: 'Cormorant Infant', serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -104,7 +104,7 @@
         }
 
         .navbar-nav .nav-link:hover {
-            color: #D8A7CA !important; /* Soft purple - navbar link hover */
+            color: #FF7043 !important; /* Sunset orange - navbar link hover */
         }
 
         footer {
@@ -112,17 +112,17 @@
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #D8A7CA; /* Soft purple - footer text */
+            color: #FF7043; /* Sunset orange - footer text */
         }
 
         footer:hover {
-            color: #6D597A; /* Dark purple - footer hover text */
+            color: #BF360C; /* Deep orange - footer hover text */
         }
 
         .panel-button-link {
             display: block;
-            background-color: #FDF6E3; /* Cream - panel button link background */
-            color: #6D597A !important; /* Dark purple - panel button link text */
+            background-color: #FFD180; /* Light orange - panel button link background */
+            color: #BF360C !important; /* Deep orange - panel button link text */
             text-align: center;
             padding: 8px 12px;
             border-radius: 4px;
@@ -131,20 +131,20 @@
             text-decoration: none;
             font-family: 'Clash Display', sans-serif;
             font-weight: 500;
-            border: 1px solid #6D597A; /* Dark purple - panel button link border */
+            border: 1px solid #BF360C; /* Deep orange - panel button link border */
             letter-spacing: 0.02em;
         }
 
         .panel-button-link:hover {
-            background-color: #6D597A; /* Dark purple - panel button link hover background */
-            color: #FDF6E3 !important; /* Cream - panel button link hover text */
+            background-color: #BF360C; /* Deep orange - panel button link hover background */
+            color: #FFD180 !important; /* Light orange - panel button link hover text */
             transform: translateY(-2px);
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
 
         .panel-button-link.active {
-            background-color: #6D597A; /* Dark purple - active panel button link background */
-            color: #FDF6E3 !important; /* Cream - active panel button link text */
+            background-color: #BF360C; /* Deep orange - active panel button link background */
+            color: #FFD180 !important; /* Light orange - active panel button link text */
             font-weight: 700;
             border-width: 2px;
             box-shadow: 0 0 10px rgba(109, 89, 122, 0.5);
@@ -180,7 +180,7 @@
             width: 100%;
             height: auto;
             cursor: pointer;
-            border: 2px solid #00BFFF; /* Blue - gallery image border */
+            border: 2px solid #FF7043; /* Sunset orange - gallery image border */
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
@@ -191,8 +191,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(109, 89, 122, 0.8); /* Dark purple with transparency - gallery title background */
-            color: #FDF6E3; /* Cream - gallery title text */
+            background-color: rgba(255, 112, 67, 0.8); /* Sunset orange with transparency - gallery title background */
+            color: #FFCCBC; /* Soft orange - gallery title text */
             border-radius: 6px;
             font-family: 'DM Sans', sans-serif;
             opacity: 0;
@@ -215,7 +215,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(109, 89, 122, 0.95); /* Dark purple with transparency - lightbox background */
+            background-color: rgba(255, 112, 67, 0.95); /* Sunset orange with transparency - lightbox background */
             display: none;
             z-index: 1000;
             padding: 20px;
@@ -236,7 +236,7 @@
             max-width: 80%;
             max-height: 80vh;
             border-radius: 8px;
-            border: 3px solid #FDF6E3; /* Cream - lightbox image border */
+            border: 3px solid #FFD180; /* Light orange - lightbox image border */
             box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
             object-fit: contain;
         }
@@ -245,37 +245,37 @@
             position: absolute;
             top: 20px;
             right: 30px;
-            color: #FDF6E3; /* Cream - close button text */
+            color: #FFD180; /* Light orange - close button text */
             font-size: 30px;
             font-weight: bold;
             cursor: pointer;
-            background-color: rgba(109, 89, 122, 0.5); /* Dark purple with transparency - close button background */
+            background-color: rgba(255, 112, 67, 0.5); /* Sunset orange with transparency - close button background */
             width: 40px;
             height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            border: 2px solid #FDF6E3; /* Cream - close button border */
+            border: 2px solid #FFD180; /* Light orange - close button border */
             transition: all 0.3s ease;
         }
 
         .close:hover {
-            background-color: #FDF6E3; /* Cream - close button hover background */
-            color: #6D597A; /* Dark purple - close button hover text */
+            background-color: #FFD180; /* Light orange - close button hover background */
+            color: #BF360C; /* Deep orange - close button hover text */
         }
 
         .content-section {
-            background-color: #FDF6E3; /* Cream - content section background */
+            background-color: #FFCCBC; /* Soft orange - content section background */
             padding: 20px;
-            border: 4px dashed #6D597A; /* Distinctive dashed dark purple border */
+            border: 4px dashed #FF7043; /* Sunset orange - content section border */
             border-radius: 8px;
         }
 
         .content-area h3 {
             font-family: 'Clash Display', sans-serif;
             font-weight: 600; /* Changed from 500 to 600 */
-            color: #D8A7CA; /* Soft purple - content area header text */
+            color: #FF7043; /* Sunset orange - content area header text */
             font-size: 1.8rem;
             letter-spacing: 0.05em;
             margin-bottom: 20px;
@@ -287,7 +287,7 @@
         h3.content-area, h3.header.clash-display.content-area {
             font-family: 'Clash Display', sans-serif;
             font-weight: 600; /* Changed from 500 to 600 */
-            color: #D8A7CA !important; /* Soft purple - content area header text */
+            color: #FF7043 !important; /* Sunset orange - content area header text */
             font-size: 1.8rem;
             letter-spacing: 0.05em;
             margin-bottom: 20px;
@@ -341,7 +341,7 @@
             </div>
             <div class="col-md-9">
                 <div class="content-section">
-                    <h3 class="header clash-display content-area" style="color: #D8A7CA;">Meme Mashup</h3>
+                    <h3 class="header clash-display content-area" style="color: #FF7043;">Meme Mashup</h3>
                     <div class="gallery">
                         <div class="gallery-item">
                             <img src="./images/chill.png" alt="Not a chill guy" class="gallery-image">
