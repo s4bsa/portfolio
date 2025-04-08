@@ -150,6 +150,7 @@
             border-width: 2px;
             box-shadow: 0 0 10px rgba(109, 89, 122, 0.5);
             position: relative;
+            animation: glow 1.5s infinite alternate; /* Add glow animation */
         }
 
         .panel-button-link.active::after {
@@ -159,6 +160,15 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 0.8rem;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(109, 89, 122, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(109, 89, 122, 0.8);
+            }
         }
 
         .gallery {
