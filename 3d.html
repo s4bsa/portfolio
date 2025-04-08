@@ -183,12 +183,6 @@
             cursor: pointer;
             border: 2px solid #00BFFF; /* Blue - gallery image border */
             border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Shadow effect on hover */
         }
 
         .gallery-title {
@@ -201,18 +195,13 @@
             color: #FDF6E3; /* Cream - gallery title text */
             border-radius: 6px;
             font-family: 'DM Sans', sans-serif;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            opacity: 1; /* Always visible */
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.2rem;
             text-align: center;
             padding: 10px;
-        }
-
-        .gallery-item:hover .gallery-title {
-            opacity: 1;
         }
 
         .lightbox {
