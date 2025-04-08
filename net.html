@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabrina Hung - My Portfolio</title>
+    <title>Sabrina Hung - net.art</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -102,21 +102,44 @@
 
         .panel-button-link {
             display: block;
-            margin: 5px 0;
-            padding: 10px;
+            background-color: #FFD180; /* Light orange - panel button link background */
+            color: #BF360C !important; /* Deep orange - panel button link text */
             text-align: center;
-            background-color: #CDA4DE; /* Slightly darker pastel purple */
-            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
             text-decoration: none;
-            border-radius: 5px;
             font-family: 'Clash Display', sans-serif;
-            font-weight: bold;
+            font-weight: 500;
+            border: 1px solid #BF360C; /* Deep orange - panel button link border */
+            letter-spacing: 0.02em;
         }
 
         .panel-button-link:hover {
-            background-color: #B58BC6; /* Even darker pastel purple */
+            background-color: #BF360C; /* Deep orange - panel button link hover background */
+            color: #FFD180 !important; /* Light orange - panel button link hover text */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
 
+        .panel-button-link.active {
+            background-color: #BF360C; /* Deep orange - active panel button link background */
+            color: #FFD180 !important; /* Light orange - active panel button link text */
+            font-weight: 700;
+            border-width: 2px;
+            box-shadow: 0 0 10px rgba(109, 89, 122, 0.5);
+            position: relative;
+        }
+
+        .panel-button-link.active::after {
+            content: "▶";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
         footer {
             text-align: center;
             padding: 20px 0;
@@ -170,7 +193,7 @@
                         <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
                         <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
                         <a href="./3d.html" class="panel-button-link">3-D Art</a>
-                        <a href="./net.html" class="panel-button-link">Net.Art</a>
+                        <a href="./net.html" class="panel-button-link active">Net.Art</a>
                     </div>
                 </div>
             </div>
