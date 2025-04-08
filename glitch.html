@@ -184,7 +184,8 @@
             box-shadow: 0 0 30px rgba(0, 255, 217, 0.8);
         }
 
-        .gallery-item:hover ~ .gallery-item .gallery-image {
+        .gallery-item:hover ~ .gallery-item .gallery-image,
+        .gallery-item:not(:hover) .gallery-image {
             filter: blur(5px);
         }
 
