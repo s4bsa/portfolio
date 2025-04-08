@@ -3,155 +3,431 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Mashup</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        light_coral: { DEFAULT: '#f08080', 100: '#420808', 200: '#830f0f', 300: '#c51717', 400: '#e83d3d', 500: '#f08080', 600: '#f39999', 700: '#f6b2b2', 800: '#f9cccc', 900: '#fce5e5' },
-                        coral_pink: { DEFAULT: '#f4978e', 100: '#470c07', 200: '#8d190e', 300: '#d42515', 400: '#ed5749', 500: '#f4978e', 600: '#f6ada6', 700: '#f8c1bc', 800: '#fbd6d2', 900: '#fdeae9' },
-                        melon: { DEFAULT: '#f8ad9d', 100: '#4b1205', 200: '#97240a', 300: '#e23610', 400: '#f36d50', 500: '#f8ad9d', 600: '#f9bdaf', 700: '#fbcdc3', 800: '#fcded7', 900: '#feeeeb' },
-                        apricot: { DEFAULT: '#fbc4ab', 100: '#511c04', 200: '#a23808', 300: '#f3550b', 400: '#f78d5b', 500: '#fbc4ab', 600: '#fcd1bd', 700: '#fddccd', 800: '#fde8de', 900: '#fef3ee' },
-                        light_orange: { DEFAULT: '#ffdab9', 100: '#582900', 200: '#af5200', 300: '#ff7b08', 400: '#ffaa60', 500: '#ffdab9', 600: '#ffe1c6', 700: '#ffe8d4', 800: '#fff0e2', 900: '#fff7f1' }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Sabrina Hung - Meme Mashup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'DM Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff5e1;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
+            background-color: #F8EDEB; /* Pastel pink - page background */
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            margin: 30px;
+            background-image: url('background.png'); /* Updated to use background.png */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-repeat: no-repeat; /* Prevent repeating of the image */
+            cursor: url('Cursor.png'), auto;
         }
 
-        header {
-            font-family: 'DM Sans', sans-serif;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f4978e;
-            color: white;
-            padding: 20px 40px;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .cormorant-infant {
+            font-family: 'Cormorant Infant', serif;
         }
 
-        .navbar {
+        .brand-link {
+            font-family: 'Telma', sans-serif; /* Changed font to Telma */
+            color: #D8A7CA !important; /* Soft purple - navbar brand link */
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .brand-link:hover {
+            color: #FDF6E3 !important; /* Cream - navbar brand link hover */
+        }
+
+        .clash-display {
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FDF6E3; /* Cream - container background */
+        }
+
+        .panel {
+            border: 2px solid #FDF6E3; /* Cream - panel border */
+            margin-bottom: 20px;
+            background-color: #F8EDEB; /* Pastel pink - panel background */
+        }
+
+        .panel-header {
+            background-color: #FDF6E3; /* Cream - panel header background */
+            padding: 5px 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .dropdown button {
-            background-color: #fef3ee;
-            color: #333;
-            border: none;
-            padding: 12px 20px;
-            cursor: pointer;
-            font-size: 16px;
+        .panel-title {
+            color: #6D597A; /* Dark purple - panel title text */
             font-weight: bold;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
         }
 
-        .dropdown button:hover {
-            background-color: #f78d5b;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            min-width: 160px;
-            border-radius: 8px;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f78d5b;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .container {
+        .panel-buttons {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+        }
+
+        .panel-button {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #6D597A; /* Dark purple - panel button border */
+            margin-left: 5px;
+            display: flex;
             justify-content: center;
-            padding: 120px 20px 40px;
+            align-items: center;
+            color: #6D597A; /* Dark purple - panel button text */
+            font-size: 10px;
+            cursor: pointer;
         }
 
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #bf505d;
-            margin-bottom: 15px;
+        .panel-content {
+            padding: 10px;
         }
 
-        .meme-image {
-            max-width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        .navbar {
+            background-color: #F3D9FA !important; /* Light purple - navbar background */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
             margin-bottom: 20px;
         }
 
-        .meme-text {
+        .navbar-nav .nav-link {
+            color: #6D597A !important; /* Dark purple - navbar link text */
+            font-family: 'Cormorant Infant', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #D8A7CA !important; /* Soft purple - navbar link hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-family: 'Clash Display', sans-serif;
+            color: #D8A7CA; /* Soft purple - footer text */
+        }
+
+        footer:hover {
+            color: #6D597A; /* Dark purple - footer hover text */
+        }
+
+        .panel-button-link {
+            display: block;
+            background-color: #FDF6E3; /* Cream - panel button link background */
+            color: #6D597A !important; /* Dark purple - panel button link text */
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border: 1px solid #6D597A; /* Dark purple - panel button link border */
+            letter-spacing: 0.02em;
+        }
+
+        .panel-button-link:hover {
+            background-color: #6D597A; /* Dark purple - panel button link hover background */
+            color: #FDF6E3 !important; /* Cream - panel button link hover text */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+
+        .panel-button-link.active {
+            background-color: #6D597A; /* Dark purple - active panel button link background */
+            color: #FDF6E3 !important; /* Cream - active panel button link text */
+            font-weight: 700;
+            border-width: 2px;
+            box-shadow: 0 0 10px rgba(109, 89, 122, 0.5);
+            position: relative;
+        }
+
+        .panel-button-link.active::after {
+            content: "▶";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            justify-content: flex-start;
+        }
+
+        .gallery-item {
+            position: relative;
+            transition: all 0.3s ease;
+            max-width: 300px;
+            flex: 0 0 auto;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid #00BFFF; /* Blue - gallery image border */
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Shadow effect on hover */
+        }
+
+        .gallery-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(109, 89, 122, 0.8); /* Dark purple with transparency - gallery title background */
+            color: #FDF6E3; /* Cream - gallery title text */
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 1.2rem;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .gallery-item:hover .gallery-title {
+            opacity: 1;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(109, 89, 122, 0.95); /* Dark purple with transparency - lightbox background */
+            display: none;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 3px solid #FDF6E3; /* Cream - lightbox image border */
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #FDF6E3; /* Cream - close button text */
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: rgba(109, 89, 122, 0.5); /* Dark purple with transparency - close button background */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid #FDF6E3; /* Cream - close button border */
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            background-color: #FDF6E3; /* Cream - close button hover background */
+            color: #6D597A; /* Dark purple - close button hover text */
+        }
+
+        .content-section {
+            background-color: #FDF6E3; /* Cream - content section background */
+            padding: 20px;
+            border: 2px solid #FDF6E3; /* Cream - content section border */
+            border-radius: 8px;
+        }
+
+        .content-area h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600; /* Changed from 500 to 600 */
+            color: #D8A7CA; /* Soft purple - content area header text */
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
+        }
+
+        h3.content-area, h3.header.clash-display.content-area {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600; /* Changed from 500 to 600 */
+            color: #D8A7CA !important; /* Soft purple - content area header text */
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
+        }
+
+        h3.header.clash-display.content-area:hover {
+            color: #FDF6E3 !important; /* Cream - content area header hover text */
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="dropdown">
-                <button class="text-white">Menu</button>
-                <div class="dropdown-content">
-                    <a href="./">Home</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Digital Art</div>
+                        <div class="panel-buttons">
+                            <div class="panel-button">－</div>
+                            <div class="panel-button">□</div>
+                            <div class="panel-button">✕</div>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link active">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link">Net.Art</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h3 class="header clash-display content-area" style="color: #D8A7CA;">3-D Art</h3>
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="./images/chill.png" alt="Chill" class="gallery-image">
+                            <div class="gallery-title">Chill</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-    <div class="container">
-        <h1 class="title">Meme Mashup</h1>
-        <img src="chill.png" alt="Meme Mashup" class="meme-image">
-        <p class="meme-text">
-            Not a chill guy anymore...This is a meme mashup of "Chill guy", also known as "My new character" by Phillip Banks (2023) & "Arthur's Fist", also known as "Clenched Fist" (2016). I used Adobe Photoshop to seamlessly combine the hand with the character. Adding a change to the character's facial expression caused the meaning to change as well. <br> He started a Chill Guy but has decided to let go.
-        </p>
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-container">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img id="lightbox-image" class="lightbox-content">
+                <div id="lightbox-caption" style="color: #FDF6E3; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif;"></div>
+            </div>
+        </div>
+        <footer>
+            &copy; s4bsa 2025
+        </footer>
     </div>
-       <footer class="bg-light_orange-500 text-center p-4 mt-16 text-apricot-300 w-full">
-        <p>&copy; s4bsa, 2025.</p>
-    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up lightbox elements
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Add click event listeners to gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('.gallery-image');
+                    const title = this.querySelector('.gallery-title').textContent;
+                    openLightbox(img.src, title);
+                });
+            });
+            
+            // Close lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this || e.target.classList.contains('lightbox-container')) {
+                    closeLightbox();
+                }
+            });
+            
+            // Add keyboard support for closing lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
+
+        function openLightbox(imageSrc, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            // Preload the image before showing lightbox
+            const img = new Image();
+            img.onload = function() {
+                // Image loaded successfully, now display lightbox
+                lightboxImage.src = imageSrc;
+                lightboxCaption.textContent = caption;
+                lightbox.style.display = 'block';
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imageSrc);
+                alert('Sorry, we could not load the image.');
+            };
+            
+            img.src = imageSrc;
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
