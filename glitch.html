@@ -195,12 +195,7 @@
         }
 
         .gallery-caption {
-            margin-top: 5px;
-            text-align: center;
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1rem;
-            color: #fd0; /* Yellow */
-            text-shadow: 1px 1px 3px #ff00ee; /* Hot pink */
+            display: none; /* Removed individual captions */
         }
 
         .lightbox {
@@ -265,6 +260,7 @@
             padding: 20px;
             border: 2px solid #fd0; /* Yellow */
             border-radius: 8px; /* Added rounded corners */
+            position: relative; /* Added for captions-box positioning */
         }
 
         h3.header.clash-display.content-area {
@@ -278,6 +274,27 @@
             border-radius: 0; /* Removed rounded corners */
             display: inline-block;
             text-shadow: 3px 3px 0px #ff00ee; /* Hot pink */
+        }
+
+        .captions-box {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(58, 0, 107, 0.9); /* Darker purple with transparency */
+            color: #fd0; /* Yellow */
+            padding: 15px;
+            border: 2px solid #fd0; /* Yellow */
+            border-radius: 8px;
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1rem;
+            text-shadow: 1px 1px 3px #ff00ee; /* Hot pink */
+            max-width: 300px;
+        }
+        .captions-box p {
+            margin: 0 0 10px;
+        }
+        .captions-box p:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -325,16 +342,18 @@
                     <div class="gallery">
                         <div class="gallery-item">
                             <img src="./images/glitch1.png" alt="Glitch 1" class="gallery-image">
-                            <div class="gallery-caption">This is a description of Glitch 1.</div>
                         </div>
                         <div class="gallery-item">
                             <img src="./images/glitch2.png" alt="Glitch 2" class="gallery-image">
-                            <div class="gallery-caption">This is a description of Glitch 2.</div>
                         </div>
                         <div class="gallery-item">
                             <img src="./images/glitch3.png" alt="Glitch 3" class="gallery-image">
-                            <div class="gallery-caption">This is a description of Glitch 3.</div>
                         </div>
+                    </div>
+                    <div class="captions-box">
+                        <p>Glitch 1: This is a description of Glitch 1.</p>
+                        <p>Glitch 2: This is a description of Glitch 2.</p>
+                        <p>Glitch 3: This is a description of Glitch 3.</p>
                     </div>
                 </div>
             </div>
