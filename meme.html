@@ -187,7 +187,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 152, 0, 0.95); /* Orange with transparency - lightbox background */
+            background-color: rgba(230, 81, 0, 0.85); /* Darker orange with less transparency */
             display: none;
             z-index: 1000;
             padding: 20px;
@@ -267,6 +267,19 @@
             border-radius: 0 5px 5px 0;
             display: inline-block;
         }
+
+        #lightbox-caption {
+            background-color: #FFE0B2; /* Soft orange - caption box background */
+            color: #E65100; /* Dark orange - caption text */
+            text-align: center;
+            margin-top: 10px;
+            font-family: 'Clash Display', sans-serif;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #FF9800; /* Orange - caption box border */
+            max-width: 80%;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -324,7 +337,7 @@
             <div class="lightbox-container">
                 <span class="close" onclick="closeLightbox()">&times;</span>
                 <img id="lightbox-image" class="lightbox-content">
-                <div id="lightbox-caption" style="color: #FDF6E3; text-align: center; margin-top: 10px; font-family: 'Clash Display', sans-serif;"></div>
+                <div id="lightbox-caption"></div>
             </div>
         </div>
         <footer>
