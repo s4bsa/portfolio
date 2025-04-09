@@ -194,6 +194,15 @@
             display: none; /* Remove hover title effect */
         }
 
+        .gallery-caption {
+            margin-top: 5px;
+            text-align: center;
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1rem;
+            color: #fd0; /* Yellow */
+            text-shadow: 1px 1px 3px #ff00ee; /* Hot pink */
+        }
+
         .lightbox {
             position: fixed;
             top: 0;
@@ -270,34 +279,6 @@
             display: inline-block;
             text-shadow: 3px 3px 0px #ff00ee; /* Hot pink */
         }
-
-        .feedback-box {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            height: 100px;
-            background-color: #3a006b; /* Darker purple */
-            color: #fd0; /* Yellow */
-            border: 2px solid #fd0; /* Yellow */
-            border-radius: 5px;
-            padding: 10px;
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1rem;
-            resize: none;
-            box-shadow: 0 0 10px rgba(255, 0, 238, 0.5);
-        }
-
-        .feedback-box::placeholder {
-            color: #00ffd9; /* Cyan */
-            font-style: italic;
-        }
-
-        .feedback-box:focus {
-            outline: none;
-            border-color: #ff00ee; /* Hot pink */
-            box-shadow: 0 0 15px rgba(255, 0, 238, 0.8);
-        }
     </style>
 </head>
 <body>
@@ -344,18 +325,17 @@
                     <div class="gallery">
                         <div class="gallery-item">
                             <img src="./images/glitch1.png" alt="Glitch 1" class="gallery-image">
-                            <div class="gallery-title">Glitch 1</div>
+                            <div class="gallery-caption">This is a description of Glitch 1.</div>
                         </div>
                         <div class="gallery-item">
                             <img src="./images/glitch2.png" alt="Glitch 2" class="gallery-image">
-                            <div class="gallery-title">Glitch 2</div>
+                            <div class="gallery-caption">This is a description of Glitch 2.</div>
                         </div>
                         <div class="gallery-item">
                             <img src="./images/glitch3.png" alt="Glitch 3" class="gallery-image">
-                            <div class="gallery-title">Glitch 3</div>
+                            <div class="gallery-caption">This is a description of Glitch 3.</div>
                         </div>
                     </div>
-                    <textarea class="feedback-box" placeholder="Leave your feedback here..."></textarea>
                 </div>
             </div>
         </div>
