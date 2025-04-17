@@ -10,46 +10,43 @@
     <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #800000; /* Maroon */
+            background-color: #FDE2E4; /* Light pink */
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
-            background-image: linear-gradient(to bottom, transparent 0%, transparent 97%, #800000 97%, #800000 98%);
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 97%, white 97%, white 98%);
             background-size: 100% 28px;
             cursor: url('Cursor.png'), auto;
         }
 
         .navbar {
-            margin-bottom: 20px;
-            background-color: #A0522D; /* Sienna */
+            margin-bottom: 20px; /* Add space below the navbar */
         }
 
         .nav-link {
-            font-family: 'Cormorant Infant', serif;
-            color: #FDEDEC !important; /* Light blush */
+            font-family: 'Cormorant Infant', serif; /* Use Cormorant Infant font for nav links */
         }
 
         .brand-link {
-            color: #FDEDEC !important; /* Light blush */
+            color: #D8BFD8 !important; /* Pastel purple */
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
-            font-family: 'Telma', sans-serif;
+            font-family: 'Telma', sans-serif; /* Updated font-family */
         }
 
         .brand-link:hover {
-            color: #FFDAB9 !important; /* Peach Puff */
+            color: #CDA4DE !important; /* Slightly darker pastel purple */
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #A0522D; /* Sienna */
-            color: #FDEDEC; /* Light blush */
+            background-color: #FFF4F4; /* Cream-colored background */
         }
 
         .header h1 {
-            color: #FFDAB9; /* Peach Puff */
+            color: #D8BFD8; /* Pastel purple */
             letter-spacing: 0.05em;
             font-size: 3em;
             margin-bottom: 0;
@@ -58,9 +55,9 @@
         }
 
         .panel {
-            border: 2px solid #FFDAB9; /* Peach Puff border */
+            border: 2px solid #FADADD; /* Cream-colored border */
             margin-bottom: 20px;
-            background-color: #A0522D; /* Sienna background */
+            background-color: #FDE2E4; /* Light pink background */
         }
 
         .panel-buttons {
@@ -78,26 +75,26 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
-            border: 1px solid #FFDAB9; /* Peach Puff */
-            color: #FFDAB9; /* Peach Puff */
-            background-color: #800000; /* Maroon */
-            border-radius: 50%;
+            border: 1px solid #D8BFD8; /* Pastel purple */
+            color: #D8BFD8; /* Pastel purple */
+            background-color: #FFF4F4; /* Cream-colored background */
+            border-radius: 50%; /* Circular buttons */
             cursor: pointer;
         }
 
         .panel-button:hover {
-            background-color: #FFDAB9; /* Peach Puff */
-            color: #800000; /* Maroon */
+            background-color: #D8BFD8; /* Pastel purple */
+            color: white;
         }
 
         .panel-header {
-            background-color: #FFDAB9; /* Peach Puff header */
+            background-color: #FADADD; /* Cream-colored header */
             padding: 5px 10px;
             position: relative;
         }
 
         .panel-title {
-            color: #800000; /* Maroon */
+            color: #CDA4DE; /* Slightly darker pastel purple */
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
         }
@@ -109,8 +106,8 @@
 
         .panel-button-link {
             display: block;
-            background-color: #FFDAB9; /* Peach Puff */
-            color: #800000 !important; /* Maroon */
+            background-color: #D8BFD8; /* Pastel purple - panel button link background */
+            color: white !important; /* White text */
             text-align: center;
             padding: 8px 12px;
             border-radius: 4px;
@@ -119,23 +116,23 @@
             text-decoration: none;
             font-family: 'Clash Display', sans-serif;
             font-weight: 500;
-            border: 1px solid #FDEDEC; /* Light blush */
+            border: 1px solid #CDA4DE; /* Slightly darker pastel purple - panel button link border */
             letter-spacing: 0.02em;
         }
 
         .panel-button-link:hover {
-            background-color: #FDEDEC; /* Light blush */
-            color: #800000 !important; /* Maroon */
+            background-color: #CDA4DE; 
+            color: white !important;
             transform: translateY(-2px);
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
 
         .panel-button-link.active {
-            background-color: #FDEDEC; /* Light blush */
-            color: #800000 !important; /* Maroon */
+            background-color: #CDA4DE; 
+            color: white !important; 
             font-weight: 700;
             border-width: 2px;
-            box-shadow: 0 0 10px rgba(255, 218, 185, 0.5); /* Peach Puff shadow */
+            box-shadow: 0 0 10px rgba(109, 89, 122, 0.5);
             position: relative;
         }
 
@@ -147,23 +144,20 @@
             transform: translateY(-50%);
             font-size: 0.8rem;
         }
-
         footer {
             text-align: center;
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #FDEDEC; /* Light blush */
+            color: #D8BFD8; /* Pastel purple */
         }
 
         .content-area h3 {
-            text-align: center;
-            color: #FFDAB9; /* Peach Puff */
+            text-align: center; /* Center the header */
         }
 
         .content-area p {
             font-family: 'Clash Display', sans-serif;
-            color: #FDEDEC; /* Light blush */
         }
     </style>
 </head>
@@ -208,7 +202,7 @@
 
             <div class="col-md-9">
                 <div class="content-area">
-                    <h3 style="color: #FFDAB9;">net.art</h3>
+                    <h3 style="color: #CDA4DE;">net.art</h3>
                     <p>Help me out! I can't decide what flowers to pick out.</p>
                     <img src="./images/shake.gif" alt="cantdecide" style="display: block; margin: 0 auto; max-width: 100%;"><br>
                     <p><span class="star-bullet">★</span> Blossom Boutique is an interactive shop where users go through a series of questions to build their personal flower bouquet.</p>
