@@ -10,25 +10,26 @@
     <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #F5E6E8; /* Light blush */
+            background-color: #800000; /* Maroon */
             font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
             margin: 30px;
-            background-image: linear-gradient(to bottom, transparent 0%, transparent 97%, white 97%, white 98%);
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 97%, #800000 97%, #800000 98%);
             background-size: 100% 28px;
             cursor: url('Cursor.png'), auto;
         }
 
         .navbar {
             margin-bottom: 20px;
+            background-color: #A0522D; /* Sienna */
         }
 
         .nav-link {
             font-family: 'Cormorant Infant', serif;
-            color: #800000 !important; /* Maroon */
+            color: #FDEDEC !important; /* Light blush */
         }
 
         .brand-link {
-            color: #800000 !important; /* Maroon */
+            color: #FDEDEC !important; /* Light blush */
             font-size: 1.8rem;
             font-weight: 600;
             text-decoration: none;
@@ -36,18 +37,19 @@
         }
 
         .brand-link:hover {
-            color: #A0522D !important; /* Sienna */
+            color: #FFDAB9 !important; /* Peach Puff */
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #FDEDEC; /* Light blush */
+            background-color: #A0522D; /* Sienna */
+            color: #FDEDEC; /* Light blush */
         }
 
         .header h1 {
-            color: #800000; /* Maroon */
+            color: #FFDAB9; /* Peach Puff */
             letter-spacing: 0.05em;
             font-size: 3em;
             margin-bottom: 0;
@@ -56,9 +58,9 @@
         }
 
         .panel {
-            border: 2px solid #F5C6CB; /* Light pink border */
+            border: 2px solid #FFDAB9; /* Peach Puff border */
             margin-bottom: 20px;
-            background-color: #F5E6E8; /* Light blush background */
+            background-color: #A0522D; /* Sienna background */
         }
 
         .panel-buttons {
@@ -76,26 +78,26 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
-            border: 1px solid #800000; /* Maroon */
-            color: #800000; /* Maroon */
-            background-color: #FDEDEC; /* Light blush */
+            border: 1px solid #FFDAB9; /* Peach Puff */
+            color: #FFDAB9; /* Peach Puff */
+            background-color: #800000; /* Maroon */
             border-radius: 50%;
             cursor: pointer;
         }
 
         .panel-button:hover {
-            background-color: #800000; /* Maroon */
-            color: white;
+            background-color: #FFDAB9; /* Peach Puff */
+            color: #800000; /* Maroon */
         }
 
         .panel-header {
-            background-color: #F5C6CB; /* Light pink header */
+            background-color: #FFDAB9; /* Peach Puff header */
             padding: 5px 10px;
             position: relative;
         }
 
         .panel-title {
-            color: #A0522D; /* Sienna */
+            color: #800000; /* Maroon */
             font-weight: bold;
             font-family: 'Clash Display', sans-serif;
         }
@@ -107,8 +109,8 @@
 
         .panel-button-link {
             display: block;
-            background-color: #800000; /* Maroon */
-            color: white !important;
+            background-color: #FFDAB9; /* Peach Puff */
+            color: #800000 !important; /* Maroon */
             text-align: center;
             padding: 8px 12px;
             border-radius: 4px;
@@ -117,23 +119,23 @@
             text-decoration: none;
             font-family: 'Clash Display', sans-serif;
             font-weight: 500;
-            border: 1px solid #A0522D; /* Sienna */
+            border: 1px solid #FDEDEC; /* Light blush */
             letter-spacing: 0.02em;
         }
 
         .panel-button-link:hover {
-            background-color: #A0522D; 
-            color: white !important;
+            background-color: #FDEDEC; /* Light blush */
+            color: #800000 !important; /* Maroon */
             transform: translateY(-2px);
             box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
 
         .panel-button-link.active {
-            background-color: #A0522D; 
-            color: white !important; 
+            background-color: #FDEDEC; /* Light blush */
+            color: #800000 !important; /* Maroon */
             font-weight: 700;
             border-width: 2px;
-            box-shadow: 0 0 10px rgba(128, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(255, 218, 185, 0.5); /* Peach Puff shadow */
             position: relative;
         }
 
@@ -151,16 +153,17 @@
             padding: 20px 0;
             margin-top: 20px;
             font-family: 'Clash Display', sans-serif;
-            color: #800000; /* Maroon */
+            color: #FDEDEC; /* Light blush */
         }
 
         .content-area h3 {
             text-align: center;
-            color: #A0522D; /* Sienna */
+            color: #FFDAB9; /* Peach Puff */
         }
 
         .content-area p {
             font-family: 'Clash Display', sans-serif;
+            color: #FDEDEC; /* Light blush */
         }
     </style>
 </head>
@@ -205,7 +208,7 @@
 
             <div class="col-md-9">
                 <div class="content-area">
-                    <h3 style="color: #A0522D;">net.art</h3>
+                    <h3 style="color: #FFDAB9;">net.art</h3>
                     <p>Help me out! I can't decide what flowers to pick out.</p>
                     <img src="./images/shake.gif" alt="cantdecide" style="display: block; margin: 0 auto; max-width: 100%;"><br>
                     <p><span class="star-bullet">★</span> Blossom Boutique is an interactive shop where users go through a series of questions to build their personal flower bouquet.</p>
