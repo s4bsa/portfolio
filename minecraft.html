@@ -326,7 +326,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./">Home</a>
+                        <a class="nav-link" href="./" id="home-button">Home</a>
                     </li>
                 </ul>
             </div>
@@ -421,6 +421,14 @@
                         this.src = this.src.replace('./images/', '');
                     }
                 });
+            });
+
+            const homeButton = document.getElementById('home-button');
+            const creeperSound = new Audio('./creeper.mp3');
+
+            homeButton.addEventListener('mouseenter', function() {
+                creeperSound.currentTime = 0; 
+                creeperSound.play();
             });
         });
 
