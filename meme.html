@@ -355,7 +355,7 @@
             galleryItems.forEach(item => {
                 item.addEventListener('click', function() {
                     const img = this.querySelector('.gallery-image');
-                    const title = this.querySelector('p').textContent; // Fix selector for caption
+                    const title = img.alt; // Use the alt attribute for the caption
                     openLightbox(img.src, title);
                 });
             });
