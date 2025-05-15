@@ -178,7 +178,7 @@
         }
         
         .star-bullet {
-            color: #FF8FA3;
+            color: #FF8FA3; /* Darker pink for star bullets */
         }
 
         .panel-button-link {
@@ -205,66 +205,22 @@
         }
 
         .highlighted-text {
-            color: #FF8FA3; 
+            color: #FF8FA3; /* Darker pink for better readability */
             transition: color 0.3s ease;
         }
         .highlighted-text:hover {
-            color: #FF6F85; 
+            color: #FF6F85; /* Even darker pink on hover */
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand telma brand-link" href="./">Sabrina Hung</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <div class="container">
         <div class="header">
             <h1>⋆˚₊ ♡ ⋆｡°✩°｡⋆ ♡ ₊˚⋆</h1>
-            <p>Welcome to my webpage!</p>
-            <img src="./images/melody.gif" alt="mymelody" style="display: block; margin: 0 auto; max-width: 100%;"><br>
-            <p>digital media / coding / 3-d modeling / more</p>
-            <p><span class="highlighted-text">@s4bsa</span></p>
         </div>
         
         <div class="row">
             <div class="col-md-3">
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">Site</div>
-                        <div class="panel-buttons">
-                            <div class="panel-button">－</div>
-                            <div class="panel-button">□</div>
-                            <div class="panel-button">✕</div>
-                        </div>
-                    </div>
-                    <div class="panel-content">
-                        <a href="#home" class="nav-item d-block mb-2">Home</a>
-                        <hr class="panel-divider">
-                        <a href="#about" class="nav-item d-block mb-2">About Me</a>
-                        <hr class="panel-divider">
-                        <a href="#contact" class="nav-item d-block mb-2">Contact</a>
-                    </div>
-                </div>
-                
                 <div class="panel">
                     <div class="panel-header">
                         <div class="panel-title">Digital Art</div>
@@ -284,14 +240,24 @@
                     </div>
                 </div>
             </div>
-           
+            
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h3 class="header clash-display content-area" style="color: #55FFFF !important; text-shadow: 3px 3px 0px #0a7d7d;">p5.js Self Portrait</h3>
+                <iframe src="https://s4bsa.github.io/portfolio/Self.portrait/"
+                      width="600" 
+                      height="600" 
+                      style="border:none;">
+                  </iframe>
+
+                    </div>
+                </div>
+            </div>
         </div>
         
         <footer>
             &copy; s4bsa 2025
         </footer>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
