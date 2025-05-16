@@ -132,18 +132,19 @@
             color: white !important;
             font-weight: 700;
             border-width: 2px;
-            box-shadow: 0 0 10px rgba(168, 60, 47, 0.2);
+            box-shadow: 0 0 15px rgba(168, 60, 47, 0.5);
             position: relative;
+            font-size: 1.1em;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            animation: pulse 1.5s infinite alternate;
         }
 
-        .panel-button-link.active::after {
-            content: "▶";
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.8rem;
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(168, 60, 47, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(168, 60, 47, 0.8); }
         }
+
         footer {
             text-align: center;
             padding: 20px 0;
@@ -159,6 +160,28 @@
 
         .content-area p {
             font-family: 'Clash Display', sans-serif;
+        }
+        
+        .project-link {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background-color: #B8574A;
+            color: white !important;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .project-link:hover {
+            background-color: #A13C2F;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
         }
     </style>
 </head>
@@ -206,6 +229,7 @@
                     <h3 style="color: #A13C2F;">net.art</h3>
                     <p>Help me out! I can't decide what flowers to pick out.</p>
                     <img src="./images/shake.gif" alt="cantdecide" style="display: block; margin: 0 auto; max-width: 100%;"><br>
+                    <a href="https://s4bsa.github.io/portfolio/blossom/" class="project-link">Visit Blossom Boutique ✿</a>
                     <p><span class="star-bullet">★</span> Blossom Boutique is an interactive shop where users go through a series of questions to build their personal flower bouquet.</p>
                     <p><span class="star-bullet">★</span> Created using HTML and published on Github.</p>
                 </div>
