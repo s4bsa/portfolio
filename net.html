@@ -80,11 +80,9 @@
             background-color: #FFF5F2; /* Light rose */
             border-radius: 50%;
             cursor: pointer;
-        }
-
-        .panel-button:hover {
-            background-color: #B8574A; /* Deep rose */
-            color: white;
+            box-sizing: border-box; /* Ensure consistent sizing */
+            min-width: 20px; /* Enforce minimum width */
+            flex: 0 0 20px; /* Prevent flexbox from resizing */
         }
 
         .panel-header {
@@ -118,6 +116,12 @@
             font-weight: 500;
             border: 1px solid #A13C2F; /* Darker rose */
             letter-spacing: 0.02em;
+            box-sizing: border-box; /* Ensure consistent sizing */
+            height: auto; /* Allow height to adjust to content */
+            min-height: 40px; /* Set minimum height for consistency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .panel-button-link:hover {
@@ -220,6 +224,7 @@
                         <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
                         <a href="./3d.html" class="panel-button-link">3-D Art</a>
                         <a href="./net.html" class="panel-button-link active">Net.Art</a>
+                        <a href="./game.html" class="panel-button-link">Tennis Game</a>
                     </div>
                 </div>
             </div>
