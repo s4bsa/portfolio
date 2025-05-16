@@ -84,6 +84,11 @@
             color: #3b8031; /* Tennis court green */
             font-size: 10px;
             cursor: pointer;
+            background-color: #daffc4; /* Light tennis ball green for button fill */
+        }
+
+        .panel-button:hover {
+            background-color: #ccff00; /* Tennis ball yellow on hover */
         }
 
         .panel-content {
@@ -144,8 +149,8 @@
         }
 
         .panel-button-link.active {
-            background-color: #3b8031; /* Tennis court green */
-            color: #ccff00 !important; /* Tennis ball yellow */
+            background-color: #2a5923; /* Darker tennis court green for distinction */
+            color: #f0ff8c !important; /* Lighter tennis ball yellow for contrast */
             font-weight: 700;
             border-width: 2px;
             box-shadow: 0 0 15px rgba(204, 255, 0, 0.8); /* Tennis ball glow */
@@ -283,6 +288,10 @@
 
         h3.header.clash-display.content-area:hover {
             color: inherit !important; /* Remove hover effect for content header */
+        }
+
+        h3.header.clash-display.content-area[style*="color: #3b8031"]:hover {
+            color: #3b8031 !important;
         }
     </style>
 </head>
