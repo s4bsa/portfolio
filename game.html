@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabrina Hung - Tennis Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #3b8031; /* Tennis court green */
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            margin: 30px;
+            background-image: url('./images/keycaps.jpg'); /* Set keycaps.jpg as the background image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-attachment: fixed; /* Fix the background image in place */
+            cursor: url('Cursor.png'), auto;
+        }
+
+        .cormorant-infant {
+            font-family: 'Cormorant Infant', serif;
+        }
+
+        .brand-link {
+            font-family: 'Telma', sans-serif;
+            color: #ccff00 !important; /* Tennis ball yellow/green */
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .brand-link:hover {
+            color: #ffffff !important; /* White like court lines */
+        }
+
+        .clash-display {
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #e8f5e3; /* Light tennis court green */
+        }
+
+        .panel {
+            border: 2px solid #ccff00; /* Tennis ball yellow */
+            margin-bottom: 20px;
+            background-color: #e8f5e3; /* Light tennis court green */
+        }
+
+        .panel-header {
+            background-color: #ccff00; /* Tennis ball yellow */
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-title {
+            color: #3b8031; /* Tennis court green - for contrast */
+            font-weight: bold;
+            font-family: 'Clash Display', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .panel-buttons {
+            display: flex;
+        }
+
+        .panel-button {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #3b8031; /* Tennis court green */
+            margin-left: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #3b8031; /* Tennis court green */
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .panel-content {
+            padding: 10px;
+        }
+
+        .navbar {
+            background-color: #3b8031 !important; /* Tennis court green */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ccff00 !important; /* Tennis ball yellow */
+            font-family: 'Cormorant Infant', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            font-size: 1.1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important; /* White like court lines */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-family: 'Clash Display', sans-serif;
+            color: #ccff00; /* Tennis ball yellow */
+        }
+
+        footer:hover {
+            color: inherit; /* Remove hover effect for footer */
+        }
+
+        .panel-button-link {
+            display: block;
+            background-color: #e8f5e3; /* Light tennis court green */
+            color: #3b8031 !important; /* Tennis court green */
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            border: 1px solid #3b8031; /* Tennis court green */
+            letter-spacing: 0.02em;
+        }
+
+        .panel-button-link:hover {
+            background-color: #3b8031; /* Tennis court green */
+            color: #ccff00 !important; /* Tennis ball yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+
+        .panel-button-link.active {
+            background-color: #3b8031; /* Tennis court green */
+            color: #ccff00 !important; /* Tennis ball yellow */
+            font-weight: 700;
+            border-width: 2px;
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.8); /* Tennis ball glow */
+            position: relative;
+        }
+
+        .panel-button-link.active::after {
+            content: "▶";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+        }
+    
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+            justify-content: flex-start;
+        }
+
+        .gallery-item {
+            position: relative;
+            transition: all 0.3s ease;
+            max-width: 300px;
+            flex: 0 0 auto;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05); /* Add hover effect */
+            transition: transform 0.3s ease; /* Smooth scaling */
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid #faa6d9; /* Blue - gallery image border */
+            border-radius: 8px;
+        }
+
+        .gallery-title {
+            display: none; /* Remove hover title */
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(109, 89, 122, 0.95); /* Dark purple with transparency - lightbox background */
+            display: none;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+            border: 3px solid #FDF6E3; /* Cream - lightbox image border */
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #FDF6E3; /* Cream - close button text */
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: rgba(109, 89, 122, 0.5); /* Dark purple with transparency - close button background */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid #FDF6E3; /* Cream - close button border */
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            background-color: #FDF6E3; /* Cream - close button hover background */
+            color: #6D597A; /* Dark purple - close button hover text */
+        }
+
+        .content-section {
+            background-color: #e8f5e3; /* Light tennis court green */
+            padding: 20px;
+            border: 2px solid #ccff00; /* Tennis ball yellow */
+            border-radius: 8px;
+        }
+
+        .content-area h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600; /* Changed from 500 to 600 */
+            color: #3b8031; /* Tennis court green */
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
+        }
+
+        h3.content-area, h3.header.clash-display.content-area {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600; /* Changed from 500 to 600 */
+            color: #3b8031 !important; /* Tennis court green */
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border-radius: 0 5px 5px 0;
+            display: inline-block;
+        }
+
+        h3.header.clash-display.content-area:hover {
+            color: inherit !important; /* Remove hover effect for content header */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand cormorant-infant brand-link" href="./">Sabrina Hung</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">                
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">Digital Art</div>
+                        <div class="panel-buttons">
+                            <div class="panel-button">－</div>
+                            <div class="panel-button">□</div>
+                            <div class="panel-button">✕</div>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <a href="./glitch.html" class="panel-button-link">Glitch Art</a>
+                        <a href="./minecraft.html" class="panel-button-link">Minecraft</a>
+                        <a href="./meme.html" class="panel-button-link">Meme Mashup</a>
+                        <a href="./3d.html" class="panel-button-link">3-D Art</a>
+                        <a href="./net.html" class="panel-button-link">Net.Art</a>
+                        <a href="./game.html" class="panel-button-link active">Tennis Game</a>
+                        <a href="./portrait.html" class="panel-button-link">Self Portrait</a>
+                        <a href="https://s4bsa.github.io/museum/" class="panel-button-link">Museum Robbery</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="content-section">
+                    <h3 class="header clash-display content-area" style="color: #3b8031;">Tennis</h3>
+                  <div style="width:100%; max-width:400px; margin:0 auto; border: 3px solid #ccff00; border-radius: 5px; padding: 5px;">
+                      <iframe 
+                        src="https://s4bsa.github.io/portfolio/Pong"
+                        style="border:none; width:100%; height:400px; max-width:100%; display:block; background:#fff;"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            &copy; s4bsa 2025
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
