@@ -1,26 +1,219 @@
-.panel-buttons {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    display: flex;
-    gap: 5px;
-}
-
-.panel-button {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    border: 1px solid #B8574A; /* Deep rose */
-    color: #B8574A; /* Deep rose */
-    background-color: #FFF5F2; /* Light rose */
-    border-radius: 50%; /* This makes them circular */
-    cursor: pointer;
-}
-
-.panel-button:hover {
-    background-color: #B8574A; /* Deep rose */
-    color: white;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabrina Hung - My Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=telma@400,700,500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #e6f4ff;
+            font-family: 'Clash Display', 'Trebuchet MS', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .top-border {
+            width: 100%;
+            height: 12px;
+            background: linear-gradient(90deg, #b7eaff 0%, #f7cfff 100%);
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 8px #b7eaff33;
+        }
+        .main-layout {
+            display: flex;
+            min-height: calc(100vh - 12px);
+        }
+        .sidebar {
+            width: 320px;
+            background: #fafdff;
+            border-right: 2px solid #d3eaff;
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 2px 0 12px #b7eaff22;
+        }
+        .sidebar .name {
+            font-family: 'Telma', sans-serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #7bb7e6;
+            margin-bottom: 0.2em;
+            letter-spacing: 0.03em;
+        }
+        .sidebar .subtitle {
+            font-family: 'Cormorant Infant', serif;
+            font-size: 1.1rem;
+            color: #a3b8c9;
+            margin-bottom: 2.5em;
+        }
+        .sidebar .info {
+            font-size: 1.05rem;
+            color: #7bb7e6;
+            margin-bottom: 2em;
+            font-family: 'Clash Display', sans-serif;
+        }
+        .sidebar .cute-badge {
+            background: #ffe7f7;
+            color: #e07bb7;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            padding: 4px 16px;
+            margin-bottom: 1.5em;
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 500;
+            box-shadow: 0 2px 8px #e07bb733;
+        }
+        .sidebar .socials {
+            margin-top: auto;
+            display: flex;
+            gap: 16px;
+        }
+        .sidebar .socials a {
+            color: #7bb7e6;
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+        .sidebar .socials a:hover {
+            color: #e07bb7;
+        }
+        .content-area {
+            flex: 1;
+            padding: 48px 48px 32px 48px;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-cute {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 32px;
+            margin-left: 8px;
+        }
+        .navbar-cute a {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.15rem;
+            color: #7bb7e6;
+            text-decoration: none;
+            padding: 0 0 4px 0;
+            position: relative;
+            transition: color 0.2s;
+        }
+        .navbar-cute a.active,
+        .navbar-cute a:focus {
+            color: #7bb7e6;
+        }
+        .navbar-cute a.active::after,
+        .navbar-cute a:focus::after {
+            content: '';
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+            height: 3px;
+            border-radius: 2px;
+            background: #7bb7e6;
+            margin-top: 3px;
+        }
+        .navbar-cute a:hover:not(.active) {
+            color: #e07bb7;
+        }
+        .cute-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px #b7eaff33;
+            padding: 32px 28px;
+            margin-bottom: 24px;
+            font-family: 'Clash Display', sans-serif;
+        }
+        .cute-card h3 {
+            color: #7bb7e6;
+            font-family: 'Telma', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 0.8em;
+        }
+        .cute-card p {
+            color: #7bb7e6;
+            font-size: 1.1rem;
+        }
+        .cute-card ul {
+            padding-left: 1.2em;
+            color: #e07bb7;
+            font-size: 1.05rem;
+        }
+        .cute-card ul li {
+            margin-bottom: 0.5em;
+        }
+        @media (max-width: 900px) {
+            .main-layout { flex-direction: column; }
+            .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
+            .sidebar .name, .sidebar .subtitle, .sidebar .info, .sidebar .cute-badge { margin-bottom: 0; }
+            .sidebar .socials { margin-top: 0; }
+            .content-area { padding: 24px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-border"></div>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div>
+                <div class="name">Sabrina Hung</div>
+                <div class="subtitle">digital media & coding</div>
+                <div class="cute-badge">✩ cute & creative ✩</div>
+                <div class="info">
+                    <div>@s4bsa</div>
+                    <div>San Jose, CA</div>
+                </div>
+            </div>
+            <div class="socials">
+                <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram"><span aria-hidden="true">🌸</span></a>
+                <a href="https://linkedin.com/in/s4bsa" target="_blank" title="LinkedIn"><span aria-hidden="true">💼</span></a>
+                <a href="mailto:sabrina.hung@sjsu.edu" title="Email"><span aria-hidden="true">✉️</span></a>
+            </div>
+        </aside>
+        <main class="content-area">
+            <nav class="navbar-cute">
+                <a href="#home" class="active">home</a>
+                <a href="#gallery">gallery</a>
+                <a href="#about">about that</a>
+            </nav>
+            <section id="main-content">
+                <div class="cute-card" id="home-card">
+                    <h3>Welcome!</h3>
+                    <p>Thanks for visiting my digital collection! Here you'll find:</p>
+                    <ul>
+                        <li>✧ Creative projects using digital tools (Photoshop, Illustrator, Blender, Github)</li>
+                        <li>✧ Links to my latest creations</li>
+                        <li>✧ Cute and introspective concept art</li>
+                    </ul>
+                </div>
+                <div class="cute-card" id="gallery-card" style="display:none;">
+                    <h3>Gallery</h3>
+                    <p>Coming soon! Stay tuned for my artwork and digital experiments.</p>
+                </div>
+                <div class="cute-card" id="about-card" style="display:none;">
+                    <h3>About Me</h3>
+                    <p>Hey there! I'm Sabrina, a digital media artist based in San Jose, CA. I love creative coding, 3D art, and all things cute and dreamy.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        // Simple nav switching
+        document.querySelectorAll('.navbar-cute a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.navbar-cute a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                // Show/hide cards
+                document.getElementById('home-card').style.display = this.getAttribute('href') === '#home' ? '' : 'none';
+                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
+                document.getElementById('about-card').style.display = this.getAttribute('href') === '#about' ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
