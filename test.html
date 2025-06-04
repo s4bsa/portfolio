@@ -22,6 +22,52 @@
             background: linear-gradient(90deg, #b7eaff 0%, #f7cfff 100%);
             border-radius: 0 0 12px 12px;
             box-shadow: 0 2px 8px #b7eaff33;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 32px;
+            position: relative;
+        }
+        .projects-section {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-left: 24px;
+        }
+        .projects-title {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.1rem;
+            color: #7bb7e6;
+            font-weight: 600;
+            margin-right: 12px;
+            letter-spacing: 0.04em;
+        }
+        .media-list {
+            display: flex;
+            gap: 28px;
+        }
+        .media-list .media-link {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.08rem;
+            color: #e07bb7;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 2px;
+            transition: color 0.2s;
+        }
+        .media-list .media-link:hover,
+        .media-list .media-link.active {
+            color: #7bb7e6;
+        }
+        .media-list .media-link.active::after {
+            content: '';
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+            height: 2px;
+            border-radius: 2px;
+            background: #7bb7e6;
+            margin-top: 2px;
         }
         .main-layout {
             display: flex;
@@ -36,6 +82,8 @@
             flex-direction: column;
             align-items: flex-start;
             box-shadow: 2px 0 12px #b7eaff22;
+            padding-top: 32px;
+            padding-bottom: 32px;
         }
         .sidebar .name {
             font-family: 'Telma', sans-serif;
@@ -44,6 +92,12 @@
             color: #7bb7e6;
             margin-bottom: 0.2em;
             letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+        .sidebar .name:hover {
+            color: #e07bb7;
         }
         .sidebar .subtitle {
             font-family: 'Cormorant Infant', serif;
@@ -68,10 +122,38 @@
             font-weight: 500;
             box-shadow: 0 2px 8px #e07bb733;
         }
+        .sidebar .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 32px 0 32px 0;
+            width: 100%;
+        }
+        .sidebar .side-nav a {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.13rem;
+            color: #e07bb7;
+            text-decoration: none;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+            width: fit-content;
+        }
+        .sidebar .side-nav a.active,
+        .sidebar .side-nav a:focus {
+            color: #7bb7e6;
+            border-bottom: 2.5px solid #7bb7e6;
+        }
+        .sidebar .side-nav a:hover:not(.active) {
+            color: #7bb7e6;
+            border-bottom: 2px solid #e07bb7;
+        }
         .sidebar .socials {
             margin-top: auto;
             display: flex;
             gap: 16px;
+            justify-content: center;
+            width: 100%;
         }
         .sidebar .socials a {
             color: #7bb7e6;
@@ -86,39 +168,6 @@
             padding: 48px 48px 32px 48px;
             display: flex;
             flex-direction: column;
-        }
-        .navbar-cute {
-            display: flex;
-            gap: 48px;
-            margin-bottom: 32px;
-            margin-left: 8px;
-        }
-        .navbar-cute a {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.15rem;
-            color: #7bb7e6;
-            text-decoration: none;
-            padding: 0 0 4px 0;
-            position: relative;
-            transition: color 0.2s;
-        }
-        .navbar-cute a.active,
-        .navbar-cute a:focus {
-            color: #7bb7e6;
-        }
-        .navbar-cute a.active::after,
-        .navbar-cute a:focus::after {
-            content: '';
-            display: block;
-            margin: 0 auto;
-            width: 70%;
-            height: 3px;
-            border-radius: 2px;
-            background: #7bb7e6;
-            margin-top: 3px;
-        }
-        .navbar-cute a:hover:not(.active) {
-            color: #e07bb7;
         }
         .cute-card {
             background: #fff;
@@ -148,6 +197,9 @@
         }
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
+            .top-border { flex-direction: column; align-items: flex-start; padding-left: 12px; }
+            .projects-section { margin-left: 0; gap: 16px; flex-wrap: wrap; }
+            .media-list { gap: 14px; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
             .sidebar .name, .sidebar .subtitle, .sidebar .info, .sidebar .cute-badge { margin-bottom: 0; }
             .sidebar .socials { margin-top: 0; }
@@ -156,17 +208,33 @@
     </style>
 </head>
 <body>
-    <div class="top-border"></div>
+    <div class="top-border">
+        <a href="./" class="name" style="position: absolute; left: 32px; top: 8px; z-index: 2;">Sabrina Hung</a>
+        <div class="projects-section" style="margin-left: 180px;">
+            <span class="projects-title">Projects</span>
+            <nav class="media-list" aria-label="Media Types">
+                <a href="#" class="media-link active">video</a>
+                <a href="#" class="media-link">photography</a>
+                <a href="#" class="media-link">digital</a>
+                <a href="#" class="media-link">coding</a>
+            </nav>
+        </div>
+    </div>
     <div class="main-layout">
         <aside class="sidebar">
-            <div>
-                <div class="name">Sabrina Hung</div>
+            <div style="width:100%;">
+                <a href="./" class="name" style="margin-bottom:0.2em;">Sabrina Hung</a>
                 <div class="subtitle">digital media & coding</div>
                 <div class="cute-badge">✩ cute & creative ✩</div>
                 <div class="info">
                     <div>@s4bsa</div>
                     <div>San Jose, CA</div>
                 </div>
+                <nav class="side-nav" aria-label="Main Navigation">
+                    <a href="#home" class="active">home</a>
+                    <a href="#gallery">gallery</a>
+                    <a href="#about">about that</a>
+                </nav>
             </div>
             <div class="socials">
                 <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram"><span aria-hidden="true">🌸</span></a>
@@ -175,11 +243,7 @@
             </div>
         </aside>
         <main class="content-area">
-            <nav class="navbar-cute">
-                <a href="#home" class="active">home</a>
-                <a href="#gallery">gallery</a>
-                <a href="#about">about that</a>
-            </nav>
+            <!-- Removed top nav, now handled in sidebar and top-border -->
             <section id="main-content">
                 <div class="cute-card" id="home-card">
                     <h3>Welcome!</h3>
@@ -202,16 +266,24 @@
         </main>
     </div>
     <script>
-        // Simple nav switching
-        document.querySelectorAll('.navbar-cute a').forEach(link => {
+        // Sidebar nav switching
+        document.querySelectorAll('.side-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelectorAll('.navbar-cute a').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.side-nav a').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
                 // Show/hide cards
                 document.getElementById('home-card').style.display = this.getAttribute('href') === '#home' ? '' : 'none';
                 document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
                 document.getElementById('about-card').style.display = this.getAttribute('href') === '#about' ? '' : 'none';
+            });
+        });
+        // Media nav (top bar) active state
+        document.querySelectorAll('.media-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.media-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
             });
         });
     </script>
