@@ -22,61 +22,10 @@
             background: linear-gradient(90deg, #b7eaff 0%, #f7cfff 100%);
             border-radius: 0 0 12px 12px;
             box-shadow: 0 2px 8px #b7eaff33;
-            display: block;
-            position: relative;
-            padding: 0;
-        }
-        .projects-section {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            margin: 0;
-            padding: 0 48px;
-            height: 56px;
-            background: #fafdff;
-            border-bottom: 2px solid #d3eaff;
-            box-shadow: 0 2px 8px #b7eaff11;
-            position: relative;
-            z-index: 2;
-        }
-        .projects-title {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.1rem;
-            color: #7bb7e6;
-            font-weight: 600;
-            margin-right: 12px;
-            letter-spacing: 0.04em;
-        }
-        .media-list {
-            display: flex;
-            gap: 28px;
-        }
-        .media-list .media-link {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.08rem;
-            color: #e07bb7;
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 2px;
-            transition: color 0.2s;
-        }
-        .media-list .media-link:hover,
-        .media-list .media-link.active {
-            color: #7bb7e6;
-        }
-        .media-list .media-link.active::after {
-            content: '';
-            display: block;
-            margin: 0 auto;
-            width: 70%;
-            height: 2px;
-            border-radius: 2px;
-            background: #7bb7e6;
-            margin-top: 2px;
         }
         .main-layout {
             display: flex;
-            min-height: calc(100vh - 68px);
+            min-height: calc(100vh - 12px);
         }
         .sidebar {
             width: 320px;
@@ -87,8 +36,6 @@
             flex-direction: column;
             align-items: flex-start;
             box-shadow: 2px 0 12px #b7eaff22;
-            padding-top: 32px;
-            padding-bottom: 32px;
         }
         .sidebar .name {
             font-family: 'Telma', sans-serif;
@@ -97,12 +44,6 @@
             color: #7bb7e6;
             margin-bottom: 0.2em;
             letter-spacing: 0.03em;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: inline-block;
-        }
-        .sidebar .name:hover {
-            color: #e07bb7;
         }
         .sidebar .subtitle {
             font-family: 'Cormorant Infant', serif;
@@ -127,38 +68,10 @@
             font-weight: 500;
             box-shadow: 0 2px 8px #e07bb733;
         }
-        .sidebar .side-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin: 32px 0 32px 0;
-            width: 100%;
-        }
-        .sidebar .side-nav a {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.13rem;
-            color: #e07bb7;
-            text-decoration: none;
-            padding-bottom: 3px;
-            border-bottom: 2px solid transparent;
-            transition: color 0.2s, border-bottom 0.2s;
-            width: fit-content;
-        }
-        .sidebar .side-nav a.active,
-        .sidebar .side-nav a:focus {
-            color: #7bb7e6;
-            border-bottom: 2.5px solid #7bb7e6;
-        }
-        .sidebar .side-nav a:hover:not(.active) {
-            color: #7bb7e6;
-            border-bottom: 2px solid #e07bb7;
-        }
         .sidebar .socials {
             margin-top: auto;
             display: flex;
             gap: 16px;
-            justify-content: center;
-            width: 100%;
         }
         .sidebar .socials a {
             color: #7bb7e6;
@@ -173,8 +86,39 @@
             padding: 48px 48px 32px 48px;
             display: flex;
             flex-direction: column;
+        }
+        .navbar-cute {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 32px;
+            margin-left: 8px;
+        }
+        .navbar-cute a {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.15rem;
+            color: #7bb7e6;
+            text-decoration: none;
+            padding: 0 0 4px 0;
             position: relative;
-            z-index: 1;
+            transition: color 0.2s;
+        }
+        .navbar-cute a.active,
+        .navbar-cute a:focus {
+            color: #7bb7e6;
+        }
+        .navbar-cute a.active::after,
+        .navbar-cute a:focus::after {
+            content: '';
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+            height: 3px;
+            border-radius: 2px;
+            background: #7bb7e6;
+            margin-top: 3px;
+        }
+        .navbar-cute a:hover:not(.active) {
+            color: #e07bb7;
         }
         .cute-card {
             background: #fff;
@@ -204,9 +148,6 @@
         }
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
-            .top-border { height: 12px; }
-            .projects-section { flex-direction: column; align-items: flex-start; height: auto; padding: 0 12px; }
-            .media-list { gap: 14px; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
             .sidebar .name, .sidebar .subtitle, .sidebar .info, .sidebar .cute-badge { margin-bottom: 0; }
             .sidebar .socials { margin-top: 0; }
@@ -216,31 +157,16 @@
 </head>
 <body>
     <div class="top-border"></div>
-    <div class="projects-section">
-        <a href="./" class="name" style="margin-bottom:0.2em; position:static; left:auto; top:auto; z-index:auto;">Sabrina Hung</a>
-        <span class="projects-title">Projects</span>
-        <nav class="media-list" aria-label="Media Types">
-            <a href="#" class="media-link active">digital</a>
-            <a href="#" class="media-link">coding</a>
-            <a href="#" class="media-link">video</a>
-            <a href="#" class="media-link">photography</a>
-        </nav>
-    </div>
     <div class="main-layout">
         <aside class="sidebar">
-            <div style="width:100%;">
-                <a href="./" class="name" style="margin-bottom:0.2em;">Sabrina Hung</a>
+            <div>
+                <div class="name">Sabrina Hung</div>
                 <div class="subtitle">digital media & coding</div>
                 <div class="cute-badge">✩ cute & creative ✩</div>
                 <div class="info">
                     <div>@s4bsa</div>
                     <div>San Jose, CA</div>
                 </div>
-                <nav class="side-nav" aria-label="Main Navigation">
-                    <a href="#home" class="active">home</a>
-                    <a href="#about">about me</a>
-                    <a href="#contact">contact me</a>
-                </nav>
             </div>
             <div class="socials">
                 <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram"><span aria-hidden="true">🌸</span></a>
@@ -249,7 +175,11 @@
             </div>
         </aside>
         <main class="content-area">
-            <!-- Removed top nav, now handled in sidebar and top-border -->
+            <nav class="navbar-cute">
+                <a href="#home" class="active">home</a>
+                <a href="#gallery">gallery</a>
+                <a href="#about">about that</a>
+            </nav>
             <section id="main-content">
                 <div class="cute-card" id="home-card">
                     <h3>Welcome!</h3>
@@ -260,41 +190,28 @@
                         <li>✧ Cute and introspective concept art</li>
                     </ul>
                 </div>
+                <div class="cute-card" id="gallery-card" style="display:none;">
+                    <h3>Gallery</h3>
+                    <p>Coming soon! Stay tuned for my artwork and digital experiments.</p>
+                </div>
                 <div class="cute-card" id="about-card" style="display:none;">
                     <h3>About Me</h3>
                     <p>Hey there! I'm Sabrina, a digital media artist based in San Jose, CA. I love creative coding, 3D art, and all things cute and dreamy.</p>
-                </div>
-                <div class="cute-card" id="contact-card" style="display:none;">
-                    <h3>Contact Me</h3>
-                    <p>Want to connect or collaborate? Reach out via email or social media!</p>
-                    <ul>
-                        <li>Email: <a href="mailto:sabrina.hung@sjsu.edu" style="color:#e07bb7;">sabrina.hung@sjsu.edu</a></li>
-                        <li>Instagram: <a href="https://instagram.com/ss4bsa" target="_blank" style="color:#e07bb7;">@ss4bsa</a></li>
-                        <li>LinkedIn: <a href="https://linkedin.com/in/s4bsa" target="_blank" style="color:#e07bb7;">@sabrinahung</a></li>
-                    </ul>
                 </div>
             </section>
         </main>
     </div>
     <script>
-        // Sidebar nav switching
-        document.querySelectorAll('.side-nav a').forEach(link => {
+        // Simple nav switching
+        document.querySelectorAll('.navbar-cute a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelectorAll('.side-nav a').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.navbar-cute a').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
                 // Show/hide cards
                 document.getElementById('home-card').style.display = this.getAttribute('href') === '#home' ? '' : 'none';
+                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
                 document.getElementById('about-card').style.display = this.getAttribute('href') === '#about' ? '' : 'none';
-                document.getElementById('contact-card').style.display = this.getAttribute('href') === '#contact' ? '' : 'none';
-            });
-        });
-        // Media nav (top bar) active state
-        document.querySelectorAll('.media-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.media-link').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
             });
         });
     </script>
