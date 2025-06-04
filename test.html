@@ -209,14 +209,13 @@
 </head>
 <body>
     <div class="top-border">
-        <a href="./" class="name" style="position: absolute; left: 32px; top: 8px; z-index: 2;">Sabrina Hung</a>
         <div class="projects-section" style="margin-left: 180px;">
             <span class="projects-title">Projects</span>
             <nav class="media-list" aria-label="Media Types">
-                <a href="#" class="media-link active">video</a>
-                <a href="#" class="media-link">photography</a>
-                <a href="#" class="media-link">digital</a>
+                <a href="#" class="media-link active">digital</a>
                 <a href="#" class="media-link">coding</a>
+                <a href="#" class="media-link">video</a>
+                <a href="#" class="media-link">photography</a>
             </nav>
         </div>
     </div>
@@ -232,8 +231,8 @@
                 </div>
                 <nav class="side-nav" aria-label="Main Navigation">
                     <a href="#home" class="active">home</a>
-                    <a href="#gallery">gallery</a>
-                    <a href="#about">about that</a>
+                    <a href="#about">about me</a>
+                    <a href="#contact">contact me</a>
                 </nav>
             </div>
             <div class="socials">
@@ -254,13 +253,18 @@
                         <li>✧ Cute and introspective concept art</li>
                     </ul>
                 </div>
-                <div class="cute-card" id="gallery-card" style="display:none;">
-                    <h3>Gallery</h3>
-                    <p>Coming soon! Stay tuned for my artwork and digital experiments.</p>
-                </div>
                 <div class="cute-card" id="about-card" style="display:none;">
                     <h3>About Me</h3>
                     <p>Hey there! I'm Sabrina, a digital media artist based in San Jose, CA. I love creative coding, 3D art, and all things cute and dreamy.</p>
+                </div>
+                <div class="cute-card" id="contact-card" style="display:none;">
+                    <h3>Contact Me</h3>
+                    <p>Want to connect or collaborate? Reach out via email or social media!</p>
+                    <ul>
+                        <li>Email: <a href="mailto:sabrina.hung@sjsu.edu" style="color:#e07bb7;">sabrina.hung@sjsu.edu</a></li>
+                        <li>Instagram: <a href="https://instagram.com/ss4bsa" target="_blank" style="color:#e07bb7;">@ss4bsa</a></li>
+                        <li>LinkedIn: <a href="https://linkedin.com/in/s4bsa" target="_blank" style="color:#e07bb7;">@sabrinahung</a></li>
+                    </ul>
                 </div>
             </section>
         </main>
@@ -274,8 +278,8 @@
                 this.classList.add('active');
                 // Show/hide cards
                 document.getElementById('home-card').style.display = this.getAttribute('href') === '#home' ? '' : 'none';
-                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
                 document.getElementById('about-card').style.display = this.getAttribute('href') === '#about' ? '' : 'none';
+                document.getElementById('contact-card').style.display = this.getAttribute('href') === '#contact' ? '' : 'none';
             });
         });
         // Media nav (top bar) active state
