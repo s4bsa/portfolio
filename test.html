@@ -22,17 +22,22 @@
             background: linear-gradient(90deg, #b7eaff 0%, #f7cfff 100%);
             border-radius: 0 0 12px 12px;
             box-shadow: 0 2px 8px #b7eaff33;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 32px;
+            display: block;
             position: relative;
+            padding: 0;
         }
         .projects-section {
             display: flex;
             align-items: center;
             gap: 32px;
-            margin-left: 24px;
+            margin: 0;
+            padding: 0 48px;
+            height: 56px;
+            background: #fafdff;
+            border-bottom: 2px solid #d3eaff;
+            box-shadow: 0 2px 8px #b7eaff11;
+            position: relative;
+            z-index: 2;
         }
         .projects-title {
             font-family: 'Clash Display', sans-serif;
@@ -71,7 +76,7 @@
         }
         .main-layout {
             display: flex;
-            min-height: calc(100vh - 12px);
+            min-height: calc(100vh - 68px);
         }
         .sidebar {
             width: 320px;
@@ -168,6 +173,8 @@
             padding: 48px 48px 32px 48px;
             display: flex;
             flex-direction: column;
+            position: relative;
+            z-index: 1;
         }
         .cute-card {
             background: #fff;
@@ -197,8 +204,8 @@
         }
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
-            .top-border { flex-direction: column; align-items: flex-start; padding-left: 12px; }
-            .projects-section { margin-left: 0; gap: 16px; flex-wrap: wrap; }
+            .top-border { height: 12px; }
+            .projects-section { flex-direction: column; align-items: flex-start; height: auto; padding: 0 12px; }
             .media-list { gap: 14px; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
             .sidebar .name, .sidebar .subtitle, .sidebar .info, .sidebar .cute-badge { margin-bottom: 0; }
@@ -208,16 +215,16 @@
     </style>
 </head>
 <body>
-    <div class="top-border">
-        <div class="projects-section" style="margin-left: 180px;">
-            <span class="projects-title">Projects</span>
-            <nav class="media-list" aria-label="Media Types">
-                <a href="#" class="media-link active">digital</a>
-                <a href="#" class="media-link">coding</a>
-                <a href="#" class="media-link">video</a>
-                <a href="#" class="media-link">photography</a>
-            </nav>
-        </div>
+    <div class="top-border"></div>
+    <div class="projects-section">
+        <a href="./" class="name" style="margin-bottom:0.2em; position:static; left:auto; top:auto; z-index:auto;">Sabrina Hung</a>
+        <span class="projects-title">Projects</span>
+        <nav class="media-list" aria-label="Media Types">
+            <a href="#" class="media-link active">digital</a>
+            <a href="#" class="media-link">coding</a>
+            <a href="#" class="media-link">video</a>
+            <a href="#" class="media-link">photography</a>
+        </nav>
     </div>
     <div class="main-layout">
         <aside class="sidebar">
