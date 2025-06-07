@@ -166,26 +166,30 @@
         <main class="content-area">
             <nav class="navbar-cute">
                 <a href="#home" class="active">home</a>
-                <a href="#gallery">gallery</a>
-                <a href="#about">about that</a>
+                <a href="#about">profile</a>
+                <a href="#gallery">contact</a>
             </nav>
             <section id="main-content">
                 <div class="cute-card" id="home-card">
                     <h3>Welcome!</h3>
                     <p>Thanks for visiting my digital collection! Here you'll find:</p>
                     <ul>
-                        <li>✧ Creative projects using digital tools (Photoshop, Illustrator, Blender, Github)</li>
+                        <li>✧ Creative projects using digital tools: Adobe Creative Suite, Blender, & Github</li>
                         <li>✧ Links to my latest creations</li>
-                        <li>✧ Cute and introspective concept art</li>
+                        <li>✧ Storytelling and introspective concept art</li>
                     </ul>
                 </div>
-                <div class="cute-card" id="gallery-card" style="display:none;">
-                    <h3>Gallery</h3>
-                    <p>Coming soon! Stay tuned for my artwork and digital experiments.</p>
-                </div>
-                <div class="cute-card" id="about-card" style="display:none;">
+                 <div class="cute-card" id="about-card" style="display:none;">
                     <h3>About Me</h3>
-                    <p>Hey there! I'm Sabrina, a digital media artist based in San Jose, CA. I love creative coding, 3D art, and all things cute and dreamy.</p>
+                    <p>Hey there! My name is Sabrina Hung, I'm a 19 y/o artist, majoring in Digital Media at SJSU. I am a multidisciplinary artist currently focusing on creative coding and 3D rendering. My work dives into themes exploring <b>love, existentialism, and fantasy</b>.</p>
+                </div>
+                <div class="cute-card" id="gallery-card" style="display:none;">
+                    <h3>Contact Me</h3>
+                    <ul>
+                        <li>✧ email: sabrina.hung@sjsu.edu</li>
+                        <li>✧ linkedin: @sabrinahung</li>
+                        <li>✧ instagram: @ss4bsa</li>
+                    </ul>
                 </div>
             </section>
         </main>
@@ -199,8 +203,8 @@
                 this.classList.add('active');
                 // Show/hide cards
                 document.getElementById('home-card').style.display = this.getAttribute('href') === '#home' ? '' : 'none';
-                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
                 document.getElementById('about-card').style.display = this.getAttribute('href') === '#about' ? '' : 'none';
+                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
             });
         });
     </script>
