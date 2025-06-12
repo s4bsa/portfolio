@@ -136,9 +136,19 @@
             padding-left: 1.2em;
             color: #e07bb7;
             font-size: 1.05rem;
+            list-style-type: none; /* Remove default bullets */
         }
+        
         .cute-card ul li {
             margin-bottom: 0.5em;
+            text-indent: -1em; /* Create hanging indent for the star character */
+            padding-left: 1em;
+        }
+        
+        /* Ensure space after the star character */
+        .cute-card ul li::before {
+            content: "";
+            margin-right: 0.3em;
         }
         .divider {
             position: relative;
@@ -173,7 +183,7 @@
             width: 80px;
             object-fit: contain;
             border-radius: 50%;
-            background-color: #ffffff;
+            background-color: transparent; /* Removed white background */
             padding: 10px;
             box-shadow: 0 4px 12px rgba(123, 183, 230, 0.2);
             z-index: 1;
