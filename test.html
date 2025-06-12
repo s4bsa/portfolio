@@ -204,6 +204,21 @@
             display: block;
         }
         
+        /* Remove default styling from links */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Keep the existing hover effects for specific links */
+        .sidebar .socials a {
+            color: #7bb7e6;
+        }
+        
+        .sidebar .socials a:hover {
+            color: #e07bb7;
+        }
+        
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
@@ -280,7 +295,7 @@
                 
                 <!-- Divider with melody image -->
                 <div class="divider">
-                    <img src="melody.png" alt="Melody" class="divider-image">
+                    <img src="images/melody.png" alt="Melody" class="divider-image">
                 </div>
                 
                 <!-- Photo Gallery -->
