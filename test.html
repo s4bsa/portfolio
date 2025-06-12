@@ -49,29 +49,44 @@
             font-family: 'Cormorant Infant', serif;
             font-size: 1.1rem;
             color: #a3b8c9;
-            margin-bottom: 2.5em;
+            margin-bottom: 1em;
         }
-        .sidebar .info {
-            font-size: 1.05rem;
-            color: #e07bb7;
-            margin-bottom: 2em;
-            font-family: 'Clash Display', sans-serif;
-        }
-        .sidebar .socials {
-            margin-top: auto;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
+        
+        /* Side navigation menu styles */
+        .side-nav {
             width: 100%;
+            margin-bottom: 2em;
         }
-        .sidebar .socials a {
+        
+        .side-nav .category {
             color: #7bb7e6;
-            font-size: 1.4rem;
-            transition: color 0.2s;
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 0.5em;
         }
-        .sidebar .socials a:hover {
+        
+        .side-nav ul {
+            list-style-type: none;
+            padding-left: 0.8em;
+            margin-bottom: 1.2em;
+        }
+        
+        .side-nav ul li {
+            margin-bottom: 0.35em;
+        }
+        
+        .side-nav ul li a {
             color: #e07bb7;
+            font-size: 0.95rem;
+            transition: transform 0.2s, color 0.2s;
+            display: inline-block;
         }
+        
+        .side-nav ul li a:hover {
+            color: #7bb7e6;
+            transform: translateX(3px);
+        }
+        
         b {
             font-weight: 600; /* Less bold than the default 700 */
         }
@@ -260,6 +275,20 @@
             <div>
                 <div class="name">Sabrina Hung</div>
                 <div class="subtitle">digital media</div>
+                
+                <!-- Side Navigation Menu -->
+                <nav class="side-nav">
+                    <div class="category">Digital Media</div>
+                    <ul>
+                        <li><a href="/glitch.html">Glitch Art</a></li>
+                        <li><a href="/minecraft.html">Minecraft</a></li>
+                        <li><a href="/photoshop.html">Photoshop</a></li>
+                        <li><a href="/3d.html">3D Art</a></li>
+                        <li><a href="/net.html">Net Art</a></li>
+                        <li><a href="/p5js.html">p5.js</a></li>
+                    </ul>
+                </nav>
+                
                 <div class="info">
                     <div><b>@s4bsa</b></div>
                     <div>San Jose, CA</div>
@@ -294,9 +323,9 @@
                 <div class="cute-card" id="gallery-card" style="display:none;">
                     <h3>Contact Me</h3>
                     <ul>
-                        <li>✧ email: <a href="mailto:sabrina.hung@sjsu.edu" title="Email">sabrina.hung@sjsu.edu</a></li>
-                        <li>✧ linkedin: <a href="https://linkedin.com/in/s4bsa" target="_blank" title="LinkedIn">@sabrinahung</a></li>
-                        <li>✧ instagram: <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram">@ss4bsa</a></li>
+                        <li>✧ email: <a href="mailto:sabrina.hung@sjsu.edu" title="Email"><b>sabrina.hung@sjsu.edu</b></a></li>
+                        <li>✧ linkedin: <a href="https://linkedin.com/in/s4bsa" target="_blank" title="LinkedIn"><b>@sabrinahung</b></a></li>
+                        <li>✧ instagram: <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram"><b>@ss4bsa</b></a></li>
                     </ul>
                 </div>
                 
