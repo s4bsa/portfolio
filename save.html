@@ -19,7 +19,7 @@
         .top-border {
             width: 100%;
             height: 12px;
-            background: linear-gradient(90deg, #b7eaff 0%, #f7cfff 100%);
+            background: linear-gradient(90deg, #cbb7ff 0%, #f7cfff 100%);
             border-radius: 0 0 12px 12px;
             box-shadow: 0 2px 8px #b7eaff33;
         }
@@ -62,6 +62,7 @@
             display: flex;
             gap: 16px;
             justify-content: center;
+            width: 100%;
         }
         .sidebar .socials a {
             color: #7bb7e6;
@@ -70,6 +71,9 @@
         }
         .sidebar .socials a:hover {
             color: #e07bb7;
+        }
+        b {
+            font-weight: 600; /* Less bold than the default 700 */
         }
         .content-area {
             flex: 1;
@@ -140,7 +144,11 @@
             .main-layout { flex-direction: column; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
             .sidebar .name, .sidebar .subtitle, .sidebar .info { margin-bottom: 0; }
-            .sidebar .socials { margin-top: 0; }
+            .sidebar .socials { 
+                margin-top: 0; 
+                justify-content: center;
+                width: auto;
+            }
             .content-area { padding: 24px 8px; }
         }
     </style>
@@ -166,26 +174,30 @@
         <main class="content-area">
             <nav class="navbar-cute">
                 <a href="#home" class="active">home</a>
-                <a href="#gallery">gallery</a>
-                <a href="#about">about that</a>
+                <a href="#about">profile</a>
+                <a href="#gallery">contact</a>
             </nav>
             <section id="main-content">
                 <div class="cute-card" id="home-card">
                     <h3>Welcome!</h3>
                     <p>Thanks for visiting my digital collection! Here you'll find:</p>
                     <ul>
-                        <li>✧ Creative projects using digital tools (Photoshop, Illustrator, Blender, Github)</li>
+                        <li>✧ Creative projects using digital tools: Adobe Creative Suite, Blender, & Github</li>
                         <li>✧ Links to my latest creations</li>
-                        <li>✧ Cute and introspective concept art</li>
+                        <li>✧ Storytelling and introspective concept art</li>
                     </ul>
                 </div>
-                <div class="cute-card" id="gallery-card" style="display:none;">
-                    <h3>Gallery</h3>
-                    <p>Coming soon! Stay tuned for my artwork and digital experiments.</p>
-                </div>
-                <div class="cute-card" id="about-card" style="display:none;">
+                 <div class="cute-card" id="about-card" style="display:none;">
                     <h3>About Me</h3>
-                    <p>Hey there! I'm Sabrina, a digital media artist based in San Jose, CA. I love creative coding, 3D art, and all things cute and dreamy.</p>
+                    <p>Hey there! My name is Sabrina Hung, I'm a 19 y/o artist, majoring in Digital Media at SJSU. I am a multidisciplinary artist currently focusing on creative coding and 3D rendering. My work dives into themes exploring <b>love, existentialism, and fantasy</b>.</p>
+                </div>
+                <div class="cute-card" id="gallery-card" style="display:none;">
+                    <h3>Contact Me</h3>
+                    <ul>
+                        <li>✧ email: <a href="mailto:sabrina.hung@sjsu.edu" title="Email">sabrina.hung@sjsu.edu</a></li>
+                        <li>✧ linkedin: <a href="https://linkedin.com/in/s4bsa" target="_blank" title="LinkedIn">@sabrinahung</a></li>
+                        <li>✧ instagram: <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram">@ss4bsa</a></li>
+                    </ul>
                 </div>
             </section>
         </main>
@@ -199,8 +211,8 @@
                 this.classList.add('active');
                 // Show/hide cards
                 document.getElementById('home-card').style.display = this.getAttribute('href') === '#home' ? '' : 'none';
-                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
                 document.getElementById('about-card').style.display = this.getAttribute('href') === '#about' ? '' : 'none';
+                document.getElementById('gallery-card').style.display = this.getAttribute('href') === '#gallery' ? '' : 'none';
             });
         });
     </script>

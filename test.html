@@ -140,6 +140,70 @@
         .cute-card ul li {
             margin-bottom: 0.5em;
         }
+        .divider {
+            position: relative;
+            height: 80px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        
+        .divider::before, .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: calc(50% - 70px);
+            background: linear-gradient(90deg, #d3eaff, #7bb7e6);
+        }
+        
+        .divider::before {
+            left: 0;
+        }
+        
+        .divider::after {
+            right: 0;
+            background: linear-gradient(90deg, #7bb7e6, #d3eaff);
+        }
+        
+        .divider-image {
+            height: 80px;
+            width: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(123, 183, 230, 0.2);
+            z-index: 1;
+        }
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(123, 183, 230, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
@@ -150,6 +214,20 @@
                 width: auto;
             }
             .content-area { padding: 24px 8px; }
+        }
+        
+        @media (max-width: 768px) {
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-item img {
+                height: 150px;
+            }
+            
+            .divider::before, .divider::after {
+                width: calc(50% - 40px);
+            }
         }
     </style>
 </head>
@@ -198,6 +276,36 @@
                         <li>✧ linkedin: <a href="https://linkedin.com/in/s4bsa" target="_blank" title="LinkedIn">@sabrinahung</a></li>
                         <li>✧ instagram: <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram">@ss4bsa</a></li>
                     </ul>
+                </div>
+                
+                <!-- Divider with melody image -->
+                <div class="divider">
+                    <img src="melody.png" alt="Melody" class="divider-image">
+                </div>
+                
+                <!-- Photo Gallery -->
+                <div class="cute-card gallery-container">
+                    <h3>My Work</h3>
+                    <div class="photo-gallery">
+                        <div class="gallery-item">
+                            <img src="gallery/photo1.jpg" alt="Artwork 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="gallery/photo2.jpg" alt="Artwork 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="gallery/photo3.jpg" alt="Artwork 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="gallery/photo4.jpg" alt="Artwork 4">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="gallery/photo5.jpg" alt="Artwork 5">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="gallery/photo6.jpg" alt="Artwork 6">
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
