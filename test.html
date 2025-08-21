@@ -49,44 +49,29 @@
             font-family: 'Cormorant Infant', serif;
             font-size: 1.1rem;
             color: #a3b8c9;
-            margin-bottom: 1em;
+            margin-bottom: 2.5em;
         }
-        
-        /* Side navigation menu styles */
-        .side-nav {
-            width: 100%;
-            margin-bottom: 2em;
-        }
-        
-        .side-nav .category {
-            color: #7bb7e6;
-            font-weight: 500;
+        .sidebar .info {
             font-size: 1.05rem;
-            margin-bottom: 0.5em;
-        }
-        
-        .side-nav ul {
-            list-style-type: none;
-            padding-left: 0.8em;
-            margin-bottom: 1.2em;
-        }
-        
-        .side-nav ul li {
-            margin-bottom: 0.35em;
-        }
-        
-        .side-nav ul li a {
             color: #e07bb7;
-            font-size: 0.95rem;
-            transition: transform 0.2s, color 0.2s;
-            display: inline-block;
+            margin-bottom: 2em;
+            font-family: 'Clash Display', sans-serif;
         }
-        
-        .side-nav ul li a:hover {
+        .sidebar .socials {
+            margin-top: auto;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            width: 100%;
+        }
+        .sidebar .socials a {
             color: #7bb7e6;
-            transform: translateX(3px);
+            font-size: 1.4rem;
+            transition: color 0.2s;
         }
-        
+        .sidebar .socials a:hover {
+            color: #e07bb7;
+        }
         b {
             font-weight: 600; /* Less bold than the default 700 */
         }
@@ -151,96 +136,10 @@
             padding-left: 1.2em;
             color: #e07bb7;
             font-size: 1.05rem;
-            list-style-type: none; /* Remove default bullets */
         }
-        
         .cute-card ul li {
             margin-bottom: 0.5em;
-            text-indent: -1em; /* Create hanging indent for the star character */
-            padding-left: 1em;
         }
-        
-        /* Ensure space after the star character */
-        .cute-card ul li::before {
-            content: "";
-            margin-right: 0.3em;
-        }
-        .divider {
-            position: relative;
-            height: 80px;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: visible;
-        }
-        
-        .divider::before, .divider::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            height: 2px;
-            width: calc(50% - 70px);
-            background: linear-gradient(90deg, #d3eaff, #7bb7e6);
-        }
-        
-        .divider::before {
-            left: 0;
-        }
-        
-        .divider::after {
-            right: 0;
-            background: linear-gradient(90deg, #7bb7e6, #d3eaff);
-        }
-        
-        .divider-image {
-            height: 80px;
-            width: 80px;
-            object-fit: contain;
-            padding: 10px;
-            z-index: 1;
-        }
-        
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            grid-gap: 16px;
-            margin-top: 24px;
-        }
-        
-        .gallery-item {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(123, 183, 230, 0.15);
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        /* Remove default styling from links */
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Keep the existing hover effects for specific links */
-        .sidebar .socials a {
-            color: #7bb7e6;
-        }
-        
-        .sidebar .socials a:hover {
-            color: #e07bb7;
-        }
-        
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; }
             .sidebar { width: 100%; border-right: none; border-bottom: 2px solid #d3eaff; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 16px; }
@@ -252,33 +151,6 @@
             }
             .content-area { padding: 24px 8px; }
         }
-        
-        @media (max-width: 768px) {
-            .photo-gallery {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            .gallery-item img {
-                height: 150px;
-            }
-            
-            .divider::before, .divider::after {
-                width: calc(50% - 40px);
-            }
-        }
-        
-        .content-footer {
-            color: #a3b8c9;
-            font-size: 0.95rem;
-            margin-top: 20px;
-            padding: 15px 0;
-            text-align: center;
-            border-top: 1px dashed #d3eaff;
-        }
-        
-        .content-footer b {
-            color: #e07bb7;
-        }
     </style>
 </head>
 <body>
@@ -288,20 +160,6 @@
             <div>
                 <div class="name">Sabrina Hung</div>
                 <div class="subtitle">digital media</div>
-                
-                <!-- Side Navigation Menu -->
-                <nav class="side-nav">
-                    <div class="category">Digital Media</div>
-                    <ul>
-                        <li><a href="./glitch.html">Glitch Art</a></li>
-                        <li><a href="./minecraft.html">Minecraft</a></li>
-                        <li><a href="./photoshop.html">Photoshop</a></li>
-                        <li><a href="./3d.html">3D Art</a></li>
-                        <li><a href="./net.html">Net Art</a></li>
-                        <li><a href="./p5js.html">p5.js</a></li>
-                    </ul>
-                </nav>
-                
                 <div class="info">
                     <div><b>@s4bsa</b></div>
                     <div>San Jose, CA</div>
@@ -336,45 +194,10 @@
                 <div class="cute-card" id="gallery-card" style="display:none;">
                     <h3>Contact Me</h3>
                     <ul>
-                        <li>✧ email: <a href="mailto:sabrina.hung@sjsu.edu" title="Email"><b>sabrina.hung@sjsu.edu</b></a></li>
-                        <li>✧ linkedin: <a href="https://linkedin.com/in/s4bsa" target="_blank" title="LinkedIn"><b>@sabrinahung</b></a></li>
-                        <li>✧ instagram: <a href="https://instagram.com/ss4bsa" target="_blank" title="Instagram"><b>@ss4bsa</b></a></li>
+                        <li>✧ email: sabrina.hung@sjsu.edu</li>
+                        <li>✧ linkedin: @sabrinahung</li>
+                        <li>✧ instagram: @ss4bsa</li>
                     </ul>
-                </div>
-                
-                <!-- Divider with melody image -->
-                <div class="divider">
-                    <img src="images/melody.gif" alt="Melody" class="divider-image">
-                </div>
-                
-                <!-- Photo Gallery -->
-                <div class="cute-card gallery-container">
-                    <h3>My Work</h3>
-                    <div class="photo-gallery">
-                        <div class="gallery-item">
-                            <img src="gallery/photo1.jpg" alt="Artwork 1">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="gallery/photo2.jpg" alt="Artwork 2">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="gallery/photo3.jpg" alt="Artwork 3">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="gallery/photo4.jpg" alt="Artwork 4">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="gallery/photo5.jpg" alt="Artwork 5">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="gallery/photo6.jpg" alt="Artwork 6">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Footer -->
-                <div class="content-footer">
-                    <span>currently working on:</span> <b>original character designs, media posters</b>
                 </div>
             </section>
         </main>
